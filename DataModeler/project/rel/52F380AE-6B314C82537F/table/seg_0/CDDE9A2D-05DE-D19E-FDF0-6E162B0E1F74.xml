@@ -47,7 +47,7 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="YEAR" id="552C0C1B-79A5-159B-5C4D-24863C3B4683">
+<Column name="CAR_YEAR" id="552C0C1B-79A5-159B-5C4D-24863C3B4683">
 <createdBy>ryan2</createdBy>
 <createdTime>2022-03-31 14:05:57 UTC</createdTime>
 <commentInRDBMS><![CDATA[Year of the car]]></commentInRDBMS>

@@ -57,7 +57,7 @@
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="YEAR" id="05F10924-5A68-EB5B-A934-5D7F52E03144">
+<Attribute name="CAR_YEAR" id="05F10924-5A68-EB5B-A934-5D7F52E03144">
 <createdBy>ryan2</createdBy>
 <createdTime>2022-03-24 02:26:49 UTC</createdTime>
 <commentInRDBMS><![CDATA[Year of the car]]></commentInRDBMS>
