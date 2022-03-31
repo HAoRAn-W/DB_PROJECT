@@ -193,10 +193,9 @@ BEGIN
         signal sqlstate '42000' set message_text = 'FK CORP_CUST_CUSTOMER_FK in Table HQZ_CORP_CUST violates Arc constraint on Table HQZ_CUSTOMER - discriminator column CUST_TYPE doesn''t have value ''C''';
     END IF;
 END;
-/
 
 CREATE TRIGGER arc_fkarc_2_hqz_indiv_cust_insert BEFORE
-    INSERT OR ON hqz_indiv_cust
+    INSERT ON hqz_indiv_cust
     FOR EACH ROW
     
 BEGIN
@@ -220,7 +219,6 @@ BEGIN
             signal sqlstate '42000' set message_text = 'FK CORP_CUST_CUSTOMER_FK in Table HQZ_CORP_CUST violates Arc constraint on Table HQZ_CUSTOMER - discriminator column CUST_TYPE doesn''t have value ''C''';
     END IF;
 END;
-/
 
 CREATE TRIGGER arc_fkarc_2_hqz_corp_cust_update BEFORE
     UPDATE ON hqz_corp_cust
@@ -246,10 +244,9 @@ BEGIN
         signal sqlstate '42000' set message_text = 'FK CORP_CUST_CUSTOMER_FK in Table HQZ_CORP_CUST violates Arc constraint on Table HQZ_CUSTOMER - discriminator column CUST_TYPE doesn''t have value ''C''';
     END IF;
 END;
-/
 
 CREATE TRIGGER arc_fkarc_2_hqz_indiv_cust_update BEFORE
-    UPDATE OR ON hqz_indiv_cust
+    UPDATE ON hqz_indiv_cust
     FOR EACH ROW
     
 BEGIN
@@ -273,4 +270,3 @@ BEGIN
             signal sqlstate '42000' set message_text = 'FK CORP_CUST_CUSTOMER_FK in Table HQZ_CORP_CUST violates Arc constraint on Table HQZ_CUSTOMER - discriminator column CUST_TYPE doesn''t have value ''C''';
     END IF;
 END;
-/
