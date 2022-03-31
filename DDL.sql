@@ -169,6 +169,7 @@ ALTER TABLE hqz_vehicle
     ADD CONSTRAINT vehicle_office_fk FOREIGN KEY ( office_id )
         REFERENCES hqz_office ( office_id );
 
+-- Triggers for CUST_TYPE
 CREATE TRIGGER arc_fkarc_2_hqz_corp_cust_insert BEFORE
     INSERT ON hqz_corp_cust
     FOR EACH ROW
@@ -270,3 +271,6 @@ BEGIN
             signal sqlstate '42000' set message_text = 'FK CORP_CUST_CUSTOMER_FK in Table HQZ_CORP_CUST violates Arc constraint on Table HQZ_CUSTOMER - discriminator column CUST_TYPE doesn''t have value ''C''';
     END IF;
 END;
+
+-- Add check for wow_db.hqz_vehicle vehicle_status, A for availbale and R for rent
+ALTER TABLE hqz_vehicle ADD CONSTRAINT status_check CHECK (vehicle_status='A' OR vehicle_status='R');
