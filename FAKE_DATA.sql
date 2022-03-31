@@ -88,7 +88,7 @@ m', '2017', '6789DQ', '9', '6', 'R');
 INSERT INTO `wow_db`.`hqz_vehicle` (`vin`, `make`, `model`, `car_year`, `license_plate_no`, `class_id`, `office_id`, `vehicle_status`) VALUES ('2c3cdzc95fh757310', 'jeep', '
 cherokee', '2016', 'DXJ226', '10', '1', 'A');  
 
--- Table hqz_customer
+-- Table hqz_customer, individual customer
 INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_state`, `c_zipcode`, `c_email`, `c_phone`, `cust_type`) 
 VALUES (10001, '15 Gelston St', 'Brooklyn', 'NY', '11203', 'adam@gmail.com', '9195833476', 'I');
 
