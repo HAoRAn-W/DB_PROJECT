@@ -168,3 +168,109 @@ ALTER TABLE hqz_vehicle
 ALTER TABLE hqz_vehicle
     ADD CONSTRAINT vehicle_office_fk FOREIGN KEY ( office_id )
         REFERENCES hqz_office ( office_id );
+
+CREATE TRIGGER arc_fkarc_2_hqz_corp_cust_insert BEFORE
+    INSERT ON hqz_corp_cust
+    FOR EACH ROW
+BEGIN
+	DECLARE d VARCHAR(1);
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+		RESIGNAL;
+    END;
+	DECLARE EXIT HANDLER FOR NOT found
+    BEGIN
+    END;
+    SELECT
+        a.cust_type
+    INTO d
+    FROM
+        hqz_customer a
+    WHERE
+        a.customer_id = new.customer_id;
+
+    IF ( d IS NULL OR d <> 'C' ) THEN
+        signal sqlstate '42000' set message_text = 'FK CORP_CUST_CUSTOMER_FK in Table HQZ_CORP_CUST violates Arc constraint on Table HQZ_CUSTOMER - discriminator column CUST_TYPE doesn''t have value ''C''';
+    END IF;
+END;
+/
+
+CREATE TRIGGER arc_fkarc_2_hqz_indiv_cust_insert BEFORE
+    INSERT OR ON hqz_indiv_cust
+    FOR EACH ROW
+    
+BEGIN
+    DECLARE d VARCHAR(1);
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+		RESIGNAL;
+    END;
+	DECLARE EXIT HANDLER FOR NOT found
+    BEGIN
+    END;
+    SELECT
+        a.cust_type
+    INTO d
+    FROM
+        hqz_customer a
+    WHERE
+        a.customer_id = new.customer_id;
+
+    IF ( d IS NULL OR d <> 'I' ) THEN
+            signal sqlstate '42000' set message_text = 'FK CORP_CUST_CUSTOMER_FK in Table HQZ_CORP_CUST violates Arc constraint on Table HQZ_CUSTOMER - discriminator column CUST_TYPE doesn''t have value ''C''';
+    END IF;
+END;
+/
+
+CREATE TRIGGER arc_fkarc_2_hqz_corp_cust_update BEFORE
+    UPDATE ON hqz_corp_cust
+    FOR EACH ROW
+BEGIN
+	DECLARE d VARCHAR(1);
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+		RESIGNAL;
+    END;
+	DECLARE EXIT HANDLER FOR NOT found
+    BEGIN
+    END;
+    SELECT
+        a.cust_type
+    INTO d
+    FROM
+        hqz_customer a
+    WHERE
+        a.customer_id = new.customer_id;
+
+    IF ( d IS NULL OR d <> 'C' ) THEN
+        signal sqlstate '42000' set message_text = 'FK CORP_CUST_CUSTOMER_FK in Table HQZ_CORP_CUST violates Arc constraint on Table HQZ_CUSTOMER - discriminator column CUST_TYPE doesn''t have value ''C''';
+    END IF;
+END;
+/
+
+CREATE TRIGGER arc_fkarc_2_hqz_indiv_cust_update BEFORE
+    UPDATE OR ON hqz_indiv_cust
+    FOR EACH ROW
+    
+BEGIN
+    DECLARE d VARCHAR(1);
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+		RESIGNAL;
+    END;
+	DECLARE EXIT HANDLER FOR NOT found
+    BEGIN
+    END;
+    SELECT
+        a.cust_type
+    INTO d
+    FROM
+        hqz_customer a
+    WHERE
+        a.customer_id = new.customer_id;
+
+    IF ( d IS NULL OR d <> 'I' ) THEN
+            signal sqlstate '42000' set message_text = 'FK CORP_CUST_CUSTOMER_FK in Table HQZ_CORP_CUST violates Arc constraint on Table HQZ_CUSTOMER - discriminator column CUST_TYPE doesn''t have value ''C''';
+    END IF;
+END;
+/
