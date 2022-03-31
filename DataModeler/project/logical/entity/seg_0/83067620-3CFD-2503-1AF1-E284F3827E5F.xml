@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="83067620-3CFD-2503-1AF1-E284F3827E5F" name="HQZ_CORP_INFO">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-26 23:46:58 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="CORP_REG_NO" id="86C1958D-A072-D33A-A202-E136B371557D">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-26 23:47:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Registration number of the corporation]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CORP_NAME" id="60C48896-E7D0-A0D9-DD9D-D72BA85D4961">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-26 23:49:19 UTC</createdTime>
+<commentInRDBMS><![CDATA[Name of the corporation]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DISCOUNT" id="02E3F5F2-CC08-F4E8-77B8-8561871ABC7C">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-27 00:01:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Discount rate of the company, e.g., 0.85, 0.50]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,3,2</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1494F788-C96D-459F-09A9-CE0555DDD782" name="HW_CORP_INFO PK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-26 23:47:36 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>86C1958D-A072-D33A-A202-E136B371557D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

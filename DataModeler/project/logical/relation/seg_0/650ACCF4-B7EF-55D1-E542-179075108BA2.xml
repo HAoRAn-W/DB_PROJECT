@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_PAY_INVOICE" directorySegmentName="seg_0" id="650ACCF4-B7EF-55D1-E542-179075108BA2">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 00:25:37 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<sourcePk>48BC5B9C-AB74-29B1-6787-009A22152E14</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>ADF0E68B-84BE-BA09-CC36-52CF6F264E12</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E729EDB5-1457-3F0E-9C67-315ECC5C690B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

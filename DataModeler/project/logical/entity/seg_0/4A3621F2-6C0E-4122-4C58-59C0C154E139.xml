@@ -1,0 +1,151 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4A3621F2-6C0E-4122-4C58-59C0C154E139" name="HQZ_VEHICLE">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 00:20:19 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="VIN" id="D6898AAF-AB25-2B0F-091D-E4D9F9944159">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:28:52 UTC</createdTime>
+<commentInRDBMS><![CDATA[Vehicle identification number]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>17</dataTypeSize>
+<ownDataTypeParameters>17,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MAKE" id="CFBEC1E6-DAB7-4382-8FB3-1F0D8BC489C1">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:26:15 UTC</createdTime>
+<commentInRDBMS><![CDATA[Make of the car]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MODEL" id="5AF88930-27F5-24D4-EB83-4017FAF6A1DB">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:26:34 UTC</createdTime>
+<commentInRDBMS><![CDATA[Car model]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="YEAR" id="05F10924-5A68-EB5B-A934-5D7F52E03144">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:26:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[Year of the car]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="LICENSE_PLATE_NO" id="4CDA828E-BAF8-C683-8E89-1C41B5CABAF9">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:30:28 UTC</createdTime>
+<commentInRDBMS><![CDATA[License Plate number]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CLASS_ID" id="49155297-265E-169F-10C7-E8E1893549B6">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:40:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[ID of the car class]]></commentInRDBMS>
+<generatorID>96A01670-22A8-6DE7-7169-C3206C74EB2E</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>8532D633-51E3-507E-B40F-3A1EE3DE6FC3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="OFFICE_ID" id="81BECB71-F7A2-0A7C-C9A5-0993B7D7D0AE">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:40:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[ID of the office]]></commentInRDBMS>
+<generatorID>DD180FDD-02BA-FFB7-0FFD-D2417D806BC5</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>0FE5CBF3-7168-EE57-D74B-ED6BF754C219</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="VEHICLE_STATUS" id="F619294B-6C95-4578-5B13-709DA81B7668">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-27 00:27:18 UTC</createdTime>
+<commentInRDBMS><![CDATA[Staus of the vehicle, R for rent and A for available]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4675544F-112D-CC30-CC86-0224C8E584E1" name="HQZ_VEHICLE PK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:26:07 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D6898AAF-AB25-2B0F-091D-E4D9F9944159</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

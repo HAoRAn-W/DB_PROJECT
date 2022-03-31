@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="71B613E2-0779-2EAB-3F43-1408A1F1D651" name="HQZ_CUSTOMER">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 00:20:00 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<generateDiscrimColumn>true</generateDiscrimColumn>
+<discriminatorAttributeID>8A7F8954-1C32-71EF-C13B-7C823845941D</discriminatorAttributeID>
+<completeSubtypes>true</completeSubtypes>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="CUSTOMER_ID" id="E11091C9-152A-0189-B2BA-9219EEE43516">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:41:52 UTC</createdTime>
+<commentInRDBMS><![CDATA[ID for the customer]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="C_STREET" id="36393421-925E-42BF-50E8-D6B0DE360A5D">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:42:31 UTC</createdTime>
+<commentInRDBMS><![CDATA[Street of customer address]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="C_CITY" id="78D7AD45-F9FB-DA04-91B9-95A204F03E8C">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:47:40 UTC</createdTime>
+<commentInRDBMS><![CDATA[City of customer address]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="C_STATE" id="BC00452D-0128-DA30-C026-793AC1A3F4DF">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:48:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[State of customer address]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="C_ZIPCODE" id="E7B0C995-E524-7A7A-25E5-1B90EB6E05AE">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:50:03 UTC</createdTime>
+<commentInRDBMS><![CDATA[Postal code of customer address]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="C_EMAIL" id="D544C4A5-49A2-D6E7-6B69-975E0A40DA7F">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:50:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer email address]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="C_PHONE" id="3480778B-8CEA-554C-3ECF-E7F7C5996BB6">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:50:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer phone number]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CUST_TYPE" id="8A7F8954-1C32-71EF-C13B-7C823845941D">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 03:02:30 UTC</createdTime>
+<commentInRDBMS><![CDATA[Type of the customer]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6307B4A5-5319-AA6C-36C1-0E2415728026" name="HQZ_CUSTOMER PK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:42:21 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E11091C9-152A-0189-B2BA-9219EEE43516</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

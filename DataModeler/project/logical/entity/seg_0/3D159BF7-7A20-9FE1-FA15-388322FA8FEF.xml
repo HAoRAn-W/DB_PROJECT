@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3D159BF7-7A20-9FE1-FA15-388322FA8FEF" name="HQZ_INDIV_CUST">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:51:43 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>71B613E2-0779-2EAB-3F43-1408A1F1D651</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<discriminatorValue>I</discriminatorValue>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="FNAME" id="4A6CC4E5-9358-A064-D1B3-AF96630E1FAC">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:55:33 UTC</createdTime>
+<commentInRDBMS><![CDATA[First name]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="LNAME" id="F9512B9A-D092-8574-B4C4-02A36CEF094F">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:55:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Last name]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DRIVER_LIC_NO" id="8F3FC53A-0C4F-9CFD-6BCF-C080471BE861">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:56:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Driver license number]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="INS_COMPANY_NAME" id="FB4D8F14-5D35-568B-3A36-F2775806DD04">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:57:18 UTC</createdTime>
+<commentInRDBMS><![CDATA[Insurance Company Name]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="INS_POLICY_NO" id="7D6822F1-3BC7-5D62-C3A9-85247A6FD188">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 02:58:46 UTC</createdTime>
+<commentInRDBMS><![CDATA[Insurance Policy Number]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

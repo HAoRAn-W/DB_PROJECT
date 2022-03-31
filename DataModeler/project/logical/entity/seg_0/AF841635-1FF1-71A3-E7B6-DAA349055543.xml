@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AF841635-1FF1-71A3-E7B6-DAA349055543" name="HQZ_OFFICE">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 00:19:35 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="OFFICE_ID" id="0FE5CBF3-7168-EE57-D74B-ED6BF754C219">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 00:25:04 UTC</createdTime>
+<commentInRDBMS><![CDATA[ID for office]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="STREET" id="82392E66-E2D5-A99B-2C85-AC6693536CA0">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 00:25:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Street for office address]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CITY" id="85DFA80A-1CE1-DFDC-F423-225530B536C9">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 00:26:24 UTC</createdTime>
+<commentInRDBMS><![CDATA[City of office address]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="STATE" id="ED6A4C0C-FD19-EC9F-0A1A-5E3DC365A8A3">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 00:27:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[State of office address]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ZIPCODE" id="564EFC58-DC93-1664-2679-E642FC2103D6">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 00:27:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Postal code of office address]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="OFFICE_PHONE" id="6B5395FC-04FC-8259-72BC-1524C40FFB1D">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-26 23:41:04 UTC</createdTime>
+<commentInRDBMS><![CDATA[Phone number of the office]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B94EA7B3-9850-D4D5-1D0B-14B1F8C3619D" name="HQZ_OFFICE PK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-24 00:25:30 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0FE5CBF3-7168-EE57-D74B-ED6BF754C219</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

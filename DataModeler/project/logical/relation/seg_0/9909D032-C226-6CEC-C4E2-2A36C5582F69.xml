@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_SERVICE_VEHICLE" directorySegmentName="seg_0" id="9909D032-C226-6CEC-C4E2-2A36C5582F69">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-27 00:28:09 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<sourcePk>4675544F-112D-CC30-CC86-0224C8E584E1</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>4A3621F2-6C0E-4122-4C58-59C0C154E139</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>46F474E8-E48E-5FFA-1026-EC8DED998F0B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

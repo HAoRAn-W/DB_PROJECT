@@ -1,0 +1,162 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CDDE9A2D-05DE-D19E-FDF0-6E162B0E1F74" name="HQZ_VEHICLE">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<generatorID>4A3621F2-6C0E-4122-4C58-59C0C154E139</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="VIN" id="5EEBBF8A-02E9-E2DC-6407-5EE4EC531C80">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Vehicle identification number]]></commentInRDBMS>
+<generatorID>D6898AAF-AB25-2B0F-091D-E4D9F9944159</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>17</dataTypeSize>
+<ownDataTypeParameters>17,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MAKE" id="16159E68-22F1-F634-4A78-EBAA306DC3B0">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Make of the car]]></commentInRDBMS>
+<generatorID>CFBEC1E6-DAB7-4382-8FB3-1F0D8BC489C1</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MODEL" id="68D880D9-A074-A5B3-E71A-F2EC89449E2F">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Car model]]></commentInRDBMS>
+<generatorID>5AF88930-27F5-24D4-EB83-4017FAF6A1DB</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="YEAR" id="552C0C1B-79A5-159B-5C4D-24863C3B4683">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Year of the car]]></commentInRDBMS>
+<generatorID>05F10924-5A68-EB5B-A934-5D7F52E03144</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LICENSE_PLATE_NO" id="6EEA1D29-727C-340F-D59C-BB222C6DE5B7">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[License Plate number]]></commentInRDBMS>
+<generatorID>4CDA828E-BAF8-C683-8E89-1C41B5CABAF9</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLASS_ID" id="B7A849A8-49E3-F174-B6A9-7E22F421A78E">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[ID of the car class]]></commentInRDBMS>
+<generatorID>49155297-265E-169F-10C7-E8E1893549B6</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="80245B52-0D4B-0DBE-222A-E8F691440421" referredColumn="89A8DFAF-328D-AA1B-65E9-9E7C8199FBDC"/>
+</associations>
+</Column>
+<Column name="OFFICE_ID" id="E1D3008D-FB0E-C7E8-B39A-A0A796B8528E">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[ID of the office]]></commentInRDBMS>
+<generatorID>81BECB71-F7A2-0A7C-C9A5-0993B7D7D0AE</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="543710DA-0332-606B-237C-896ECD81E28B" referredColumn="3BC459A4-FB01-C0FE-EE2D-26EE19E6F3FB"/>
+</associations>
+</Column>
+<Column name="VEHICLE_STATUS" id="323C637B-7BBB-09C6-5146-F477C3E2A116">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Staus of the vehicle, R for rent and A for available]]></commentInRDBMS>
+<generatorID>F619294B-6C95-4578-5B13-709DA81B7668</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CD7BCC03-BD68-C094-7855-11A1D2108CD7" name="HQZ_VEHICLE_PK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<generatorID>4675544F-112D-CC30-CC86-0224C8E584E1</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5EEBBF8A-02E9-E2DC-6407-5EE4EC531C80"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9630AC83-8C82-78D3-163C-79A341ACFFC2" name="VEHICLE_CLASS_FK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<generatorID>96A01670-22A8-6DE7-7169-C3206C74EB2E</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B7A849A8-49E3-F174-B6A9-7E22F421A78E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0647975E-C7AD-8FB1-4410-3CBEA85A4D3A" name="VEHICLE_OFFICE_FK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<generatorID>DD180FDD-02BA-FFB7-0FFD-D2417D806BC5</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1D3008D-FB0E-C7E8-B39A-A0A796B8528E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

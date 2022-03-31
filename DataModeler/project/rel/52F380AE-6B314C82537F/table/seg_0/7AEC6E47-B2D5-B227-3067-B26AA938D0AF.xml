@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7AEC6E47-B2D5-B227-3067-B26AA938D0AF" name="HQZ_CUSTOMER">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<generatorID>71B613E2-0779-2EAB-3F43-1408A1F1D651</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CUSTOMER_ID" id="25043DD9-3EB1-1725-8D06-2769AA9C6E48">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[ID for the customer]]></commentInRDBMS>
+<generatorID>E11091C9-152A-0189-B2BA-9219EEE43516</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="C_STREET" id="C77EAC18-C372-0C5D-FD87-460B7FAABAC8">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Street of customer address]]></commentInRDBMS>
+<generatorID>36393421-925E-42BF-50E8-D6B0DE360A5D</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="C_CITY" id="5E858C70-E397-8EA2-E1E6-74262928A2AF">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[City of customer address]]></commentInRDBMS>
+<generatorID>78D7AD45-F9FB-DA04-91B9-95A204F03E8C</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="C_STATE" id="1DBD8953-AA5B-24AE-112D-52FE17C131ED">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[State of customer address]]></commentInRDBMS>
+<generatorID>BC00452D-0128-DA30-C026-793AC1A3F4DF</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="C_ZIPCODE" id="809364C0-7674-451B-8050-DFEDB2FF0771">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Postal code of customer address]]></commentInRDBMS>
+<generatorID>E7B0C995-E524-7A7A-25E5-1B90EB6E05AE</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="C_EMAIL" id="68350763-FD5D-00F2-2C97-22B3D6070C3F">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer email address]]></commentInRDBMS>
+<generatorID>D544C4A5-49A2-D6E7-6B69-975E0A40DA7F</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="C_PHONE" id="5763BCB1-2F83-F37F-B7A8-2F7661BB1554">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer phone number]]></commentInRDBMS>
+<generatorID>3480778B-8CEA-554C-3ECF-E7F7C5996BB6</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUST_TYPE" id="99F1B107-ACA0-08D3-60CD-16BAF3F0161C">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Type of the customer]]></commentInRDBMS>
+<generatorID>8A7F8954-1C32-71EF-C13B-7C823845941D</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<constraintName>CH_INH_HQZ_CUSTOMER</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<listOfValues>
+<valueDef value="C" description="entity HQZ_CORP_CUST"/>
+<valueDef value="I" description="entity HQZ_INDIV_CUST"/>
+</listOfValues>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isDiscriminatorColumn>true</isDiscriminatorColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1EC9BA2A-4CB7-72FA-C8A1-733021029F10" name="HQZ_CUSTOMER_PK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<generatorID>6307B4A5-5319-AA6C-36C1-0E2415728026</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="25043DD9-3EB1-1725-8D06-2769AA9C6E48"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

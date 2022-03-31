@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B0C8689C-B13D-36E7-4DD8-03456258882B" name="HQZ_CORP_INFO">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<generatorID>83067620-3CFD-2503-1AF1-E284F3827E5F</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CORP_REG_NO" id="A8851D6B-CDBA-D5C1-63C0-C0C8B4358CD8">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Registration number of the corporation]]></commentInRDBMS>
+<generatorID>86C1958D-A072-D33A-A202-E136B371557D</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORP_NAME" id="AC1C0BC1-75B9-D92B-AF27-F4BE2E260A5C">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Name of the corporation]]></commentInRDBMS>
+<generatorID>60C48896-E7D0-A0D9-DD9D-D72BA85D4961</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DISCOUNT" id="90A457AE-21AB-760F-BC9A-6E18452B57E7">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Discount rate of the company, e.g., 0.85, 0.50]]></commentInRDBMS>
+<generatorID>02E3F5F2-CC08-F4E8-77B8-8561871ABC7C</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,3,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="248FCECF-CA73-34E2-0BC8-E711DC5E1453" name="HQZ_CORP_INFO_PK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<generatorID>1494F788-C96D-459F-09A9-CE0555DDD782</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8851D6B-CDBA-D5C1-63C0-C0C8B4358CD8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

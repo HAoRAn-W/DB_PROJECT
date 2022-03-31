@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_SERVICE_COUPON" directorySegmentName="seg_0" id="D5B7D339-08AF-4AEA-26D5-BC730BE8266C">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-03-31 00:13:23 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<sourcePk>932E81D9-9A7D-0C4E-D02C-D16B3F8326E5</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>13A49E1D-C17E-BB33-6B0C-B01B5D09E965</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>46F474E8-E48E-5FFA-1026-EC8DED998F0B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
