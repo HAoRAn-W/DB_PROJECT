@@ -178,9 +178,9 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>6</dataTypePrecision>
+<dataTypePrecision>9</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<ownDataTypeParameters>,9,2</ownDataTypeParameters>
 </Attribute>
 <Attribute name="E_ODOMETER" id="D9EED150-C232-A77A-543D-107B5FC95880">
 <createdBy>ryan2</createdBy>
@@ -193,9 +193,9 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>6</dataTypePrecision>
+<dataTypePrecision>9</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<ownDataTypeParameters>,9,2</ownDataTypeParameters>
 </Attribute>
 <Attribute name="DAILY_O_LIMIT" id="BF8FACD9-FFD4-FF93-C2A6-0F21C24511D6">
 <createdBy>ryan2</createdBy>
@@ -209,9 +209,9 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
+<dataTypePrecision>6</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
 </Attribute>
 <Attribute name="CUSTOMER_ID" id="3B72790E-710E-D33A-AABE-68439E2E6347">
 <createdBy>ryan2</createdBy>
@@ -228,7 +228,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>8</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="VIN" id="59E0F5CA-6649-A4F4-E16B-9A44AC76EEFD">
 <createdBy>ryan2</createdBy>
@@ -245,7 +245,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>17</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>17,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="COUPON_ID" id="0A2E4F5E-6558-9377-37BB-3293DA50F2FA">
 <createdBy>ryan2</createdBy>
@@ -262,7 +262,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>15</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,15,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="INVOICE_ID" id="3157AFCA-208B-B6C1-110F-9F926020062E">
 <createdBy>ryan2</createdBy>
@@ -278,7 +278,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>12</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,12,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
