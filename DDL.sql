@@ -62,7 +62,7 @@ ALTER TABLE hqz_indiv_cust ADD CONSTRAINT hqz_indiv_cust_pk PRIMARY KEY ( custom
 CREATE TABLE hqz_invoice (
     invoice_id BIGINT NOT NULL COMMENT 'ID for the invoice',
     i_date     DATETIME NOT NULL COMMENT 'Invoice date',
-    i_amount   DECIMAL(7, 2) NOT NULL COMMENT 'Invoice amount in USD'
+    i_amount   DECIMAL(8, 2) NOT NULL COMMENT 'Invoice amount in USD'
 );
 
 ALTER TABLE hqz_invoice ADD CONSTRAINT hqz_invoice_pk PRIMARY KEY ( invoice_id );
@@ -100,9 +100,9 @@ CREATE TABLE hqz_rental_service (
     d_zipcode     VARCHAR(10) NOT NULL COMMENT 'Drop off zipcode',
     p_date        DATETIME NOT NULL COMMENT 'Pick up date',
     d_date        DATETIME NOT NULL COMMENT 'Drop off date',
-    s_odometer    DECIMAL(6, 2) NOT NULL COMMENT 'Start odometer',
-    e_odometer    DECIMAL(6, 2) NOT NULL COMMENT 'End odometer',
-    daily_o_limit DECIMAL(5, 2) COMMENT 'Daily odometer limitaion',
+    s_odometer    DECIMAL(9, 2) NOT NULL COMMENT 'Start odometer',
+    e_odometer    DECIMAL(9, 2) NOT NULL COMMENT 'End odometer',
+    daily_o_limit DECIMAL(6, 2) COMMENT 'Daily odometer limitaion',
     customer_id   INT COMMENT 'ID of the customer',
     vehicle_vin   VARCHAR(17) COMMENT 'VIN of the rent car',
     coupon_id     BIGINT COMMENT 'ID for the coupon',
@@ -191,7 +191,7 @@ BEGIN
         a.customer_id = new.customer_id;
 
     IF ( d IS NULL OR d <> 'C' ) THEN
-        signal sqlstate '42000' set message_text = 'FK CORP_CUST_CUSTOMER_FK in Table HQZ_CORP_CUST violates Arc constraint on Table HQZ_CUSTOMER - discriminator column CUST_TYPE doesn''t have value ''C''';
+        signal sqlstate '42000' set message_text = 'CORP_CUST_CUSTOMER in HQZ_CORP_CUST violates constraint on HQZ_CUSTOMER-CUST_TYPE doesn''t have value ''C''';
     END IF;
 END;
 
@@ -217,7 +217,7 @@ BEGIN
         a.customer_id = new.customer_id;
 
     IF ( d IS NULL OR d <> 'I' ) THEN
-            signal sqlstate '42000' set message_text = 'FK CORP_CUST_CUSTOMER_FK in Table HQZ_CORP_CUST violates Arc constraint on Table HQZ_CUSTOMER - discriminator column CUST_TYPE doesn''t have value ''C''';
+            signal sqlstate '42000' set message_text = 'CORP_CUST_CUSTOMER in HQZ_CORP_CUST violates constraint on HQZ_CUSTOMER-CUST_TYPE doesn''t have value ''C''';
     END IF;
 END;
 
@@ -242,7 +242,7 @@ BEGIN
         a.customer_id = new.customer_id;
 
     IF ( d IS NULL OR d <> 'C' ) THEN
-        signal sqlstate '42000' set message_text = 'FK CORP_CUST_CUSTOMER_FK in Table HQZ_CORP_CUST violates Arc constraint on Table HQZ_CUSTOMER - discriminator column CUST_TYPE doesn''t have value ''C''';
+        signal sqlstate '42000' set message_text = 'CORP_CUST_CUSTOMER in HQZ_CORP_CUST violates constraint on HQZ_CUSTOMER-CUST_TYPE doesn''t have value ''C''';
     END IF;
 END;
 
@@ -268,9 +268,15 @@ BEGIN
         a.customer_id = new.customer_id;
 
     IF ( d IS NULL OR d <> 'I' ) THEN
-            signal sqlstate '42000' set message_text = 'FK CORP_CUST_CUSTOMER_FK in Table HQZ_CORP_CUST violates Arc constraint on Table HQZ_CUSTOMER - discriminator column CUST_TYPE doesn''t have value ''C''';
+            signal sqlstate '42000' set message_text = 'CORP_CUST_CUSTOMER in HQZ_CORP_CUST violates constraint on HQZ_CUSTOMER-CUST_TYPE doesn''t have value ''C''';
     END IF;
 END;
 
 -- Add check for wow_db.hqz_vehicle vehicle_status, A for availbale and R for rent
 ALTER TABLE hqz_vehicle ADD CONSTRAINT status_check CHECK (vehicle_status='A' OR vehicle_status='R');
+
+-- Add check for hqz_rental_service, d_date >= p_date
+ALTER TABLE hqz_rental_service ADD CONSTRAINT  date_check CHECK ( d_date >= p_date);
+
+-- Add check for hqz_rental_service, e_odometer >= s_odometer
+ALTER TABLE hqz_rental_service ADD CONSTRAINT odometer_check CHECK ( e_odometer >= s_odometer );
