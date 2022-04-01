@@ -11,16 +11,16 @@ INSERT INTO `wow_db`.`hqz_corp_info` (`corp_reg_no`, `corp_name`, `discount`) VA
 INSERT INTO `wow_db`.`hqz_corp_info` (`corp_reg_no`, `corp_name`, `discount`) VALUES ('B1100', 'Nike', 0.25);
 
 -- Table hqz_coupon
-INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valic_from_date`, `valid_to_date`) VALUES (10001, 0.10, '2018-01-01 00:00:00', '2018-03-01 23:59:59');
-INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valic_from_date`, `valid_to_date`) VALUES (10002, 0.15, '2018-06-15 00:00:00', '2022-08-31 23:59:59');
-INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valic_from_date`, `valid_to_date`) VALUES (10003, 0.05, '2019-01-01 00:00:00', '2019-06-15 23:59:59');
-INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valic_from_date`, `valid_to_date`) VALUES (10004, 0.20, '2019-09-01 00:00:00', '2019-10-01 23:59:59');
-INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valic_from_date`, `valid_to_date`) VALUES (10005, 0.10, '2020-01-01 00:00:00', '2020-12-30 23:59:59');
-INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valic_from_date`, `valid_to_date`) VALUES (10006, 0.15, '2021-01-01 00:00:00', '2021-01-31 23:59:59');
-INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valic_from_date`, `valid_to_date`) VALUES (10007, 0.30, '2021-10-15 00:00:00', '2022-03-15 23:59:59');
-INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valic_from_date`, `valid_to_date`) VALUES (10008, 0.25, '2022-01-01 00:00:00', '2022-02-15 23:59:59');
-INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valic_from_date`, `valid_to_date`) VALUES (10009, 0.10, '2022-02-01 00:00:00', '2022-05-01 23:59:59');
-INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valic_from_date`, `valid_to_date`) VALUES (10010, 0.15, '2022-03-15 00:00:00', '2022-08-01 23:59:59');
+INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valid_from_date`, `valid_to_date`) VALUES (10001, 0.10, '2018-01-01 00:00:00', '2018-03-01 23:59:59');
+INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valid_from_date`, `valid_to_date`) VALUES (10002, 0.15, '2018-06-15 00:00:00', '2022-08-31 23:59:59');
+INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valid_from_date`, `valid_to_date`) VALUES (10003, 0.05, '2019-01-01 00:00:00', '2019-06-15 23:59:59');
+INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valid_from_date`, `valid_to_date`) VALUES (10004, 0.20, '2019-09-01 00:00:00', '2019-10-01 23:59:59');
+INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valid_from_date`, `valid_to_date`) VALUES (10005, 0.10, '2020-01-01 00:00:00', '2020-12-30 23:59:59');
+INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valid_from_date`, `valid_to_date`) VALUES (10006, 0.15, '2021-01-01 00:00:00', '2021-01-31 23:59:59');
+INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valid_from_date`, `valid_to_date`) VALUES (10007, 0.30, '2021-10-15 00:00:00', '2022-03-15 23:59:59');
+INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valid_from_date`, `valid_to_date`) VALUES (10008, 0.25, '2022-01-01 00:00:00', '2022-02-15 23:59:59');
+INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valid_from_date`, `valid_to_date`) VALUES (10009, 0.10, '2022-02-01 00:00:00', '2022-05-01 23:59:59');
+INSERT INTO `wow_db`.`hqz_coupon` (`coupon_id`, `discount`, `valid_from_date`, `valid_to_date`) VALUES (10010, 0.15, '2022-03-15 00:00:00', '2022-08-01 23:59:59');
 
 -- Table hqz_class
 INSERT INTO `wow_db`.`hqz_class` (`class_id`, `class_name`, `rental_rate`, `over_fee`) VALUES (1, 'motorcycles', 20.00, 5.00);
