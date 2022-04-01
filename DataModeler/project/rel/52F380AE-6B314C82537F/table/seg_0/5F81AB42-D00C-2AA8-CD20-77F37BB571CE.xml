@@ -35,7 +35,7 @@
 <ownDataTypeParameters>,3,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="VALIC_FROM_DATE" id="018894C3-75AE-4AF1-B603-A82BD62920D2">
+<Column name="VALID_FROM_DATE" id="018894C3-75AE-4AF1-B603-A82BD62920D2">
 <createdBy>ryan2</createdBy>
 <createdTime>2022-03-31 14:05:57 UTC</createdTime>
 <commentInRDBMS><![CDATA[Valid from date]]></commentInRDBMS>

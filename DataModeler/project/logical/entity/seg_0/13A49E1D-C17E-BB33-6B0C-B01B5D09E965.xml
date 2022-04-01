@@ -47,7 +47,7 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,3,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="VALIC_FROM_DATE" id="B73F8C44-BEF9-6590-035B-9B4E550B3005">
+<Attribute name="VALID_FROM_DATE" id="B73F8C44-BEF9-6590-035B-9B4E550B3005">
 <createdBy>ryan2</createdBy>
 <createdTime>2022-03-27 00:00:21 UTC</createdTime>
 <commentInRDBMS><![CDATA[Valid from date]]></commentInRDBMS>
@@ -63,7 +63,7 @@
 <Attribute name="VALID_TO_DATE" id="0EBCCB86-75BD-EA54-2879-AB92FFF5412E">
 <createdBy>ryan2</createdBy>
 <createdTime>2022-03-27 00:00:37 UTC</createdTime>
-<commentInRDBMS><![CDATA[Valide to date]]></commentInRDBMS>
+<commentInRDBMS><![CDATA[Valid to date]]></commentInRDBMS>
 <ownerDesignName>project</ownerDesignName>
 <engineerTo>
 <item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
