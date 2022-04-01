@@ -26,8 +26,8 @@ ALTER TABLE hqz_corp_info ADD CONSTRAINT hqz_corp_info_pk PRIMARY KEY ( corp_reg
 CREATE TABLE hqz_coupon (
     coupon_id       BIGINT NOT NULL COMMENT 'ID of the coupon',
     discount        DECIMAL(3, 2) NOT NULL COMMENT 'Percentage of discount offered, r.g., 1.00, 0.85.',
-    valic_from_date DATETIME NOT NULL COMMENT 'Valid from date',
-    valid_to_date   DATETIME NOT NULL COMMENT 'Valide to date'
+    valid_from_date DATETIME NOT NULL COMMENT 'Valid from date',
+    valid_to_date   DATETIME NOT NULL COMMENT 'Valid to date'
 );
 
 ALTER TABLE hqz_coupon ADD CONSTRAINT hqz_coupon_pk PRIMARY KEY ( coupon_id );
@@ -280,3 +280,13 @@ ALTER TABLE hqz_rental_service ADD CONSTRAINT  date_check CHECK ( d_date >= p_da
 
 -- Add check for hqz_rental_service, e_odometer >= s_odometer
 ALTER TABLE hqz_rental_service ADD CONSTRAINT odometer_check CHECK ( e_odometer >= s_odometer );
+
+-- Add check for hqz_coupon discount rate < 1.00
+ALTER TABLE hqz_coupon ADD CONSTRAINT coupon_discount_check CHECK ( discount <= 1.00);
+
+-- Add check for hqz_corp_info discount rate < 1.00
+ALTER TABLE hqz_corp_info ADD CONSTRAINT corp_discount_check CHECK ( discount <= 1.00);
+
+-- Add check for hqz_coupon check dates valid_from_date <= valid_to_date
+ALTER TABLE hqz_coupon ADD CONSTRAINT coupon_date_check CHECK (valid_from_date <= valid_to_date);
+
