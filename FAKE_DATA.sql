@@ -129,50 +129,53 @@ INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_sta
 VALUES (10013, '18 Gelston St', 'Brooklyn', 'NY', '11234', 'adamxx@gmail.com', '5654899356', 'I');
 
 INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_state`, `c_zipcode`, `c_email`, `c_phone`, `cust_type`) 
-VALUES (10014, '23 Kelvin St', 'Bronx', 'NY', '10018', 'rapper@gmail.com', '2827388475', 'I');
+VALUES (10014, '23 Kelvin St', 'Bronx', 'NY', '10018', 'rapper@gmail.com', '2827388475', 'C');
 
 INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_state`, `c_zipcode`, `c_email`, `c_phone`, `cust_type`) 
-VALUES (10015, '5 MetroTech', 'Brooklyn', 'NY', '11201', 'nyu@gmail.com', '1112224456', 'I');
+VALUES (10015, '5 MetroTech', 'Brooklyn', 'NY', '11201', 'nyu@gmail.com', '1112224456', 'C');
 
 INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_state`, `c_zipcode`, `c_email`, `c_phone`, `cust_type`) 
-VALUES (10016, '6 MetroTech', 'Brooklyn', 'NY', '11203', 'anothernyu@gmail.com', '2345678987', 'I');
+VALUES (10016, '6 MetroTech', 'Brooklyn', 'NY', '11203', 'anothernyu@gmail.com', '2345678987', 'C');
 
 INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_state`, `c_zipcode`, `c_email`, `c_phone`, `cust_type`) 
-VALUES (10017, '99 Empire St', 'Manhattan', 'NY', '11012', 'imrich@gmail.com', '2536766534', 'I');
+VALUES (10017, '99 Empire St', 'Manhattan', 'NY', '11012', 'imrich@gmail.com', '2536766534', 'C');
 
 INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_state`, `c_zipcode`, `c_email`, `c_phone`, `cust_type`) 
-VALUES (10018, '100 Empire St', 'Manhattan', 'NY', '11012', 'imricher@gmail.com', '3236596325', 'I');
+VALUES (10018, '100 Empire St', 'Manhattan', 'NY', '11012', 'imricher@gmail.com', '3236596325', 'C');
 
 INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_state`, `c_zipcode`, `c_email`, `c_phone`, `cust_type`) 
-VALUES (10019, '101 Gelston St', 'Brooklyn', 'NY', '11203', 'homes@gmail.com', '9293844765', 'I');
+VALUES (10019, '101 Gelston St', 'Brooklyn', 'NY', '11203', 'homes@gmail.com', '9293844765', 'C');
 
 INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_state`, `c_zipcode`, `c_email`, `c_phone`, `cust_type`) 
-VALUES (10020, '300 Sunset St', 'Brooklyn', 'NY', '11205', 'roll@gmail.com', '2324566789', 'I');
+VALUES (10020, '300 Sunset St', 'Brooklyn', 'NY', '11205', 'roll@gmail.com', '2324566789', 'C');
 
 INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_state`, `c_zipcode`, `c_email`, `c_phone`, `cust_type`) 
 VALUES (10021, '302 Sunset St', 'Brooklyn', 'NY', '11205', 'lobster@gmail.com', '9145833476', 'I');
 
 INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_state`, `c_zipcode`, `c_email`, `c_phone`, `cust_type`) 
-VALUES (10022, '88 MetroTech', 'Brooklyn', 'NY', '11201', 'point@gmail.com', '9195833423', 'I');
+VALUES (10022, '88 MetroTech', 'Brooklyn', 'NY', '11201', 'point@gmail.com', '9195833423', 'C');
 
 INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_state`, `c_zipcode`, `c_email`, `c_phone`, `cust_type`) 
-VALUES (10023, '99 Gelston St', 'Brooklyn', 'NY', '11209', 'yesorno@gmail.com', '2320908736', 'I');
+VALUES (10023, '99 Gelston St', 'Brooklyn', 'NY', '11209', 'yesorno@gmail.com', '2320908736', 'C');
 
 INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_state`, `c_zipcode`, `c_email`, `c_phone`, `cust_type`) 
-VALUES (10024, '1000 Fifth Ave', 'Manhattan', 'NY', '12563', 'met@gmail.com', '2195833476', 'I');
+VALUES (10024, '1505 Trousdale Dr', 'San Francisco', 'CA', '90011', 'met@gmail.com', '2195833476', 'C');
+
+INSERT INTO `wow_db`.`hqz_customer` (`customer_id`, `c_street`, `c_city`, `c_state`, `c_zipcode`, `c_email`, `c_phone`, `cust_type`) 
+VALUES (10025, '1 Infinite Loop', 'San Francisco', 'CA', '90001', 'apple@gmail.com', '2329899876', 'C');
 
 -- hqz_indiv_cust
 INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
-VALUES (10001, 'Adam', 'Jackson', 'drive1000000000', 'Wellfleet', 'inspolicyno10001');
+VALUES (10001, 'Adam', 'Jackson', 'drive1000000001', 'Wellfleet', 'inspolicyno10001');
 
 INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
-VALUES (10002, 'Yoyo', 'Ma', 'drive1000000001', 'Wellfleet', 'inspolicyno10002');
+VALUES (10002, 'Yoyo', 'Ma', 'drive1000000002', 'Wellfleet', 'inspolicyno10002');
 
 INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
 VALUES (10003, 'Taylor', 'Swift', 'drive1000000003', 'BestINS', 'inspolicyno10003');
 
 INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
-VALUES (10004, 'Bill', 'Gates', 'drive1000000005', 'Richman', 'inspolicyno10004');
+VALUES (10004, 'Bill', 'Gates', 'drive1000000004', 'Richman', 'inspolicyno10004');
 
 INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
 VALUES (10005, 'Tim', 'Cook', 'drive1000000005', 'Stars', 'inspolicyno10005');
@@ -200,33 +203,3 @@ VALUES (10012, 'Biddy', 'Tick', 'drive1000000012', 'Citizen', 'inspolicyno10012'
 
 INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
 VALUES (10013, 'Rose', 'Mary', 'drive1000000013', 'Citizen', 'inspolicyno10013');
-
-INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
-VALUES (10014, 'Jessy', 'Jay', 'drive1000000014', 'BestINS', 'inspolicyno10014');
-
-INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
-VALUES (10015, 'Maria', 'Carey', 'drive1000000015', 'Stars', 'inspolicyno10015');
-
-INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
-VALUES (100016, 'Billie', 'Eley', 'drive1000000016', 'Stars', 'inspolicyno10016');
-
-INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
-VALUES (10017, 'Avril', 'Lavy', 'drive1000000018', 'Stars', 'inspolicyno10018');
-
-INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
-VALUES (10019, 'Lenoa', 'Louis', 'drive1000000019', 'Wellfleet', 'inspolicyno10019');
-
-INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
-VALUES (10020, 'Milly', 'Fox', 'drive1000000020', 'Stars', 'inspolicyno10020');
-
-INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
-VALUES (10021, 'Ryan', 'Ted', 'drive1000000021', 'BestINS', 'inspolicyno10001');
-
-INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
-VALUES (10022, 'Selena', 'Gogo', 'drive1000000022', 'BestINS', 'inspolicyno10022');
-
-INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
-VALUES (10023, 'Riri', 'Hanna', 'drive1000000023', 'Stars', 'inspolicyno10023');
-
-INSERT INTO `wow_db`.`hqz_indiv_cust` (`customer_id`, `fname`, `lname`, `driver_lic_no`, `ins_company_name`, `ins_policy_no`) 
-VALUES (10024, 'Sia', 'Olive', 'drive1000000024', 'BestINS', 'inspolicyno10024');
