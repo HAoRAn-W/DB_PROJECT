@@ -270,13 +270,6 @@ BEGIN
     END IF;
 END;
 
--- Trigger to generate empty invoice
--- CREATE TRIGGER invoice_generation_trigger AFTER
---     INSERT ON hqz_rental_service
---     FOR EACH ROW
--- BEGIN
---     INSERT INTO wow_db.hqz_invoice (i_date, i_amount, service_id) VALUES (SYSDATE(), 0.00, new.service_id);
--- END;
 CREATE TRIGGER invoice_generation_trigger AFTER
     INSERT ON hqz_rental_service
     FOR EACH ROW

@@ -195,7 +195,6 @@ INSERT INTO wow_db.hqz_rental_service (service_id, p_street, p_city, p_state, p_
 INSERT INTO wow_db.hqz_rental_service (service_id, p_street, p_city, p_state, p_zipcode, d_street, d_city, d_state, d_zipcode, p_date, d_date, s_odometer, e_odometer, daily_o_limit, customer_id, vin, coupon_id) VALUES (121, '343 GOLD St.', 'New York', 'NY', '11201', 'EAST 8 St.', 'New York', 'NY', '10003', '2019-08-15 00:47:41', '2019-08-17 00:47:47', 49810.00, 50000.00, 500.00, 10001, '8btpe7dd4ge127040', null);
 INSERT INTO wow_db.hqz_rental_service (service_id, p_street, p_city, p_state, p_zipcode, d_street, d_city, d_state, d_zipcode, p_date, d_date, s_odometer, e_odometer, daily_o_limit, customer_id, vin, coupon_id) VALUES (122, '343 GOLD St.', 'New York', 'NY', '11201', '1600 Amphitheatre Parkway', 'Mountain View', 'CA', '94043', '2020-08-07 00:47:57', '2020-08-18 00:48:02', 698841.00, 702260.00, 500.00, 10002, 'jtezu11f88k007763', null);
 
-
 -- table payment
 INSERT INTO wow_db.hqz_payment (payment_id, pay_date, payment_method, card_no) VALUES (100001, '2022-02-01 13:08:00', 'credit', '374245455400126');
 INSERT INTO wow_db.hqz_payment (payment_id, pay_date, payment_method, card_no) VALUES (100002, '2022-01-01 13:08:07', 'debit', '374245455400122');
