@@ -15,36 +15,6 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="INVOICE_ID" id="E828C6B4-863F-2D69-074E-E0B4FB46EA1E">
-<createdBy>ryan2</createdBy>
-<createdTime>2022-03-27 00:39:50 UTC</createdTime>
-<commentInRDBMS><![CDATA[ID for the invoice]]></commentInRDBMS>
-<ownerDesignName>project</ownerDesignName>
-<engineerTo>
-<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>12</dataTypePrecision>
-<ownDataTypeParameters>,12,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="SERVICE_ID" id="5BAC14F2-4AA5-7926-D33E-60DABFA51021">
-<createdBy>ryan2</createdBy>
-<createdTime>2022-03-27 00:28:37 UTC</createdTime>
-<commentInRDBMS><![CDATA[ID of the service]]></commentInRDBMS>
-<generatorID>781B64CE-7777-F5C5-4B52-AA8A4A4CFA42</generatorID>
-<ownerDesignName>project</ownerDesignName>
-<engineerTo>
-<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
-</engineerTo>
-<referedAttribute>5C2E5AA4-CA97-27C8-ABCD-AD95410D4292</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>8</dataTypePrecision>
-<ownDataTypeParameters>,8,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="I_DATE" id="4A22BD7F-596B-7CF4-0F78-8EF6021ADBD7">
 <createdBy>ryan2</createdBy>
 <createdTime>2022-03-27 00:40:10 UTC</createdTime>
@@ -73,6 +43,21 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,8,2</ownDataTypeParameters>
 </Attribute>
+<Attribute name="SERVICE_ID" id="999A1957-45B8-103F-F5FE-D400EBF7A763">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-04-03 00:47:57 UTC</createdTime>
+<generatorID>26E87686-3690-DFB2-E454-2B1869F19076</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<referedAttribute>5C2E5AA4-CA97-27C8-ABCD-AD95410D4292</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="48BC5B9C-AB74-29B1-6787-009A22152E14" name="HQZ_INVOICE PK">
@@ -84,7 +69,7 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>E828C6B4-863F-2D69-074E-E0B4FB46EA1E</attributeRef>
+<attributeRef>999A1957-45B8-103F-F5FE-D400EBF7A763</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

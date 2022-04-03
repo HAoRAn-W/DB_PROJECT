@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="563CA67D-5948-6641-6110-CE5E25FB3D50" name="HQZ_RENTAL_SERVICE">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BBDB343D-0115-9841-09F7-70058D86B73B" name="HQZ_RENTAL_SERVICE">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>46F474E8-E48E-5FFA-1026-EC8DED998F0B</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="SERVICE_ID" id="4AA376C8-3A4C-AC83-4A46-CAD765332EB2">
+<Column name="SERVICE_ID" id="000357E6-C0C4-D99A-1EDC-D68EABA79021">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[ID of the service]]></commentInRDBMS>
 <generatorID>5C2E5AA4-CA97-27C8-ABCD-AD95410D4292</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -21,9 +21,9 @@
 <ownDataTypeParameters>,8,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="P_STREET" id="2E4B1C2C-A9AE-7828-2D77-94F49DD7B89B">
+<Column name="P_STREET" id="C28B0CB3-60A9-9029-1ED8-7849FF679F4D">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Pick up street]]></commentInRDBMS>
 <generatorID>CD3F13BE-E839-902F-37FB-868B65896761</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -34,9 +34,9 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="P_CITY" id="2EEA0DE0-C36D-48EB-C17F-70C144067F47">
+<Column name="P_CITY" id="C8D01BDF-171F-F00E-A863-CE9EB1156063">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Pick up city]]></commentInRDBMS>
 <generatorID>244CA09F-592A-602B-27A9-400A5D5D865F</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -47,9 +47,9 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="P_STATE" id="1A4A8AB2-1BB2-B46B-E396-B352A08CDE8D">
+<Column name="P_STATE" id="85508F65-09FC-73FE-34F0-203B1FECDC47">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Pick up state]]></commentInRDBMS>
 <generatorID>1CF351B2-CE9D-A984-4435-9AA6C94D1D64</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -60,9 +60,9 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="P_ZIPCODE" id="C434F2C5-9357-419E-620F-C83142073990">
+<Column name="P_ZIPCODE" id="7987D3F0-1A4C-3206-EDEA-0F1F76FCE62E">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Pick up zipcode]]></commentInRDBMS>
 <generatorID>D1B74958-3D68-9F2B-1753-468D8029B2A2</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -73,9 +73,9 @@
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="D_STREET" id="15C24E0F-D9B6-7E59-7BAB-601E4B60C074">
+<Column name="D_STREET" id="FBFF9366-013D-D356-239D-38DE2D564817">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Drop off street]]></commentInRDBMS>
 <generatorID>6680AA5A-765F-0697-981D-565FE85B55B8</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -86,9 +86,9 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="D_CITY" id="7B42DACB-08A9-DAAE-F2D4-9A8B1C7139BB">
+<Column name="D_CITY" id="7E4A669F-C601-5713-0B97-9B299CB27121">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Drop off city]]></commentInRDBMS>
 <generatorID>6C465A0A-B5F2-0634-470F-4ACD38EDD53E</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -99,9 +99,9 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="D_STATE" id="AFDD566B-F07E-79F6-1134-699F5BD5BAA5">
+<Column name="D_STATE" id="CB6B51EC-363F-B074-29D6-FAE1F4CB4E54">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Drop off state]]></commentInRDBMS>
 <generatorID>B588E039-5B4A-7EB1-33B5-239561549C4E</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -112,9 +112,9 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="D_ZIPCODE" id="D089B1AB-DFCB-439A-4CE9-48FDA689F52F">
+<Column name="D_ZIPCODE" id="331A558C-2818-1099-F098-FCBE77DFA35E">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Drop off zipcode]]></commentInRDBMS>
 <generatorID>01E54245-0651-840F-1A9E-82EA7BE043B1</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -125,9 +125,9 @@
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="P_DATE" id="4E3356E5-6BEB-6323-83D2-10F6B5355612">
+<Column name="P_DATE" id="8B743574-E8BF-45A7-0107-7DC525298A89">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Pick up date]]></commentInRDBMS>
 <generatorID>9C032F41-2D63-2E2A-CEF8-593FC10FACC2</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -137,9 +137,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="D_DATE" id="DEB96ACD-FD58-FD95-6597-F5FEA12CAAE1">
+<Column name="D_DATE" id="939779C4-DC71-CCC8-699A-D187E31DAA4E">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Drop off date]]></commentInRDBMS>
 <generatorID>F0C70F1B-0962-B09A-DF15-9B76F741C4BA</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -149,9 +149,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="S_ODOMETER" id="4A0BF30E-7F1E-4C92-C7BF-4308539F708A">
+<Column name="S_ODOMETER" id="5BE4BDA5-1231-5FE1-45D0-212A96D97F87">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Start odometer]]></commentInRDBMS>
 <generatorID>01425C05-5D2E-6007-B217-39B70FD486C3</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -163,9 +163,9 @@
 <ownDataTypeParameters>,9,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="E_ODOMETER" id="A8BE4BEA-66F5-873B-DA4D-5F6C35F222A9">
+<Column name="E_ODOMETER" id="24F8E5B7-F79E-EF0E-F722-300AB5F7A2AA">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[End odometer]]></commentInRDBMS>
 <generatorID>D9EED150-C232-A77A-543D-107B5FC95880</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -177,9 +177,9 @@
 <ownDataTypeParameters>,9,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="DAILY_O_LIMIT" id="49EE8B61-442E-454E-7291-69C06D32E7F9">
+<Column name="DAILY_O_LIMIT" id="384D2194-59DC-7B6E-BEA9-F773A099EBF2">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Daily odometer limitaion]]></commentInRDBMS>
 <generatorID>BF8FACD9-FFD4-FF93-C2A6-0F21C24511D6</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -192,9 +192,9 @@
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CUSTOMER_ID" id="1CF42575-279B-A41D-1410-5CD7976A0DFA">
+<Column name="CUSTOMER_ID" id="F950175C-0C86-048D-3268-5ED58BBB699B">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[ID of the customer]]></commentInRDBMS>
 <generatorID>3B72790E-710E-D33A-AABE-68439E2E6347</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -207,12 +207,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="5275913C-320F-27E4-4F99-C702DA1435FE" referredColumn="25043DD9-3EB1-1725-8D06-2769AA9C6E48"/>
+<colAssociation fkAssociation="5BC5DEBC-04D8-2337-5450-1C598F89E293" referredColumn="F0A4147F-39C0-82FE-7F65-E83BFD38A655"/>
 </associations>
 </Column>
-<Column name="VEHICLE_VIN" id="48979A61-B815-CBEB-5BFF-B8FD609B7D95">
+<Column name="VIN" id="66B15C9E-28C5-1F56-C81A-06AA16C1B92A">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[VIN of the rent car]]></commentInRDBMS>
 <generatorID>59E0F5CA-6649-A4F4-E16B-9A44AC76EEFD</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -225,12 +225,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="475801BF-529F-8EE2-4DD8-907C56E648BA" referredColumn="5EEBBF8A-02E9-E2DC-6407-5EE4EC531C80"/>
+<colAssociation fkAssociation="A0F88B85-E96A-AFD5-A046-6CC2163E1D15" referredColumn="0CC14FF3-A3C5-1A1B-8630-1AA0CDA01EC5"/>
 </associations>
 </Column>
-<Column name="COUPON_ID" id="FE140CE7-58B6-83E4-CB26-83BF7E7E876E">
+<Column name="COUPON_ID" id="8C77B898-BE4C-F422-663E-208907D8C2DE">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[ID for the coupon]]></commentInRDBMS>
 <generatorID>0A2E4F5E-6558-9377-37BB-3293DA50F2FA</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -243,93 +243,54 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="A5B7C5DE-097A-30E4-E9BF-80A6CD891953" referredColumn="0A92D403-E45E-DC21-22DB-F67596953DC0"/>
-</associations>
-</Column>
-<Column name="INVOICE_ID" id="C1055109-6677-516F-656E-C3E4BCC47FA3">
-<createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
-<commentInRDBMS><![CDATA[ID of the invoice]]></commentInRDBMS>
-<generatorID>3157AFCA-208B-B6C1-110F-9F926020062E</generatorID>
-<ownerDesignName>project</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>12</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="9C5DB364-ED57-F164-352D-7F3FB9B64005" referredColumn="27D37E90-7C32-11EF-38B6-3A6E5D777CC0"/>
+<colAssociation fkAssociation="5A50E986-505E-62E1-395E-86E03EDAB5F2" referredColumn="2E3236D3-CA3F-50CD-B8A0-DDBD56850543"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="72DA3CE8-DB80-F570-FB05-2592BA8CEAA6" name="HQZ_RENTAL_SERVICE_PK">
+<ind_PK_UK id="852D9086-68E9-9EC4-B34D-85329CFC85EF" name="HQZ_RENTAL_SERVICE_PK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>929B2377-6D6D-11E1-8424-2974CCA29CFB</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="4AA376C8-3A4C-AC83-4A46-CAD765332EB2"/>
+<colUsage columnID="000357E6-C0C4-D99A-1EDC-D68EABA79021"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="919579E9-256A-8C3F-9F81-38345723AD15" name="HQZ_RENTAL_SERVICE__IDX">
+<ind_PK_UK id="14DD256D-36C8-F9AC-00A7-14341EBD357D" name="RENTAL_SERVICE_CUSTOMER_FK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
-<ownerDesignName>project</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>781B64CE-7777-F5C5-4B52-AA8A4A4CFA42</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="C1055109-6677-516F-656E-C3E4BCC47FA3"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="CCC2246F-D355-066A-1AE1-565FEE70F746" name="RENTAL_SERVICE_CUSTOMER_FK">
-<createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>7126F56B-B792-CEAF-BA32-74BAD5461C5D</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="1CF42575-279B-A41D-1410-5CD7976A0DFA"/>
+<colUsage columnID="F950175C-0C86-048D-3268-5ED58BBB699B"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="296E64FA-0E82-61AB-82DB-24B6C80485FC" name="RENTAL_SERVICE_COUPON_FK">
+<ind_PK_UK id="F7E033A4-0E1C-278D-080A-06500DEC44A8" name="RENTAL_SERVICE_COUPON_FK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>D5B7D339-08AF-4AEA-26D5-BC730BE8266C</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="FE140CE7-58B6-83E4-CB26-83BF7E7E876E"/>
+<colUsage columnID="8C77B898-BE4C-F422-663E-208907D8C2DE"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="87A2630F-A615-D7E1-68B7-3AD36F23876F" name="RENTAL_SERVICE_INVOICE_FK">
+<ind_PK_UK id="81EC1F6B-F786-04C3-543D-8D6D52E79E5A" name="RENTAL_SERVICE_VEHICLE_FK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
-<generatorID>781B64CE-7777-F5C5-4B52-AA8A4A4CFA42</generatorID>
-<ownerDesignName>project</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="C1055109-6677-516F-656E-C3E4BCC47FA3"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="E9518E45-CAC0-F8C7-16E1-7AC2A0E8ACC8" name="RENTAL_SERVICE_VEHICLE_FK">
-<createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>9909D032-C226-6CEC-C4E2-2A36C5582F69</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="48979A61-B815-CBEB-5BFF-B8FD609B7D95"/>
+<colUsage columnID="66B15C9E-28C5-1F56-C81A-06AA16C1B92A"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

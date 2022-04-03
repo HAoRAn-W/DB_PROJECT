@@ -70,21 +70,20 @@
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="INVOICE_ID" id="11BC85F0-7672-7902-7644-3BBD3C687593">
+<Attribute name="SERVICE_ID" id="B78025BF-E969-321F-F5D7-AEC5458B0607">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 00:25:37 UTC</createdTime>
-<commentInRDBMS><![CDATA[ID of the invoice]]></commentInRDBMS>
+<createdTime>2022-04-03 00:57:40 UTC</createdTime>
 <generatorID>650ACCF4-B7EF-55D1-E542-179075108BA2</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <engineerTo>
 <item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<referedAttribute>E828C6B4-863F-2D69-074E-E0B4FB46EA1E</referedAttribute>
+<referedAttribute>999A1957-45B8-103F-F5FE-D400EBF7A763</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>12</dataTypePrecision>
+<dataTypePrecision>8</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

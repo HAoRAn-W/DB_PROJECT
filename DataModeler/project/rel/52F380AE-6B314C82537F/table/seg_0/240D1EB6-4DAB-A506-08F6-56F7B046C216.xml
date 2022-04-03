@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B0C8689C-B13D-36E7-4DD8-03456258882B" name="HQZ_CORP_INFO">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="240D1EB6-4DAB-A506-08F6-56F7B046C216" name="HQZ_CORP_INFO">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>83067620-3CFD-2503-1AF1-E284F3827E5F</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CORP_REG_NO" id="A8851D6B-CDBA-D5C1-63C0-C0C8B4358CD8">
+<Column name="CORP_REG_NO" id="58CFAA46-E19C-75B7-4FCB-C5A36EE183CE">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Registration number of the corporation]]></commentInRDBMS>
 <generatorID>86C1958D-A072-D33A-A202-E136B371557D</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -21,9 +21,9 @@
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CORP_NAME" id="AC1C0BC1-75B9-D92B-AF27-F4BE2E260A5C">
+<Column name="CORP_NAME" id="17F4E2B1-9B45-2890-CD88-47450357ADE9">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Name of the corporation]]></commentInRDBMS>
 <generatorID>60C48896-E7D0-A0D9-DD9D-D72BA85D4961</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -34,9 +34,9 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="DISCOUNT" id="90A457AE-21AB-760F-BC9A-6E18452B57E7">
+<Column name="DISCOUNT" id="08595778-F282-B2BE-F97F-2AA5BD524435">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Discount rate of the company, e.g., 0.85, 0.50]]></commentInRDBMS>
 <generatorID>02E3F5F2-CC08-F4E8-77B8-8561871ABC7C</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -50,16 +50,16 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="248FCECF-CA73-34E2-0BC8-E711DC5E1453" name="HQZ_CORP_INFO_PK">
+<ind_PK_UK id="3B00A4C4-C771-B9C7-9A7B-C42F817A7B5C" name="HQZ_CORP_INFO_PK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>1494F788-C96D-459F-09A9-CE0555DDD782</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="A8851D6B-CDBA-D5C1-63C0-C0C8B4358CD8"/>
+<colUsage columnID="58CFAA46-E19C-75B7-4FCB-C5A36EE183CE"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

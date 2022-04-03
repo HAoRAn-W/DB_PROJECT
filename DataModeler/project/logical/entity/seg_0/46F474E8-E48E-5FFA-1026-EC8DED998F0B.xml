@@ -264,21 +264,20 @@
 <dataTypePrecision>15</dataTypePrecision>
 <ownDataTypeParameters>,15,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="INVOICE_ID" id="3157AFCA-208B-B6C1-110F-9F926020062E">
+<Attribute name="SERVICE_ID1" id="324939A6-D9E0-2DCD-8D38-63B4FFC5014A">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 00:35:12 UTC</createdTime>
-<commentInRDBMS><![CDATA[ID of the invoice]]></commentInRDBMS>
-<generatorID>781B64CE-7777-F5C5-4B52-AA8A4A4CFA42</generatorID>
+<createdTime>2022-04-03 00:57:40 UTC</createdTime>
+<generatorID>26E87686-3690-DFB2-E454-2B1869F19076</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <engineerTo>
 <item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
 </engineerTo>
-<referedAttribute>E828C6B4-863F-2D69-074E-E0B4FB46EA1E</referedAttribute>
+<referedAttribute>999A1957-45B8-103F-F5FE-D400EBF7A763</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>12</dataTypePrecision>
-<ownDataTypeParameters>,12,</ownDataTypeParameters>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

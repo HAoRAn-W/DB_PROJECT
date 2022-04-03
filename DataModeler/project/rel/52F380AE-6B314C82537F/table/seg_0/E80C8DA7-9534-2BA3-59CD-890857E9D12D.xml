@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7E5C5504-8915-ECB9-FF65-0381CE71BFFD" name="HQZ_CORP_CUST">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E80C8DA7-9534-2BA3-59CD-890857E9D12D" name="HQZ_CORP_CUST">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>6F26D4C8-C3D8-E386-236A-A0B38AD20FA2</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CUSTOMER_ID" id="5959C6C6-87C4-BE01-2F93-1E9C204BDF55">
+<Column name="CUSTOMER_ID" id="990BDF75-8EEE-CFAD-39B5-EB48A4BA3642">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[ID for the customer]]></commentInRDBMS>
 <generatorID>E11091C9-152A-0189-B2BA-9219EEE43516</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -21,12 +21,12 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="F7E08D8A-9E92-C1F9-9856-2DD7B51ED0E9" referredColumn="25043DD9-3EB1-1725-8D06-2769AA9C6E48"/>
+<colAssociation fkAssociation="C3E6028A-66DB-6EAA-693C-5F724992D7E7" referredColumn="F0A4147F-39C0-82FE-7F65-E83BFD38A655"/>
 </associations>
 </Column>
-<Column name="EMPLOYEE_ID" id="8535402C-037F-C5D5-C2F2-40AE2AD7F277">
+<Column name="EMPLOYEE_ID" id="97004EE7-26E0-6FB5-7194-9DE72BCA3DD8">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Employee ID of the customer who rents the car on a corporate account]]></commentInRDBMS>
 <generatorID>55EAEA16-C329-42B6-00DA-539B431AAFD6</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -37,9 +37,9 @@
 <ownDataTypeParameters>,8,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CORP_REG_NO" id="355E4BD9-5C48-8E35-BEF6-4EFA80685E91">
+<Column name="CORP_REG_NO" id="C908D685-5F68-CA39-1164-A8883D37DA6E">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[The registration number of the customer's company]]></commentInRDBMS>
 <generatorID>646AA56A-CC37-392D-4EBE-04670F7810AB</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -52,43 +52,43 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="4823C602-F01E-09B7-E1BC-1F9FF1156EC5" referredColumn="A8851D6B-CDBA-D5C1-63C0-C0C8B4358CD8"/>
+<colAssociation fkAssociation="1DDEBC0F-BEA5-D843-D56A-7B00787A3AEE" referredColumn="58CFAA46-E19C-75B7-4FCB-C5A36EE183CE"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="C9613676-D49B-C5BE-B612-C73E5B4BADC0" name="HQZ_CORP_CUST_PK">
+<ind_PK_UK id="8CCCA3CA-28DE-C7AB-1610-160100106B18" name="HQZ_CORP_CUST_PK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>6307B4A5-5319-AA6C-36C1-0E2415728026</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="5959C6C6-87C4-BE01-2F93-1E9C204BDF55"/>
+<colUsage columnID="990BDF75-8EEE-CFAD-39B5-EB48A4BA3642"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="183BA88F-4521-7620-A4F7-0BE53D653366" name="CORP_CUST_CUSTOMER_FK">
+<ind_PK_UK id="34AA97CF-E949-2A2B-E727-73B17F9D59CB" name="CORP_CUST_CUSTOMER_FK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>87C3E38C-57FB-B5E9-9981-232B40E97B60</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="5959C6C6-87C4-BE01-2F93-1E9C204BDF55"/>
+<colUsage columnID="990BDF75-8EEE-CFAD-39B5-EB48A4BA3642"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="EED547C0-0971-B95E-3D5F-183A526F61B8" name="CORP_CUST_CORP_INFO_FK">
+<ind_PK_UK id="DC44CAA3-EC8A-B193-7E81-F6B595393A35" name="CORP_CUST_CORP_INFO_FK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>53AC59F0-D0ED-CB36-FA13-18C089A03AF1</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="355E4BD9-5C48-8E35-BEF6-4EFA80685E91"/>
+<colUsage columnID="C908D685-5F68-CA39-1164-A8883D37DA6E"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

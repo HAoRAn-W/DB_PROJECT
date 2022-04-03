@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5F81AB42-D00C-2AA8-CD20-77F37BB571CE" name="HQZ_COUPON">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F6885B17-D646-8F6B-8DC0-C11EE7FBF033" name="HQZ_COUPON">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>13A49E1D-C17E-BB33-6B0C-B01B5D09E965</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="COUPON_ID" id="0A92D403-E45E-DC21-22DB-F67596953DC0">
+<Column name="COUPON_ID" id="2E3236D3-CA3F-50CD-B8A0-DDBD56850543">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[ID of the coupon]]></commentInRDBMS>
 <generatorID>FBAA845F-81B7-8990-AEC1-B1136C523F54</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -21,9 +21,9 @@
 <ownDataTypeParameters>,15,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="DISCOUNT" id="1530C293-B912-5E9E-95C4-C7537FE34FDC">
+<Column name="DISCOUNT" id="42DEB684-1B7B-4A4B-1278-1026A44ED898">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Percentage of discount offered, r.g., 1.00, 0.85.]]></commentInRDBMS>
 <generatorID>EB243931-F925-2241-0BF8-2C3F4F27A5B5</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -35,9 +35,9 @@
 <ownDataTypeParameters>,3,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="VALID_FROM_DATE" id="018894C3-75AE-4AF1-B603-A82BD62920D2">
+<Column name="VALID_FROM_DATE" id="77B3265B-1C44-3229-5C83-68F4E60A6FD8">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Valid from date]]></commentInRDBMS>
 <generatorID>B73F8C44-BEF9-6590-035B-9B4E550B3005</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -47,10 +47,10 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="VALID_TO_DATE" id="9D95EDF7-C432-B475-3D58-B48D875AC939">
+<Column name="VALID_TO_DATE" id="73BB17C2-D437-3F0D-D120-CD25A160FF40">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
-<commentInRDBMS><![CDATA[Valide to date]]></commentInRDBMS>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<commentInRDBMS><![CDATA[Valid to date]]></commentInRDBMS>
 <generatorID>0EBCCB86-75BD-EA54-2879-AB92FFF5412E</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -61,16 +61,16 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="1C20B8DE-32EB-1292-B682-CB4B3BEC6290" name="HQZ_COUPON_PK">
+<ind_PK_UK id="2C43F39A-F57B-36B8-7AF6-D550FF30AA7C" name="HQZ_COUPON_PK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>932E81D9-9A7D-0C4E-D02C-D16B3F8326E5</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="0A92D403-E45E-DC21-22DB-F67596953DC0"/>
+<colUsage columnID="2E3236D3-CA3F-50CD-B8A0-DDBD56850543"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

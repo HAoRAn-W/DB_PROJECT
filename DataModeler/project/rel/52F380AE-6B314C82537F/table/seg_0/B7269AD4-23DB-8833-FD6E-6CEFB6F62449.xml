@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="99085C34-1412-0436-87A1-CFC82C9C7D10" name="HQZ_INDIV_CUST">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B7269AD4-23DB-8833-FD6E-6CEFB6F62449" name="HQZ_INDIV_CUST">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>3D159BF7-7A20-9FE1-FA15-388322FA8FEF</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CUSTOMER_ID" id="5851A965-C462-4FE1-BE33-856D6E7168DF">
+<Column name="CUSTOMER_ID" id="898460ED-D4F7-354D-7D61-790F9A77B469">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[ID for the customer]]></commentInRDBMS>
 <generatorID>E11091C9-152A-0189-B2BA-9219EEE43516</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -21,12 +21,12 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="A09A02E5-E65F-BF25-598B-3997DD0E048B" referredColumn="25043DD9-3EB1-1725-8D06-2769AA9C6E48"/>
+<colAssociation fkAssociation="36A4CCAA-C93C-8C93-A6A4-4633D4EC2436" referredColumn="F0A4147F-39C0-82FE-7F65-E83BFD38A655"/>
 </associations>
 </Column>
-<Column name="FNAME" id="9B1000B5-B9B6-8F13-CCA0-EDF1F8CA8393">
+<Column name="FNAME" id="A3386E16-8125-C2B6-0FF9-3605E3BBD30B">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[First name]]></commentInRDBMS>
 <generatorID>4A6CC4E5-9358-A064-D1B3-AF96630E1FAC</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -37,9 +37,9 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="LNAME" id="DE2F5C65-5B30-E3E1-7261-524E2704B309">
+<Column name="LNAME" id="362DEB42-4B18-CCBE-5105-B498C421025F">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Last name]]></commentInRDBMS>
 <generatorID>F9512B9A-D092-8574-B4C4-02A36CEF094F</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -50,9 +50,9 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="DRIVER_LIC_NO" id="78D24663-486B-49BE-044A-104D73163775">
+<Column name="DRIVER_LIC_NO" id="3BF24EFA-7CC6-E960-8C50-DD781C2B3ADA">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Driver license number]]></commentInRDBMS>
 <generatorID>8F3FC53A-0C4F-9CFD-6BCF-C080471BE861</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -63,9 +63,9 @@
 <ownDataTypeParameters>15,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="INS_COMPANY_NAME" id="D5574273-F302-0D36-ED0F-9CF4002C0C96">
+<Column name="INS_COMPANY_NAME" id="85AEBEE4-DCD0-2BA7-04AF-4B488C812835">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Insurance Company Name]]></commentInRDBMS>
 <generatorID>FB4D8F14-5D35-568B-3A36-F2775806DD04</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -76,9 +76,9 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="INS_POLICY_NO" id="0E1A4E7E-17EF-6B65-E6A4-83E3AFE77162">
+<Column name="INS_POLICY_NO" id="4795A81D-F584-CE87-E00D-6737FC9A87AF">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Insurance Policy Number]]></commentInRDBMS>
 <generatorID>7D6822F1-3BC7-5D62-C3A9-85247A6FD188</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -91,27 +91,27 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="8196E4FC-CF03-FF0F-7872-B68016F79F13" name="HQZ_INDIV_CUST_PK">
+<ind_PK_UK id="27B1AFC9-DF2C-AF77-CC66-4F17B92AC60D" name="HQZ_INDIV_CUST_PK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>6307B4A5-5319-AA6C-36C1-0E2415728026</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="5851A965-C462-4FE1-BE33-856D6E7168DF"/>
+<colUsage columnID="898460ED-D4F7-354D-7D61-790F9A77B469"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="6808246B-E5E7-890A-4219-EA6061E30C9C" name="INDIV_CUST_CUSTOMER_FK">
+<ind_PK_UK id="7E47AEBB-9B4C-5443-B47C-11393AE4DFB3" name="INDIV_CUST_CUSTOMER_FK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 14:05:57 UTC</createdTime>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
 <generatorID>F9CDE807-7F84-B182-F354-2CA59C19C10C</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="5851A965-C462-4FE1-BE33-856D6E7168DF"/>
+<colUsage columnID="898460ED-D4F7-354D-7D61-790F9A77B469"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

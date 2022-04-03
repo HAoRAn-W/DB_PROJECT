@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AD65BFED-AFC6-D86F-CAA9-8F360CF5881A" name="HQZ_INVOICE">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<generatorID>ADF0E68B-84BE-BA09-CC36-52CF6F264E12</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="I_DATE" id="56C6D8E8-EFB8-115D-DD0B-83BBD7BB273A">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<commentInRDBMS><![CDATA[Invoice date]]></commentInRDBMS>
+<generatorID>4A22BD7F-596B-7CF4-0F78-8EF6021ADBD7</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="I_AMOUNT" id="2F0669E6-3B04-DDBD-A84C-46BB78D736A9">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<commentInRDBMS><![CDATA[Invoice amount in USD]]></commentInRDBMS>
+<generatorID>6341CF76-D20E-1903-24B3-B5C796EE515A</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SERVICE_ID" id="4DCFD9E9-8529-6180-CF4F-85C7B6A2D8A7">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<generatorID>999A1957-45B8-103F-F5FE-D400EBF7A763</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F223C11B-01E7-D946-B0E0-CC9A48BCBC00" referredColumn="000357E6-C0C4-D99A-1EDC-D68EABA79021"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4AEFE829-AEAF-DECE-E56F-9FCD553A42C9" name="HQZ_INVOICE_PK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<generatorID>48BC5B9C-AB74-29B1-6787-009A22152E14</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4DCFD9E9-8529-6180-CF4F-85C7B6A2D8A7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="611D8C1C-6BB1-87F3-1BE2-073342310292" name="INVOICE_RENTAL_SERVICE_FK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<generatorID>26E87686-3690-DFB2-E454-2B1869F19076</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4DCFD9E9-8529-6180-CF4F-85C7B6A2D8A7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
