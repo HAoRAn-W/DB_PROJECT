@@ -168,7 +168,7 @@ ALTER TABLE hqz_vehicle
         REFERENCES hqz_office ( office_id );
 
 -- Triggers for CUST_TYPE
-CREATE TRIGGER arc_fkarc_2_hqz_corp_cust_insert BEFORE
+CREATE TRIGGER check_hqz_corp_cust_insert BEFORE
     INSERT ON hqz_corp_cust
     FOR EACH ROW
 BEGIN
@@ -193,7 +193,7 @@ BEGIN
     END IF;
 END;
 
-CREATE TRIGGER arc_fkarc_2_hqz_indiv_cust_insert BEFORE
+CREATE TRIGGER check_hqz_indiv_cust_insert BEFORE
     INSERT ON hqz_indiv_cust
     FOR EACH ROW
     
@@ -219,7 +219,7 @@ BEGIN
     END IF;
 END;
 
-CREATE TRIGGER arc_fkarc_2_hqz_corp_cust_update BEFORE
+CREATE TRIGGER check_hqz_corp_cust_update BEFORE
     UPDATE ON hqz_corp_cust
     FOR EACH ROW
 BEGIN
@@ -244,7 +244,7 @@ BEGIN
     END IF;
 END;
 
-CREATE TRIGGER arc_fkarc_2_hqz_indiv_cust_update BEFORE
+CREATE TRIGGER check_hqz_indiv_cust_update BEFORE
     UPDATE ON hqz_indiv_cust
     FOR EACH ROW
     
@@ -281,12 +281,12 @@ CREATE TRIGGER invoice_generation_trigger AFTER
     INSERT ON hqz_rental_service
     FOR EACH ROW
 BEGIN
-		DECLARE c_id INT;
-		DECLARE r_fee DECIMAL(6, 2);
+	DECLARE c_id INT;
+	DECLARE r_fee DECIMAL(6, 2);
     DECLARE o_fee DECIMAL(4, 2);
-		DECLARE disc DECIMAL(3, 2);
-		DECLARE c_type VARCHAR(1);
-		DECLARE c_no VARCHAR(10);
+	DECLARE disc DECIMAL(3, 2);
+	DECLARE c_type VARCHAR(1);
+	DECLARE c_no VARCHAR(10);
     IF new.s_odometer <> new.e_odometer THEN
         
         SELECT class_id INTO c_id FROM hqz_vehicle WHERE vin = new.vin;
@@ -303,18 +303,10 @@ BEGIN
                 SELECT discount INTO disc FROM hqz_corp_info WHERE corp_reg_no = c_no;
             END IF;
         END IF;
-        IF new.daily_o_limit IS NULL OR new.e_odometer - new.s_odometer <= new.daily_o_limit THEN
-            UPDATE hqz_invoice 
-						SET 
-						I_DATE = SYSDATE(),
-						I_AMOUNT = ROUND((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee * disc, 2)
-            WHERE service_id = new.service_id;
+        IF new.daily_o_limit IS NULL OR new.e_odometer - new.s_odometer <= (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit THEN
+            INSERT INTO wow_db.hqz_invoice (i_date, i_amount, service_id) VALUES (SYSDATE(), ROUND((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee * disc, 2), new.service_id);
         ELSE
-						UPDATE hqz_invoice 
-						SET 
-						I_DATE = SYSDATE(),
-						I_AMOUNT = ROUND(((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee + ((new.e_odometer - new.s_odometer) - (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit) * o_fee) * disc, 2)
-            WHERE service_id = new.service_id;
+            INSERT INTO wow_db.hqz_invoice (i_date, i_amount, service_id) VALUES (SYSDATE(), ROUND(((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee + ((new.e_odometer - new.s_odometer) - (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit) * o_fee) * disc, 2), new.service_id);
         END IF;
     END IF;
 END;
@@ -324,12 +316,12 @@ CREATE TRIGGER invoice_update_trigger AFTER
     UPDATE ON hqz_rental_service
     FOR EACH ROW
 BEGIN
-		DECLARE c_id INT;
-		DECLARE r_fee DECIMAL(6, 2);
+	DECLARE c_id INT;
+	DECLARE r_fee DECIMAL(6, 2);
     DECLARE o_fee DECIMAL(4, 2);
-		DECLARE disc DECIMAL(3, 2);
-		DECLARE c_type VARCHAR(1);
-		DECLARE c_no VARCHAR(10);
+	DECLARE disc DECIMAL(3, 2);
+	DECLARE c_type VARCHAR(1);
+	DECLARE c_no VARCHAR(10);
     IF old.e_odometer <> new.e_odometer THEN
         
         SELECT class_id INTO c_id FROM hqz_vehicle WHERE vin = new.vin;
@@ -346,17 +338,17 @@ BEGIN
                 SELECT discount INTO disc FROM hqz_corp_info WHERE corp_reg_no = c_no;
             END IF;
         END IF;
-        IF new.daily_o_limit IS NULL OR new.e_odometer - new.s_odometer <= new.daily_o_limit THEN
+        IF new.daily_o_limit IS NULL OR new.e_odometer - new.s_odometer <= (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit THEN
             UPDATE hqz_invoice 
-						SET 
-						I_DATE = SYSDATE(),
-						I_AMOUNT = ROUND((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee * disc, 2)
+			SET 
+			I_DATE = SYSDATE(),
+			I_AMOUNT = ROUND((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee * disc, 2)
             WHERE service_id = new.service_id;
         ELSE
-						UPDATE hqz_invoice 
-						SET 
-						I_DATE = SYSDATE(),
-						I_AMOUNT = ROUND(((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee + ((new.e_odometer - new.s_odometer) - (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit) * o_fee) * disc, 2)
+			UPDATE hqz_invoice 
+			SET 
+			I_DATE = SYSDATE(),
+			I_AMOUNT = ROUND(((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee + ((new.e_odometer - new.s_odometer) - (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit) * o_fee) * disc, 2)
             WHERE service_id = new.service_id;
         END IF;
     END IF;
