@@ -271,11 +271,52 @@ BEGIN
 END;
 
 -- Trigger to generate empty invoice
-CREATE TRIGGER invoice_generation_trigger AFTER
+-- CREATE TRIGGER invoice_generation_trigger AFTER
+--     INSERT ON hqz_rental_service
+--     FOR EACH ROW
+-- BEGIN
+--     INSERT INTO wow_db.hqz_invoice (i_date, i_amount, service_id) VALUES (SYSDATE(), 0.00, new.service_id);
+-- END;
+CREATE TRIGGER invoice_update_trigger AFTER
     INSERT ON hqz_rental_service
     FOR EACH ROW
 BEGIN
-    INSERT INTO wow_db.hqz_invoice (i_date, i_amount, service_id) VALUES (SYSDATE(), 0.00, new.service_id);
+		DECLARE c_id INT;
+		DECLARE r_fee DECIMAL(6, 2);
+    DECLARE o_fee DECIMAL(4, 2);
+		DECLARE disc DECIMAL(3, 2);
+		DECLARE c_type VARCHAR(1);
+		DECLARE c_no VARCHAR(10);
+    IF new.s_odometer <> new.e_odometer THEN
+        
+        SELECT class_id INTO c_id FROM hqz_vehicle WHERE vin = new.vin;
+        
+        SELECT rental_rate, over_fee INTO r_fee, o_fee FROM hqz_class WHERE class_id = c_id;
+        
+        SET disc = 1.00;
+        IF new.coupon_id IS NOT NULL THEN
+            SELECT discount INTO disc FROM hqz_coupon WHERE coupon_id = new.coupon_id;
+        ELSE
+            SELECT cust_type INTO c_type FROM hqz_customer WHERE customer_id = new.customer_id;
+            IF c_type = 'C' THEN 
+                SELECT corp_reg_no INTO c_no FROM hqz_corp_cust WHERE customer_id = new.customer_id;
+                SELECT discount INTO disc FROM hqz_corp_info WHERE corp_reg_no = c_no;
+            END IF;
+        END IF;
+        IF new.daily_o_limit IS NULL OR new.e_odometer - new.s_odometer <= new.daily_o_limit THEN
+            UPDATE hqz_invoice 
+						SET 
+						I_DATE = SYSDATE(),
+						I_AMOUNT = ROUND((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee * disc, 2)
+            WHERE service_id = new.service_id;
+        ELSE
+						UPDATE hqz_invoice 
+						SET 
+						I_DATE = SYSDATE(),
+						I_AMOUNT = ROUND(((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee + ((new.e_odometer - new.s_odometer) - (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit) * o_fee) * disc, 2)
+            WHERE service_id = new.service_id;
+        END IF;
+    END IF;
 END;
 
 -- Trigger to insert into HQZ_INVOICE
