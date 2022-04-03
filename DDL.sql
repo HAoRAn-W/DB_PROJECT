@@ -7,6 +7,7 @@ CREATE TABLE hqz_class (
 
 ALTER TABLE hqz_class ADD CONSTRAINT hqz_class_pk PRIMARY KEY ( class_id );
 
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE hqz_corp_cust (
     customer_id INT NOT NULL COMMENT 'ID for the customer',
     employee_id INT NOT NULL COMMENT 'Employee ID of the customer who rents the car on a corporate account',
@@ -15,6 +16,7 @@ CREATE TABLE hqz_corp_cust (
 
 ALTER TABLE hqz_corp_cust ADD CONSTRAINT hqz_corp_cust_pk PRIMARY KEY ( customer_id );
 
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE hqz_corp_info (
     corp_reg_no VARCHAR(10) NOT NULL COMMENT 'Registration number of the corporation',
     corp_name   VARCHAR(50) NOT NULL COMMENT 'Name of the corporation',
@@ -23,6 +25,7 @@ CREATE TABLE hqz_corp_info (
 
 ALTER TABLE hqz_corp_info ADD CONSTRAINT hqz_corp_info_pk PRIMARY KEY ( corp_reg_no );
 
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE hqz_coupon (
     coupon_id       BIGINT NOT NULL COMMENT 'ID of the coupon',
     discount        DECIMAL(3, 2) NOT NULL COMMENT 'Percentage of discount offered, r.g., 1.00, 0.85.',
@@ -32,6 +35,7 @@ CREATE TABLE hqz_coupon (
 
 ALTER TABLE hqz_coupon ADD CONSTRAINT hqz_coupon_pk PRIMARY KEY ( coupon_id );
 
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE hqz_customer (
     customer_id INT NOT NULL COMMENT 'ID for the customer',
     c_street    VARCHAR(30) NOT NULL COMMENT 'Street of customer address',
@@ -60,12 +64,12 @@ CREATE TABLE hqz_indiv_cust (
 ALTER TABLE hqz_indiv_cust ADD CONSTRAINT hqz_indiv_cust_pk PRIMARY KEY ( customer_id );
 
 CREATE TABLE hqz_invoice (
-    invoice_id BIGINT NOT NULL COMMENT 'ID for the invoice',
     i_date     DATETIME NOT NULL COMMENT 'Invoice date',
-    i_amount   DECIMAL(8, 2) NOT NULL COMMENT 'Invoice amount in USD'
+    i_amount   DECIMAL(8, 2) NOT NULL COMMENT 'Invoice amount in USD',
+    service_id INT NOT NULL
 );
 
-ALTER TABLE hqz_invoice ADD CONSTRAINT hqz_invoice_pk PRIMARY KEY ( invoice_id );
+ALTER TABLE hqz_invoice ADD CONSTRAINT hqz_invoice_pk PRIMARY KEY ( service_id );
 
 CREATE TABLE hqz_office (
     office_id    INT NOT NULL COMMENT 'ID for office',
@@ -83,7 +87,7 @@ CREATE TABLE hqz_payment (
     pay_date       DATETIME NOT NULL COMMENT 'Date of this payment',
     payment_method VARCHAR(10) NOT NULL COMMENT 'Payment method (Credit, decit, etc.)',
     card_no        VARCHAR(20) NOT NULL COMMENT 'Payment card number',
-    invoice_id     BIGINT COMMENT 'ID of the invoice'
+    service_id     INT
 );
 
 ALTER TABLE hqz_payment ADD CONSTRAINT hqz_payment_pk PRIMARY KEY ( payment_id );
@@ -104,15 +108,9 @@ CREATE TABLE hqz_rental_service (
     e_odometer    DECIMAL(9, 2) NOT NULL COMMENT 'End odometer',
     daily_o_limit DECIMAL(6, 2) COMMENT 'Daily odometer limitaion',
     customer_id   INT COMMENT 'ID of the customer',
-    vehicle_vin   VARCHAR(17) COMMENT 'VIN of the rent car',
-    coupon_id     BIGINT COMMENT 'ID for the coupon',
-    invoice_id    BIGINT NOT NULL COMMENT 'ID of the invoice'
+    vin           VARCHAR(17) COMMENT 'VIN of the rent car',
+    coupon_id     BIGINT COMMENT 'ID for the coupon'
 );
-
-CREATE UNIQUE INDEX hqz_rental_service__idx ON
-    hqz_rental_service (
-        invoice_id
-    ASC );
 
 ALTER TABLE hqz_rental_service ADD CONSTRAINT hqz_rental_service_pk PRIMARY KEY ( service_id );
 
@@ -120,7 +118,7 @@ CREATE TABLE hqz_vehicle (
     vin              VARCHAR(17) NOT NULL COMMENT 'Vehicle identification number',
     make             VARCHAR(30) NOT NULL COMMENT 'Make of the car',
     model            VARCHAR(20) NOT NULL COMMENT 'Car model',
-    car_year             SMALLINT NOT NULL COMMENT 'Year of the car',
+    car_year         SMALLINT NOT NULL COMMENT 'Year of the car',
     license_plate_no VARCHAR(10) NOT NULL COMMENT 'License Plate number',
     class_id         INT COMMENT 'ID of the car class',
     office_id        INT COMMENT 'ID of the office',
@@ -141,9 +139,13 @@ ALTER TABLE hqz_indiv_cust
     ADD CONSTRAINT indiv_cust_customer_fk FOREIGN KEY ( customer_id )
         REFERENCES hqz_customer ( customer_id );
 
+ALTER TABLE hqz_invoice
+    ADD CONSTRAINT invoice_rental_service_fk FOREIGN KEY ( service_id )
+        REFERENCES hqz_rental_service ( service_id );
+
 ALTER TABLE hqz_payment
-    ADD CONSTRAINT payment_invoice_fk FOREIGN KEY ( invoice_id )
-        REFERENCES hqz_invoice ( invoice_id );
+    ADD CONSTRAINT payment_invoice_fk FOREIGN KEY ( service_id )
+        REFERENCES hqz_invoice ( service_id );
 
 ALTER TABLE hqz_rental_service
     ADD CONSTRAINT rental_service_coupon_fk FOREIGN KEY ( coupon_id )
@@ -154,11 +156,7 @@ ALTER TABLE hqz_rental_service
         REFERENCES hqz_customer ( customer_id );
 
 ALTER TABLE hqz_rental_service
-    ADD CONSTRAINT rental_service_invoice_fk FOREIGN KEY ( invoice_id )
-        REFERENCES hqz_invoice ( invoice_id );
-
-ALTER TABLE hqz_rental_service
-    ADD CONSTRAINT rental_service_vehicle_fk FOREIGN KEY ( vehicle_vin )
+    ADD CONSTRAINT rental_service_vehicle_fk FOREIGN KEY ( vin )
         REFERENCES hqz_vehicle ( vin );
 
 ALTER TABLE hqz_vehicle
@@ -272,6 +270,57 @@ BEGIN
     END IF;
 END;
 
+-- Trigger to generate empty invoice
+CREATE TRIGGER invoice_generation_trigger AFTER
+    INSERT ON hqz_rental_service
+    FOR EACH ROW
+BEGIN
+    INSERT INTO wow_db.hqz_invoice (i_date, i_amount, service_id) VALUES (SYSDATE(), 0.00, new.service_id);
+END;
+
+-- Trigger to insert into HQZ_INVOICE
+CREATE TRIGGER invoice_update_trigger AFTER
+    UPDATE ON hqz_rental_service
+    FOR EACH ROW
+BEGIN
+		DECLARE c_id INT;
+		DECLARE r_fee DECIMAL(6, 2);
+    DECLARE o_fee DECIMAL(4, 2);
+		DECLARE disc DECIMAL(3, 2);
+		DECLARE c_type VARCHAR(1);
+		DECLARE c_no VARCHAR(10);
+    IF old.e_odometer <> new.e_odometer THEN
+        
+        SELECT class_id INTO c_id FROM hqz_vehicle WHERE vin = new.vin;
+        
+        SELECT rental_rate, over_fee INTO r_fee, o_fee FROM hqz_class WHERE class_id = c_id;
+        
+        SET disc = 1.00;
+        IF new.coupon_id IS NOT NULL THEN
+            SELECT discount INTO disc FROM hqz_coupon WHERE coupon_id = new.coupon_id;
+        ELSE
+            SELECT cust_type INTO c_type FROM hqz_customer WHERE customer_id = new.customer_id;
+            IF c_type = 'C' THEN 
+                SELECT corp_reg_no INTO c_no FROM hqz_corp_cust WHERE customer_id = new.customer_id;
+                SELECT discount INTO disc FROM hqz_corp_info WHERE corp_reg_no = c_no;
+            END IF;
+        END IF;
+        IF new.daily_o_limit IS NULL OR new.e_odometer - new.s_odometer <= new.daily_o_limit THEN
+            UPDATE hqz_invoice 
+						SET 
+						I_DATE = SYSDATE(),
+						I_AMOUNT = ROUND((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee * disc, 2)
+            WHERE service_id = new.service_id;
+        ELSE
+						UPDATE hqz_invoice 
+						SET 
+						I_DATE = SYSDATE(),
+						I_AMOUNT = ROUND(((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee + ((new.e_odometer - new.s_odometer) - (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit) * o_fee) * disc, 2)
+            WHERE service_id = new.service_id;
+        END IF;
+    END IF;
+END;
+
 -- Add check for wow_db.hqz_vehicle vehicle_status, A for availbale and R for rent
 ALTER TABLE hqz_vehicle ADD CONSTRAINT status_check CHECK (vehicle_status='A' OR vehicle_status='R');
 
@@ -289,4 +338,3 @@ ALTER TABLE hqz_corp_info ADD CONSTRAINT corp_discount_check CHECK ( discount <=
 
 -- Add check for hqz_coupon check dates valid_from_date <= valid_to_date
 ALTER TABLE hqz_coupon ADD CONSTRAINT coupon_date_check CHECK (valid_from_date <= valid_to_date);
-
