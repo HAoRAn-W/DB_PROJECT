@@ -66,7 +66,7 @@ ALTER TABLE hqz_indiv_cust ADD CONSTRAINT hqz_indiv_cust_pk PRIMARY KEY ( custom
 CREATE TABLE hqz_invoice (
     i_date     DATETIME NOT NULL COMMENT 'Invoice date',
     i_amount   DECIMAL(8, 2) NOT NULL COMMENT 'Invoice amount in USD',
-    service_id INT NOT NULL
+    service_id INT NOT NULL COMMENT 'ID for the customer'
 );
 
 ALTER TABLE hqz_invoice ADD CONSTRAINT hqz_invoice_pk PRIMARY KEY ( service_id );
@@ -87,7 +87,7 @@ CREATE TABLE hqz_payment (
     pay_date       DATETIME NOT NULL COMMENT 'Date of this payment',
     payment_method VARCHAR(10) NOT NULL COMMENT 'Payment method (Credit, decit, etc.)',
     card_no        VARCHAR(20) NOT NULL COMMENT 'Payment card number',
-    service_id     INT
+    service_id     INT COMMENT 'ID for the service'
 );
 
 ALTER TABLE hqz_payment ADD CONSTRAINT hqz_payment_pk PRIMARY KEY ( payment_id );
@@ -287,7 +287,7 @@ BEGIN
 	DECLARE disc DECIMAL(3, 2);
 	DECLARE c_type VARCHAR(1);
 	DECLARE c_no VARCHAR(10);
-    IF new.s_odometer <> new.e_odometer THEN
+    IF new.s_odometer <= new.e_odometer THEN
         
         SELECT class_id INTO c_id FROM hqz_vehicle WHERE vin = new.vin;
         
