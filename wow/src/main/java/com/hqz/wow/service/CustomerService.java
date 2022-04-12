@@ -1,7 +1,7 @@
 package com.hqz.wow.service;
 
 import com.hqz.wow.entity.CustomerEntity;
-import com.hqz.wow.vo.CustomerVO;
+import com.hqz.wow.vo.CorpCustomerVO;
 
 public interface CustomerService {
 
@@ -9,5 +9,5 @@ public interface CustomerService {
 
     public boolean checkIfCustomerExist(String email);
 
-    public void encodePassword(CustomerEntity userEntity, CustomerVO customerVO);
+    public void registerCorpCustomer(CorpCustomerVO corpCustomerVO);
 }

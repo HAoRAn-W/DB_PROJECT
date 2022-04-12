@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <link rel="icon" href="images/favicon.png" type="image/gif" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--  <meta name="_csrf" th:content="${_csrf.token}"/>-->
+    <!--  <meta name="_csrf_parameter_name" th:content="${_csrf.parameterName}"/>-->
+
+    <title> WoW </title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<!-- header section strats -->
+<header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+          <span>
+            WoW
+          </span>
+            </a>
+            <div class="" id="">
+
+                <div class="custom_menu-btn">
+                    <button onclick="openNav()">
+                        <span class="s-1"> </span>
+                        <span class="s-2"> </span>
+                        <span class="s-3"> </span>
+                    </button>
+                    <div id="myNav" class="overlay">
+                        <div class="overlay-content">
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About</a>
+                            <a href="shop.html">Shop</a>
+                            <a href="blog.html">Blog</a>
+                            <!--                <a href="#" th:href="@{/logout}"><span class="glyphicon glyphicon-log-out">-->
+                            <div sec:authorize="isAuthenticated()">
+                                <a href="javascript: document.logoutForm.submit()" >Sign out</a>
+                                <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+                                    <input hidden type="submit" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- end header section -->
+
+<!-- slider section -->
+<section class="slider_section position-relative">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 mx-auto detail_container">
+                <div class="detail-box">
+                    <h1>
+                        Best Glasses
+                        <br> Collection
+                    </h1>
+                    <p>
+                        It is a long established fact that a reader will be distracted by the readable content of a page when
+                        looking at its layout. The point of using Lorem
+                    </p>
+                    <div>
+                        <a href="" class="slider-link">
+                            Shop Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 px-0">
+                <div id="customCarousel1" class="carousel  slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="slider_img_box">
+                                <img src="images/slider-bg.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="slider_img_box">
+                                <img src="images/slider-bg.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="slider_img_box">
+                                <img src="images/slider-bg.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel_btn-box">
+            <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- end slider section -->
+
+<!-- category section -->
+
+<section class="cat_section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 mx-auto">
+                <div class="box cat-box1">
+                    <img src="images/c1.jpg" alt="">
+                    <div class="detail-box">
+                        <h2>
+                            For Women
+                        </h2>
+                        <a href="">
+                            Shop Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mx-auto">
+                <div class="box cat-box2">
+                    <img src="images/c2.jpg" alt="">
+                    <div class="detail-box">
+                        <h2>
+                            For Men
+                        </h2>
+                        <a href="">
+                            Shop Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mx-auto">
+                <div class="box cat-box3">
+                    <img src="images/c3.jpg" alt="">
+                    <div class="detail-box">
+                        <h2>
+                            For kids
+                        </h2>
+                        <a href="">
+                            Shop Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end category section -->
+
+<!-- shop section -->
+
+<section class="shop_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                Latest Products
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box">
+                    <div>
+                        <div class="img-box">
+                            <img src="images/p1.png" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <a href="">
+                                Aviator Glasses
+                            </a>
+                            <h6>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-half-empty" aria-hidden="true"></i>
+                            </h6>
+                            <h6>
+                                $200
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box">
+                    <div>
+                        <div class="img-box">
+                            <img src="images/p2.png" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <a href="">
+                                Aviator Glasses
+                            </a>
+                            <h6>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-half-empty" aria-hidden="true"></i>
+                            </h6>
+                            <h6>
+                                $175
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box">
+                    <div>
+                        <div class="img-box">
+                            <img src="images/p3.png" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <a href="">
+                                Aviator Glasses
+                            </a>
+                            <h6>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-half-empty" aria-hidden="true"></i>
+                            </h6>
+                            <h6>
+                                $190
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box">
+                    <div>
+                        <div class="img-box">
+                            <img src="images/p4.png" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <a href="">
+                                Aviator Glasses
+                            </a>
+                            <h6>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-half-empty" aria-hidden="true"></i>
+                            </h6>
+                            <h6>
+                                $155
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box">
+                    <div>
+                        <div class="img-box">
+                            <img src="images/p5.png" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <a href="">
+                                Aviator Glasses
+                            </a>
+                            <h6>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-half-empty" aria-hidden="true"></i>
+                            </h6>
+                            <h6>
+                                $185
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box">
+                    <div>
+                        <div class="img-box">
+                            <img src="images/p6.png" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <a href="">
+                                Aviator Glasses
+                            </a>
+                            <h6>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-half-empty" aria-hidden="true"></i>
+                            </h6>
+                            <h6>
+                                $170
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box">
+                    <div>
+                        <div class="img-box">
+                            <img src="images/p7.png" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <a href="">
+                                Aviator Glasses
+                            </a>
+                            <h6>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-half-empty" aria-hidden="true"></i>
+                            </h6>
+                            <h6>
+                                $200
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box">
+                    <div>
+                        <div class="img-box">
+                            <img src="images/p8.png" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <a href="">
+                                Aviator Glasses
+                            </a>
+                            <h6>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-half-empty" aria-hidden="true"></i>
+                            </h6>
+                            <h6>
+                                $180
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-box">
+            <a href="">
+                View All Products
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- end shop section -->
+
+<!-- about section -->
+
+<section class="about_section  ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 px-0">
+                <div class="img-box">
+                    <img src="images/about-img.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-6 mx-auto detail_container">
+                <div class="detail-box">
+                    <div class="heading_container">
+                        <h2>
+                            About Us
+                        </h2>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem eum consequuntur ipsam repellat dolor soluta aliquid laborum, eius odit consectetur vel quasi in quidem, eveniet ab est corporis tempore.
+                    </p>
+                    <a href="">
+                        Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end about section -->
+
+<!-- blog section -->
+
+<section class="blog_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2>
+                Latest From Blog
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mx-auto">
+                <div class="box">
+                    <div class="img-box">
+                        <img src="images/b1.jpg" alt="">
+                        <h4 class="blog_date">
+                            10/08/2020
+                        </h4>
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            Molestiae ad reiciendis dignissimos
+                        </h5>
+                        <p>
+                            alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                        </p>
+                        <a href="">
+                            Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mx-auto">
+                <div class="box">
+                    <div class="img-box">
+                        <img src="images/b2.jpg" alt="">
+                        <h4 class="blog_date">
+                            11/08/2020
+                        </h4>
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            Dolores vel maiores voluptatem enim
+                        </h5>
+                        <p>
+                            alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                        </p>
+                        <a href="">
+                            Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mx-auto">
+                <div class="box">
+                    <div class="img-box">
+                        <img src="images/b3.jpg" alt="">
+                        <h4 class="blog_date">
+                            11/08/2020
+                        </h4>
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            Molestiae ad reiciendis dignissimos
+                        </h5>
+                        <p>
+                            alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                        </p>
+                        <a href="">
+                            Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end blog section -->
+
+<!-- client section -->
+<section class="client_section layout_padding-bottom">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                Testimonial
+            </h2>
+            <p>
+                Even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to
+            </p>
+        </div>
+    </div>
+    <div class="container px-0">
+        <div id="customCarousel2" class="carousel  slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 mx-auto">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/client.jpg" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <div class="client_info">
+                                            <div class="client_name">
+                                                <h5>
+                                                    Sara Cavill
+                                                </h5>
+                                                <h6>
+                                                    Customer
+                                                </h6>
+                                            </div>
+                                            <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                        </div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                            labore
+                                            et
+                                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                            cillum
+                                            dolore eu fugia
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10 mx-auto">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/client.jpg" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <div class="client_info">
+                                            <div class="client_name">
+                                                <h5>
+                                                    Sara Cavill
+                                                </h5>
+                                                <h6>
+                                                    Customer
+                                                </h6>
+                                            </div>
+                                            <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                        </div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                            labore
+                                            et
+                                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                            cillum
+                                            dolore eu fugia
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10 mx-auto">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/client.jpg" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <div class="client_info">
+                                            <div class="client_name">
+                                                <h5>
+                                                    Sara Cavill
+                                                </h5>
+                                                <h6>
+                                                    Customer
+                                                </h6>
+                                            </div>
+                                            <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                        </div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                            labore
+                                            et
+                                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                            cillum
+                                            dolore eu fugia
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel_btn-box">
+                <a class="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end client section -->
+
+<!-- info section -->
+
+<section class="info_section ">
+    <div class="container-fluid">
+        <div class="row info_main_row">
+            <div class="col-lg-7 mx-auto">
+                <div class="row">
+                    <div class="col-md-4 info-col">
+                        <div class="info_detail">
+                            <h4>
+                                About
+                            </h4>
+                            <p>
+                                Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+                            </p>
+                            <div class="info_social">
+                                <a href="">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 info-col">
+                        <div class="info_contact">
+                            <h4>
+                                Reach at..
+                            </h4>
+                            <div class="contact_link_box">
+                                <a href="">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    <span>
+                      Location
+                    </span>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    <span>
+                      Call +01 1234567890
+                    </span>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <span>
+                      demo@gmail.com
+                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 info-col">
+                        <div class="info_contact">
+                            <h4>
+                                Subscribe
+                            </h4>
+                            <form action="#">
+                                <input type="text" placeholder="Enter email" />
+                                <button type="submit">
+                                    Subscribe
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 px-0 info-col">
+                <div class="map_container">
+                    <div class="map">
+                        <div id="googleMap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end info section -->
+<!-- footer section -->
+<footer class="footer_section">
+    <div class="container">
+        <p>
+            &copy; <span id="displayYear"></span> All Rights Reserved By
+            <a href="https://www.11moban.com/">模板分享</a>
+        </p>
+    </div>
+</footer>
+<!-- footer section -->
+
+
+<!-- jQery -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.js"></script>
+<!-- custom js -->
+<script src="js/custom.js"></script>
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+</script>
+<!--  <script type="application/javascript">-->
+
+<!--    $('#logout-form').submit(function (ev) {-->
+<!--      ev.preventDefault(); // to stop the form from submitting-->
+<!--      var token = $("meta[name='_csrf']").attr("content");-->
+<!--      var paramName = $("meta[name='_csrf_parameter_name']").attr("content");-->
+<!--      $('<input>').attr('type', 'hidden').attr('name', paramName).attr('value', token).appendTo('#logout-form');-->
+<!--      this.submit();-->
+<!--    });-->
+<!--  </script>-->
+<!-- End Google Map -->
+</body>
+
+</html>

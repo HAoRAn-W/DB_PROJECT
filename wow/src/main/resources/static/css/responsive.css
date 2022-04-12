@@ -1,0 +1,133 @@
+@media (max-width: 1300px) {}
+
+@media (max-width: 1120px) {}
+
+@media (max-width: 992px) {
+
+  .slider_section {
+    min-height: auto;
+  }
+
+  .slider_section .detail-box {
+    padding: 90px 0 75px 0;
+  }
+
+  .info_main_row {
+    flex-direction: column-reverse;
+  }
+
+  .info-col {
+    margin-bottom: 45px;
+  }
+}
+
+@media (max-width: 800px) {}
+
+@media (max-width: 768px) {
+  .slider_section .detail-box {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .slider_section .detail-box h1 {
+    font-size: 2.5rem;
+  }
+
+  .slider_section .slider_bg_box img {
+    object-position: 20% center;
+  }
+
+  .contact_section .form_container {
+    margin-bottom: 45px;
+  }
+
+  .client_section .box {
+    background: linear-gradient(to bottom, #3c2946 115px, #ffffff 115px);
+  }
+
+  .client_section .box .client_info {
+    flex-direction: column;
+  }
+
+  .client_section .box .client_info .client_name h6 {
+    margin-bottom: 5px;
+  }
+
+  .client_section .box {
+    flex-direction: column;
+    text-align: center;
+    margin: 45px 5px;
+    padding: 45px 20px;
+  }
+
+  .client_section .box .detail-box {
+    align-items: center;
+  }
+
+  .client_section .box .img-box {
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+
+  .client_section .carousel_btn-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .client_section .carousel-control-prev,
+  .client_section .carousel-control-next {
+    position: unset;
+    margin: 0 2.5px;
+  }
+
+  .info-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info_section .info_social {
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .info_section .info_insta .insta_box {
+    flex-direction: column;
+  }
+
+  .info_section .info_insta .insta_box .img-box {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .about_section .img-box::before {
+    width: 150px;
+    height: 150px;
+  }
+
+  .slider_section .slider_bg_box img {
+    object-position: 40% center;
+  }
+}
+
+@media (max-width: 420px) {}
+
+@media (max-width: 376px) {
+  .slider_section .detail-box h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+

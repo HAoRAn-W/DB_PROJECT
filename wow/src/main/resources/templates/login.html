@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" th:href="@{/images/favicon.png}" type="image/gif" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title> WoW </title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" />
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link th:href="@{css/responsive.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<!-- header section -->
+<header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+          <span>
+            WoW
+          </span>
+            </a>
+            <div class="" id="">
+
+                <div class="custom_menu-btn">
+                    <button onclick="openNav()">
+                        <span class="s-1"> </span>
+                        <span class="s-2"> </span>
+                        <span class="s-3"> </span>
+                    </button>
+                    <div id="myNav" class="overlay">
+                        <div class="overlay-content">
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About</a>
+                            <a href="shop.html">Shop</a>
+                            <a href="blog.html">Blog</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- end header section -->
+
+<!-- slider section -->
+<section class="slider_section position-relative">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 mx-auto detail_container">
+                <div class="detail-box">
+                    <h1>
+                        Welcome to WOW
+                    </h1>
+                    <h3>
+                        Log in to your account
+                    </h3>
+                    <p th:if="${error}" class="error">用户名或密码错误</p>
+                    <hr>
+                    <form th:action="@{/login}" method="post">
+                        <input type="text" id="username" name="username" placeholder="Enter email" /> <br/>
+                        <input type="password" id="password" name="password" placeholder="Enter password" />
+                        <hr>
+                        <button type="submit">
+                            Log in
+                        </button>
+                    </form>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="check-box">
+                                <input type="checkbox" id="remember" name="remember-me">
+                                <label for="remember">Remember me</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <a th:href="@{/indiv-register}">Individual Register</a>
+                        </div>
+                        <div class="col-8">
+                            <a th:href="@{/corp-register}">Employee Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 px-0">
+                <div id="customCarousel1" class="carousel  slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="slider_img_box">
+                                <img th:src="@{/images/slidecar1.jpg}" alt="">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="slider_img_box">
+                                <img th:src="@{/images/slidecar2.jpg}" alt="">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="slider_img_box">
+                                <img th:src="@{/images/slidecar3.jpg}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer_section">
+    <div class="container">
+        <p>
+            &copy; <span id="displayYear"></span> All Rights Reserved By
+            <a href="whr.one">HQZ Group</a>
+        </p>
+    </div>
+</footer>
+<!-- footer section -->
+
+
+<!-- jQuery -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.js"></script>
+<!-- custom js -->
+<script src="js/custom.js"></script>
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+</script>
+<!-- End Google Map -->
+</body>
+
+</html>
