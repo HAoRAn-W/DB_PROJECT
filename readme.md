@@ -3,6 +3,16 @@
 This is a repository for the course project of Principles of Database Systems at New York University by Qifan Zhang, Zhen Wang, and Haoran Wang.
 
 ## Part1 Objectives:
+- [x] Customer register, login, logout, remember me
+- [ ] Customer modify information
+- [ ] Select cars based on class and office
+- [ ] Start a rental service
+- [ ] End a rental service
+- [ ] Choose payment method
+- [ ] Show invoice
+- [ ] Docker
+
+## Part1 Objectives:
 - [X] Single PDF document with following contents:
 - [X] Cover page with clearly stated course, section, submission date, team 
   members’ names and ids.
