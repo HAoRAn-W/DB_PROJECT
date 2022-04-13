@@ -66,28 +66,28 @@ public class AccountController {
         }
     }
 
-//    @PostMapping("/register-indiv")
-//    public String registerSaveIndiv(@ModelAttribute("indivCustomerVO") IndivCustomerVO indivCustomerVO, Model model) {
-//        //todo parameter check, employeeId unique check
-//        if(customerService.checkIfCustomerExist(indivCustomerVO.getCustomer().getEmail())) {
-//            model.addAttribute("error", true);
-//            return "register-corp";
-//        }
-//        try {
-//            // 密码加密存储
-//            BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-//            String password = bCryptPasswordEncoder.encode(indivCustomerVO.getCustomer().getPassword());
-//            indivCustomerVO.getCustomer().setPassword(password);
-//            // 写入数据库
-//            customerService.registerIndivCustomer(indivCustomerVO);
-//            //  重定向到 login 页面
-//            return "/login";
-//        } catch (Exception e) {
-//            // 注册错误
-//            model.addAttribute("error", true);
-//            return "register-corp";
-//        }
-//    }
+    @PostMapping("/register-indiv")
+    public String registerSaveIndiv(@ModelAttribute("indivCustomerVO") IndivCustomerVO indivCustomerVO, Model model) {
+        //todo parameter check, employeeId unique check
+        if(customerService.checkIfCustomerExist(indivCustomerVO.getCustomer().getEmail())) {
+            model.addAttribute("error", true);
+            return "register-corp";
+        }
+        try {
+            // 密码加密存储
+            BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+            String password = bCryptPasswordEncoder.encode(indivCustomerVO.getCustomer().getPassword());
+            indivCustomerVO.getCustomer().setPassword(password);
+            // 写入数据库
+            customerService.registerIndivCustomer(indivCustomerVO);
+            //  重定向到 login 页面
+            return "/login";
+        } catch (Exception e) {
+            // 注册错误
+            model.addAttribute("error", true);
+            return "register-indiv";
+        }
+    }
 
     @RequestMapping("/login")
     public String login() {
@@ -102,13 +102,4 @@ public class AccountController {
         }
         return "redirect:/login?logout";
     }
-
-    @RequestMapping("/index")
-    public String index() {
-        return "index";
-    }
-
-
-
-
 }

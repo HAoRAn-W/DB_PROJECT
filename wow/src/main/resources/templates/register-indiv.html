@@ -1,10 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>register</title>
 </head>
 <body>
+<p>register</p>
+<!--<p th:if="${error}" class="error">error during registration</p>-->
+<form th:action="@{/register-indiv}" th:object="${indivCustomerVO}" method="post">
+    <label>email</label>
+    <input type="text" th:field="*{customer.email}" /><br/>
 
+    <label>password</label>
+    <input type="password" th:field="*{customer.password}" /><br/>
+
+    <label>street</label>
+    <input type="text" th:field="*{customer.street}" /><br/>
+
+    <label>city</label>
+    <input type="text" th:field="*{customer.city}" /><br/>
+
+    <label>state</label>
+    <input type="text" th:field="*{customer.state}" /><br/>
+
+    <label>zipcode</label>
+    <input type="text" th:field="*{customer.zipcode}" /><br/>
+
+    <label>phone</label>
+    <input type="text" th:field="*{customer.phone}" /><br/>
+
+    <label>firstName</label>
+    <input type="text" th:field="*{firstName}" /><br/>
+
+    <label>lastName</label>
+    <input type="text" th:field="*{lastName}" /><br/>
+
+    <label>driverLicenseNo</label>
+    <input type="text" th:field="*{driverLicenseNo}" /><br/>
+
+    <label>insuranceName</label>
+    <input type="text" th:field="*{insuranceName}" /><br/>
+
+    <label>insuranceNo</label>
+    <input type="text" th:field="*{insuranceNo}" /><br/>
+
+    <button type="submit">Register</button>
+</form>
 </body>
 </html>
