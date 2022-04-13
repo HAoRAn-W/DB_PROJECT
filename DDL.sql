@@ -10,7 +10,7 @@ ALTER TABLE hqz_class ADD CONSTRAINT hqz_class_pk PRIMARY KEY ( class_id );
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE hqz_corp_cust (
     customer_id INT NOT NULL COMMENT 'ID for the customer',
-    employee_id INT NOT NULL COMMENT 'Employee ID of the customer who rents the car on a corporate account',
+    employee_id INT NOT NULL COMMENT 'Employee ID of the customer who rents the car on a corporate account' UNIQUE,
     corp_reg_no VARCHAR(10) COMMENT 'The registration number of the customer''s company'
 );
 
@@ -37,20 +37,19 @@ ALTER TABLE hqz_coupon ADD CONSTRAINT hqz_coupon_pk PRIMARY KEY ( coupon_id );
 
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE hqz_customer (
-    customer_id INT NOT NULL COMMENT 'ID for the customer',
+    customer_id INT NOT NULL COMMENT 'ID for the customer' PRIMARY KEY AUTO_INCREMENT,
     c_street    VARCHAR(30) NOT NULL COMMENT 'Street of customer address',
     c_city      VARCHAR(30) NOT NULL COMMENT 'City of customer address',
     c_state     VARCHAR(20) NOT NULL COMMENT 'State of customer address',
     c_zipcode   VARCHAR(10) NOT NULL COMMENT 'Postal code of customer address',
-    c_email     VARCHAR(50) NOT NULL COMMENT 'Customer email address',
+    c_email     VARCHAR(50) NOT NULL COMMENT 'Customer email address' UNIQUE,
     c_phone     VARCHAR(15) NOT NULL COMMENT 'Customer phone number',
-    cust_type   VARCHAR(1) NOT NULL COMMENT 'Type of the customer'
+    cust_type   VARCHAR(1) NOT NULL COMMENT 'Type of the customer',
+    c_password VARCHAR(255) NOT NULL COMMENT 'Customer encoded password'
 );
 
 ALTER TABLE hqz_customer
     ADD CONSTRAINT ch_inh_hqz_customer CHECK ( cust_type IN ( 'C', 'I' ) );
-
-ALTER TABLE hqz_customer ADD CONSTRAINT hqz_customer_pk PRIMARY KEY ( customer_id );
 
 CREATE TABLE hqz_indiv_cust (
     customer_id      INT NOT NULL COMMENT 'ID for the customer',
