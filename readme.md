@@ -3,21 +3,21 @@
 This is a repository for the course project of Principles of Database Systems at New York University by Qifan Zhang, Zhen Wang, and Haoran Wang.
 
 ## Part1 Objectives:
-- [ ] Single PDF document with following contents:
-- [ ] Cover page with clearly stated course, section, submission date, team 
+- [X] Single PDF document with following contents:
+- [X] Cover page with clearly stated course, section, submission date, team 
   members’ names and ids.
-- [ ] A properly documented description and justification of your entire 
+- [X] A properly documented description and justification of your entire 
   design (no more than half page), assumptions that you have made other 
   than stated business rules, if any.
-- [ ] Logical Model of database design
-- [ ] Relational Model of database design
-- [ ] List of tables and record counts of each table (Number of records should 
+- [X] Logical Model of database design
+- [X] Relational Model of database design
+- [X] List of tables and record counts of each table (Number of records should 
   be **10 to 25** records in each table. Child tables should have more records 
   than parent tables)
-- [ ] **DDL** code (Table creation code along with PK, FK, and Check constraints)
-- [ ] **DML** code (insert statement for all tables)
-- [ ] Database **trigger** code that used for **generating invoice**
-- [ ] Data Dictionary results of following queries:
+- [X] **DDL** code (Table creation code along with PK, FK, and Check constraints)
+- [X] **DML** code (insert statement for all tables)
+- [X] Database **trigger** code that used for **generating invoice**
+- [X] Data Dictionary results of following queries:
 
 ```sql
 -- List of Tables 
