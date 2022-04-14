@@ -1,572 +1,483 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="icon" href="images/favicon.png" type="image/gif" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
 
-    <title> WoW </title>
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Welcome to WoW</title>
 
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/responsive.css" rel="stylesheet" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Constra HTML Template v1.0">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Animate css -->
+  <link rel="stylesheet" href="plugins/animate/animate.css">
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
-<body>
+<body id="body">
 
-<!-- header section strats -->
-<header class="header_section">
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="index.html">
-          <span>
-            WoW
-          </span>
-            </a>
-            <div class="" id="">
+<!-- Start Top Header Bar -->
+<section class="top-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-xs-12 col-sm-4">
+<!--				<div class="contact-number">-->
+<!--					<i class="tf-ion-ios-telephone"></i>-->
+<!--					<span>0129- 12323-123123</span>-->
+<!--				</div>-->
+			</div>
+			<div class="col-md-4 col-xs-12 col-sm-4">
+				<!-- Site Logo -->
+				<div class="logo text-center">
+					<a href="index.html">
+						<!-- replace logo here -->
+						<svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40"
+								font-family="AustinBold, Austin" font-weight="bold">
+								<g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
+									<text id="WoW">
+										<tspan x="108.94" y="325">WoW</tspan>
+									</text>
+								</g>
+							</g>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-12 col-sm-4">
+				<!-- Cart -->
+				<ul class="top-menu text-right list-inline">
+					<li class="dropdown cart-nav dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
+								class="tf-ion-android-cart"></i>Cart</a>
+						<div class="dropdown-menu cart-dropdown">
+							<!-- Cart Item -->
+							<div class="media">
+								<a class="pull-left" href="#!">
+									<img class="media-object" src="images/shop/cart/cart-1.jpg" alt="image" />
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading"><a href="#!">Ladies Bag</a></h4>
+									<div class="cart-price">
+										<span>1 x</span>
+										<span>1250.00</span>
+									</div>
+									<h5><strong>$1200</strong></h5>
+								</div>
+								<a href="#!" class="remove"><i class="tf-ion-close"></i></a>
+							</div><!-- / Cart Item -->
+							<!-- Cart Item -->
+							<div class="media">
+								<a class="pull-left" href="#!">
+									<img class="media-object" src="images/shop/cart/cart-2.jpg" alt="image" />
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading"><a href="#!">Ladies Bag</a></h4>
+									<div class="cart-price">
+										<span>1 x</span>
+										<span>1250.00</span>
+									</div>
+									<h5><strong>$1200</strong></h5>
+								</div>
+								<a href="#!" class="remove"><i class="tf-ion-close"></i></a>
+							</div><!-- / Cart Item -->
 
-                <div class="custom_menu-btn">
-                    <button onclick="openNav()">
-                        <span class="s-1"> </span>
-                        <span class="s-2"> </span>
-                        <span class="s-3"> </span>
-                    </button>
-                    <div id="myNav" class="overlay">
-                        <div class="overlay-content">
-                            <a href="index.html">Home</a>
-                            <a href="about.html">About</a>
-                            <a href="shop.html">Shop</a>
-                            <a href="blog.html">Blog</a>
-                            <div sec:authorize="isAuthenticated()">
-                                <a href="javascript: document.logoutForm.submit()" >Sign out</a>
-                                <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
-                                    <input hidden type="submit" />
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+							<div class="cart-summary">
+								<span>Total</span>
+								<span class="total-price">$1799.00</span>
+							</div>
+							<ul class="text-center cart-buttons">
+								<li><a href="cart.html" class="btn btn-small">View Cart</a></li>
+								<li><a href="checkout.html" class="btn btn-small btn-solid-border">Checkout</a></li>
+							</ul>
+						</div>
 
-            </div>
-        </nav>
-    </div>
-</header>
-<!-- end header section -->
+					</li><!-- / Cart -->
 
-<!-- slider section -->
-<section class="slider_section position-relative">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 mx-auto detail_container">
-                <div class="detail-box">
-                    <h1>
-                        Welcome back,
-                        <br>
-                        <div sec:authorize="isAuthenticated()">
-                            <span sec:authentication="name"></span>
-                        </div>
-                    </h1>
-                    <p>
-                        Check out our various classes & latest models
-                        <br>and start your road trip right away!
-                    </p>
-                    <div>
-                        <a href="#vehicle-class" class="slider-link">
-                            Shop Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 px-0">
-                <div id="customCarousel1" class="carousel  slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="slider_img_box">
-                                <img th:src="@{/images/slidecar4.jpg}" alt="">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="slider_img_box">
-                                <img th:src="@{/images/slidecar5.jpg}" alt="">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="slider_img_box">
-                                <img th:src="@{/images/slidecar6.jpg}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel_btn-box">
-            <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
-                <i class="fa fa-angle-left" aria-hidden="true"></i>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
+					<!-- Search -->
+					<li class="dropdown search dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
+								class="tf-ion-ios-search-strong"></i> Search</a>
+						<ul class="dropdown-menu search-dropdown">
+							<li>
+								<form action="post"><input type="search" class="form-control" placeholder="Search..."></form>
+							</li>
+						</ul>
+					</li><!-- / Search -->
+
+					<!-- Languages -->
+<!--					<li class="commonSelect">-->
+<!--						<select class="form-control">-->
+<!--							<option>EN</option>-->
+<!--							<option>DE</option>-->
+<!--							<option>FR</option>-->
+<!--							<option>ES</option>-->
+<!--						</select>-->
+<!--					</li>&lt;!&ndash; / Languages &ndash;&gt;-->
+
+				</ul><!-- / .nav .navbar-nav .navbar-right -->
+			</div>
+		</div>
+	</div>
+</section><!-- End Top Header Bar -->
+
+
+<!-- Main Menu Section -->
+<section class="menu">
+	<nav class="navbar navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<h2 class="menu-title">Main Menu</h2>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+			</div><!-- / .navbar-header -->
+
+			<!-- Navbar Links -->
+			<div id="navbar" class="navbar-collapse collapse text-center">
+				<ul class="nav navbar-nav">
+
+					<li class="dropdown ">
+						<a th:href="@{/index}">Home</a>
+					</li>
+
+<!--					<li class="dropdown dropdown-slide">-->
+<!--						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"-->
+<!--							role="button" aria-haspopup="true" aria-expanded="false">Shop <span-->
+<!--								class="tf-ion-ios-arrow-down"></span></a>-->
+<!--						<div class="dropdown-menu">-->
+<!--							<div class="row">-->
+
+<!--								&lt;!&ndash; Basic &ndash;&gt;-->
+<!--								<div class="col-lg-6 col-md-6 mb-sm-3">-->
+<!--									<ul>-->
+<!--										<li class="dropdown-header">Pages</li>-->
+<!--										<li role="separator" class="divider"></li>-->
+<!--										<li><a href="shop.html">Shop</a></li>-->
+<!--										<li><a href="checkout.html">Checkout</a></li>-->
+<!--										<li><a href="cart.html">Cart</a></li>-->
+<!--										<li><a href="pricing.html">Pricing</a></li>-->
+<!--										<li><a href="confirmation.html">Confirmation</a></li>-->
+
+<!--									</ul>-->
+<!--								</div>-->
+
+<!--								&lt;!&ndash; Layout &ndash;&gt;-->
+<!--								<div class="col-lg-6 col-md-6 mb-sm-3">-->
+<!--									<ul>-->
+<!--										<li class="dropdown-header">Layout</li>-->
+<!--										<li role="separator" class="divider"></li>-->
+<!--										<li><a href="product-single.html">Product Details</a></li>-->
+<!--										<li><a href="shop-sidebar.html">Shop With Sidebar</a></li>-->
+
+<!--									</ul>-->
+<!--								</div>-->
+
+<!--							</div>-->
+<!--						</div>-->
+<!--					</li>-->
+
+
+					<!-- Pages -->
+					<li class="dropdown full-width dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+							role="button" aria-haspopup="true" aria-expanded="false">Pages <span
+								class="tf-ion-ios-arrow-down"></span></a>
+						<div class="dropdown-menu">
+							<div class="row">
+
+								<!-- Introduction -->
+								<div class="col-sm-3 col-xs-12">
+									<ul>
+										<li class="dropdown-header">Introduction</li>
+										<li role="separator" class="divider"></li>
+										<li><a href="contact.html">Contact Us</a></li>
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="404.html">404 Page</a></li>
+										<li><a href="coming-soon.html">Coming Soon</a></li>
+										<li><a href="faq.html">FAQ</a></li>
+									</ul>
+								</div>
+
+								<!-- Contact -->
+								<div class="col-sm-3 col-xs-12">
+									<ul>
+										<li class="dropdown-header">Dashboard</li>
+										<li role="separator" class="divider"></li>
+										<li><a href="dashboard.html">User Interface</a></li>
+										<li><a href="order.html">Orders</a></li>
+										<li><a href="address.html">Address</a></li>
+										<li><a href="profile-details.html">Profile Details</a></li>
+									</ul>
+								</div>
+
+								<!-- Utility -->
+								<div class="col-sm-3 col-xs-12">
+									<ul>
+										<li class="dropdown-header">Utility</li>
+										<li role="separator" class="divider"></li>
+										<li><a href="login.html">Login Page</a></li>
+										<li><a href="register-corp.html">Signin Page</a></li>
+										<li><a href="forget-password.html">Forget Password</a></li>
+									</ul>
+								</div>
+
+								<!-- Mega Menu -->
+								<div class="col-sm-3 col-xs-12">
+									<a href="shop.html">
+										<img class="img-responsive" src="images/shop/header-img.jpg" alt="menu image" />
+									</a>
+								</div>
+							</div><!-- / .row -->
+						</div><!-- / .dropdown-menu -->
+					</li><!-- / Pages -->
+
+
+
+					<!-- Blog -->
+<!--					<li class="dropdown dropdown-slide">-->
+<!--						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"-->
+<!--							role="button" aria-haspopup="true" aria-expanded="false">Blog <span-->
+<!--								class="tf-ion-ios-arrow-down"></span></a>-->
+<!--						<ul class="dropdown-menu">-->
+<!--							<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>-->
+<!--							<li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>-->
+<!--							<li><a href="blog-full-width.html">Blog Full Width</a></li>-->
+<!--							<li><a href="blog-grid.html">Blog 2 Columns</a></li>-->
+<!--							<li><a href="blog-single.html">Blog Single</a></li>-->
+<!--						</ul>-->
+<!--					</li>&lt;!&ndash; / Blog &ndash;&gt;-->
+
+
+					<li class="dropdown dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+							role="button" aria-haspopup="true" aria-expanded="false">Account <span
+								class="tf-ion-ios-arrow-down"></span></a>
+						<ul class="dropdown-menu">
+							<li><a th:href="@{/login}">Login</a></li>
+							<li><a th:href="@{/register-corp}">Corporation Register</a></li>
+							<li><a th:href="@{/register-indiv}">Individual Register</a></li>
+							<div sec:authorize="isAuthenticated()">
+								<li><a href="javascript: document.logoutForm.submit()" >Sign out</a></li>
+								<form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+									<input hidden type="submit" />
+								</form>
+							</div>
+						</ul>
+					</li><!-- / Blog -->
+				</ul>
+
+			</div>
+			<!--/.navbar-collapse -->
+		</div><!-- / .container -->
+	</nav>
 </section>
-<!-- end slider section -->
 
-<!-- category section -->
-
-<section class="cat_section">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6 col-md-4 mx-auto">
-                <div class="box cat-box1">
-                    <img src="images/c1.jpg" alt="">
-                    <div class="detail-box">
-                        <h2>
-                            For Women
-                        </h2>
-                        <a href="">
-                            Shop Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 mx-auto">
-                <div class="box cat-box2">
-                    <img src="images/c2.jpg" alt="">
-                    <div class="detail-box">
-                        <h2>
-                            For Men
-                        </h2>
-                        <a href="">
-                            Shop Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 mx-auto">
-                <div class="box cat-box3">
-                    <img src="images/c3.jpg" alt="">
-                    <div class="detail-box">
-                        <h2>
-                            For kids
-                        </h2>
-                        <a href="">
-                            Shop Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- end category section -->
-
-<!-- shop section -->
-
-<section class="shop_section layout_padding">
+<div class="hero-slider">
+  <div class="slider-item th-fullpage hero-area" style="background-image: url(images/slider/slider-1.jpg);">
     <div class="container">
-        <div class="heading_container heading_center">
-            <h2>
-                <a id="vehicle-class"></a>vehicle classes
-            </h2>
+      <div class="row">
+        <div class="col-lg-8 text-center">
+          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">CLASSIC</p>
+          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">Classic cars take you back <br> to the good old days .</h1>
         </div>
-        <div class="row">
-                <div class="col-sm-6 col-md-4 col-lg-3"  th:each="classEntity : ${classEntityList}">
-                    <div class="box">
-                        <div>
-                            <div class="img-box">
-                                <img th:src="${classEntity.imgUrl}" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <a th:href="@{/carclass/{classId}(classId=${classEntity.classId})}" th:text="${classEntity.className}">test</a>
-                            </div>
-                            <h6 th:text="${classEntity.rentalRate}">test</h6>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        <div class="btn-box">
-            <a href="">
-                View All Products
-            </a>
-        </div>
+      </div>
     </div>
-</section>
-
-<!-- end shop section -->
-
-<!-- about section -->
-
-<section class="about_section  ">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4 px-0">
-                <div class="img-box">
-                    <img src="images/about-img.jpg" alt="">
-                </div>
-            </div>
-            <div class="col-md-6 mx-auto detail_container">
-                <div class="detail-box">
-                    <div class="heading_container">
-                        <h2>
-                            About Us
-                        </h2>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem eum consequuntur ipsam repellat dolor soluta aliquid laborum, eius odit consectetur vel quasi in quidem, eveniet ab est corporis tempore.
-                    </p>
-                    <a href="">
-                        Read More
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- end about section -->
-
-<!-- blog section -->
-
-<section class="blog_section layout_padding">
+  </div>
+  <div class="slider-item th-fullpage hero-area" style="background-image: url(images/slider/slider-2.jpg);">
     <div class="container">
-        <div class="heading_container">
-            <h2>
-                Latest From Blog
-            </h2>
+      <div class="row">
+        <div class="col-lg-8 text-left">
+          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">SPORTS</p>
+          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">Sports is in your <br> DNA.</h1>
         </div>
-        <div class="row">
-            <div class="col-md-6 col-lg-4 mx-auto">
-                <div class="box">
-                    <div class="img-box">
-                        <img src="images/b1.jpg" alt="">
-                        <h4 class="blog_date">
-                            10/08/2020
-                        </h4>
-                    </div>
-                    <div class="detail-box">
-                        <h5>
-                            Molestiae ad reiciendis dignissimos
-                        </h5>
-                        <p>
-                            alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                        </p>
-                        <a href="">
-                            Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mx-auto">
-                <div class="box">
-                    <div class="img-box">
-                        <img src="images/b2.jpg" alt="">
-                        <h4 class="blog_date">
-                            11/08/2020
-                        </h4>
-                    </div>
-                    <div class="detail-box">
-                        <h5>
-                            Dolores vel maiores voluptatem enim
-                        </h5>
-                        <p>
-                            alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                        </p>
-                        <a href="">
-                            Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mx-auto">
-                <div class="box">
-                    <div class="img-box">
-                        <img src="images/b3.jpg" alt="">
-                        <h4 class="blog_date">
-                            11/08/2020
-                        </h4>
-                    </div>
-                    <div class="detail-box">
-                        <h5>
-                            Molestiae ad reiciendis dignissimos
-                        </h5>
-                        <p>
-                            alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                        </p>
-                        <a href="">
-                            Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</section>
-
-<!-- end blog section -->
-
-<!-- client section -->
-<section class="client_section layout_padding-bottom">
+  </div>
+  <div class="slider-item th-fullpage hero-area" style="background-image: url(images/slider/slider-3.jpg);">
     <div class="container">
-        <div class="heading_container heading_center">
-            <h2>
-                Testimonial
-            </h2>
-            <p>
-                Even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to
-            </p>
+      <div class="row">
+        <div class="col-lg-8 text-right">
+          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">LUXURY</p>
+          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5"> VENI</br> VIDI</br> VICI</h1>
         </div>
+      </div>
     </div>
-    <div class="container px-0">
-        <div id="customCarousel2" class="carousel  slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-10 mx-auto">
-                                <div class="box">
-                                    <div class="img-box">
-                                        <img src="images/client.jpg" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <div class="client_info">
-                                            <div class="client_name">
-                                                <h5>
-                                                    Sara Cavill
-                                                </h5>
-                                                <h6>
-                                                    Customer
-                                                </h6>
-                                            </div>
-                                            <i class="fa fa-quote-left" aria-hidden="true"></i>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                            labore
-                                            et
-                                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                            cillum
-                                            dolore eu fugia
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-10 mx-auto">
-                                <div class="box">
-                                    <div class="img-box">
-                                        <img src="images/client.jpg" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <div class="client_info">
-                                            <div class="client_name">
-                                                <h5>
-                                                    Sara Cavill
-                                                </h5>
-                                                <h6>
-                                                    Customer
-                                                </h6>
-                                            </div>
-                                            <i class="fa fa-quote-left" aria-hidden="true"></i>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                            labore
-                                            et
-                                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                            cillum
-                                            dolore eu fugia
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-10 mx-auto">
-                                <div class="box">
-                                    <div class="img-box">
-                                        <img src="images/client.jpg" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <div class="client_info">
-                                            <div class="client_name">
-                                                <h5>
-                                                    Sara Cavill
-                                                </h5>
-                                                <h6>
-                                                    Customer
-                                                </h6>
-                                            </div>
-                                            <i class="fa fa-quote-left" aria-hidden="true"></i>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                            labore
-                                            et
-                                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                            cillum
-                                            dolore eu fugia
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel_btn-box">
-                <a class="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
-                    <i class="fa fa-angle-left" aria-hidden="true"></i>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end client section -->
+  </div>
+</div>
 
-<!-- info section -->
+<section class="products section bg-gray">
+	<div class="container">
+		<div class="row">
+			<div class="title text-center">
+				<h2>Vehicle Classes</h2>
+			</div>
+		</div>
+		<div class="row">
+			
+			<div class="col-md-4" th:each="classEntity : ${classEntityList}">
+				<div class="product-item">
+					<div class="product-thumb">
+<!--						<span class="bage">Sale</span>-->
+						<img class="img-responsive" th:src="${classEntity.imgUrl}" alt="product-img" />
+<!--						<div class="preview-meta">-->
+<!--							<ul>-->
+<!--								<li>-->
+<!--									<span  data-toggle="modal" data-target="#product-modal">-->
+<!--										<i class="tf-ion-ios-search-strong"></i>-->
+<!--									</span>-->
+<!--								</li>-->
+<!--								<li>-->
+<!--			                        <a href="#!" ><i class="tf-ion-ios-heart"></i></a>-->
+<!--								</li>-->
+<!--								<li>-->
+<!--									<a href="#!"><i class="tf-ion-android-cart"></i></a>-->
+<!--								</li>-->
+<!--							</ul>-->
+<!--                      	</div>-->
+					</div>
+					<div class="product-content">
+						<h4><a th:href="@{/carclass/{classId}(classId=${classEntity.classId})}" th:text="${classEntity.className}">Unknown</a></h4>
+						<p class="price" th:text="'Rental rate: ' + ${classEntity.rentalRate}">$200</p>
+					</div>
+				</div>
+			</div>
 
-<section class="info_section ">
-    <div class="container-fluid">
-        <div class="row info_main_row">
-            <div class="col-lg-7 mx-auto">
-                <div class="row">
-                    <div class="col-md-4 info-col">
-                        <div class="info_detail">
-                            <h4>
-                                About
-                            </h4>
-                            <p>
-                                Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
-                            </p>
-                            <div class="info_social">
-                                <a href="">
-                                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                                </a>
-                                <a href="">
-                                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                                </a>
-                                <a href="">
-                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                </a>
-                                <a href="">
-                                    <i class="fa fa-instagram" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 info-col">
-                        <div class="info_contact">
-                            <h4>
-                                Reach at..
-                            </h4>
-                            <div class="contact_link_box">
-                                <a href="">
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    <span>
-                      Location
-                    </span>
-                                </a>
-                                <a href="">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                    <span>
-                      Call +01 1234567890
-                    </span>
-                                </a>
-                                <a href="">
-                                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    <span>
-                      demo@gmail.com
-                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 info-col">
-                        <div class="info_contact">
-                            <h4>
-                                Subscribe
-                            </h4>
-                            <form action="#">
-                                <input type="text" placeholder="Enter email" />
-                                <button type="submit">
-                                    Subscribe
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 px-0 info-col">
-                <div class="map_container">
-                    <div class="map">
-                        <div id="googleMap"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		
+		<!-- Modal -->
+		<div class="modal product-modal fade" id="product-modal">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<i class="tf-ion-close"></i>
+			</button>
+		  	<div class="modal-dialog " role="document">
+		    	<div class="modal-content">
+			      	<div class="modal-body">
+			        	<div class="row">
+			        		<div class="col-md-8 col-sm-6 col-xs-12">
+			        			<div class="modal-image">
+				        			<img class="img-responsive" src="images/shop/products/modal-product.jpg" alt="product-img" />
+			        			</div>
+			        		</div>
+			        		<div class="col-md-4 col-sm-6 col-xs-12">
+			        			<div class="product-short-details">
+			        				<h2 class="product-title">GM Pendant, Basalt Grey</h2>
+			        				<p class="product-price">$200</p>
+			        				<p class="product-short-description">
+			        					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem iusto nihil cum. Illo laborum numquam rem aut officia dicta cumque.
+			        				</p>
+			        				<a href="cart.html" class="btn btn-main">Add To Cart</a>
+			        				<a href="product-single.html" class="btn btn-transparent">View Product Details</a>
+			        			</div>
+			        		</div>
+			        	</div>
+			        </div>
+		    	</div>
+		  	</div>
+		</div><!-- /.modal -->
+
+		</div>
+	</div>
 </section>
 
-<!-- end info section -->
-<!-- footer section -->
-<footer class="footer_section">
-    <div class="container">
-        <p>
-            &copy; <span id="displayYear"></span> All Rights Reserved By
-            <a href="https://www.11moban.com/">模板分享</a>
-        </p>
-    </div>
+<footer class="footer section text-center">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="social-media">
+					<li>
+						<a href="https://www.facebook.com/themefisher">
+							<i class="tf-ion-social-facebook"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.instagram.com/themefisher">
+							<i class="tf-ion-social-instagram"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.twitter.com/themefisher">
+							<i class="tf-ion-social-twitter"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.pinterest.com/themefisher/">
+							<i class="tf-ion-social-pinterest"></i>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-menu text-uppercase">
+					<li>
+						<a href="contact.html">CONTACT</a>
+					</li>
+					<li>
+						<a href="shop.html">SHOP</a>
+					</li>
+					<li>
+						<a href="pricing.html">Pricing</a>
+					</li>
+					<li>
+						<a href="contact.html">PRIVACY POLICY</a>
+					</li>
+				</ul>
+				<p class="copyright-text">Copyright &copy;2021, Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a></p>
+			</div>
+		</div>
+	</div>
 </footer>
-<!-- footer section -->
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+    
+    <!-- Main jQuery -->
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.1 -->
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Touchpin -->
+    <script src="plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+    <!-- Instagram Feed Js -->
+    <script src="plugins/instafeed/instafeed.min.js"></script>
+    <!-- Video Lightbox Plugin -->
+    <script src="plugins/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+    <!-- Count Down Js -->
+    <script src="plugins/syo-timer/build/jquery.syotimer.min.js"></script>
+
+    <!-- slick Carousel -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <script src="plugins/slick/slick-animation.min.js"></script>
+
+    <!-- Google Mapl -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script type="text/javascript" src="plugins/google-map/gmap.js"></script>
+
+    <!-- Main Js File -->
+    <script src="js/script.js"></script>
+    
 
 
-<!-- jQery -->
-<script src="js/jquery-3.4.1.min.js"></script>
-<!-- bootstrap js -->
-<script src="js/bootstrap.js"></script>
-<!-- custom js -->
-<script src="js/custom.js"></script>
-<!-- Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-</script>
-<!--  <script type="application/javascript">-->
-
-<!--    $('#logout-form').submit(function (ev) {-->
-<!--      ev.preventDefault(); // to stop the form from submitting-->
-<!--      var token = $("meta[name='_csrf']").attr("content");-->
-<!--      var paramName = $("meta[name='_csrf_parameter_name']").attr("content");-->
-<!--      $('<input>').attr('type', 'hidden').attr('name', paramName).attr('value', token).appendTo('#logout-form');-->
-<!--      this.submit();-->
-<!--    });-->
-<!--  </script>-->
-<!-- End Google Map -->
-</body>
-
-</html>
+  </body>
+  </html>
