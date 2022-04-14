@@ -4,6 +4,7 @@ import com.hqz.wow.entity.ClassEntity;
 import com.hqz.wow.service.ClassService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -23,11 +24,11 @@ public class RentalController {
         return "index";
     }
 
-    @RequestMapping("/carclass/{classId}")
+    @RequestMapping("/view-car/{classId}")
     public String carClass(@PathVariable int classId, Model model) {
         // todo
         ClassEntity classEntity = classService.getClassEntityById(classId);
         model.addAttribute("carClass", classEntity);
-        return "carclass";
+        return "viewcar";
     }
 }

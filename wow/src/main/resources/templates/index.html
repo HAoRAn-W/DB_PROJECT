@@ -361,7 +361,7 @@
 <!--                      	</div>-->
 					</div>
 					<div class="product-content">
-						<h4><a th:href="@{/carclass/{classId}(classId=${classEntity.classId})}" th:text="${classEntity.className}">Unknown</a></h4>
+						<h4><a th:href="@{/view-car/{classId}(classId=${classEntity.classId})}" th:text="${classEntity.className}">Unknown</a></h4>
 						<p class="price" th:text="'Rental rate: ' + ${classEntity.rentalRate}">$200</p>
 					</div>
 				</div>
