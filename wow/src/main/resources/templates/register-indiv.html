@@ -58,45 +58,110 @@ FACEBOOK: https://www.facebook.com/themefisher
       <div class="col-md-6 col-md-offset-3">
         <div class="block text-center">
           <a class="logo" href="index.html">
-            <img src="images/logo.png" alt="">
+            <img src="images/user.png" alt="">
           </a>
           <h2 class="text-center">Create Your Individual Account</h2>
           <form class="text-left clearfix" th:action="@{/register-indiv}" th:object="${indivCustomerVO}" method="post">
             <div class="form-group">
-              <input type="text" class="form-control"  th:field="*{firstName}" placeholder="First Name">
+              <label for="Fname">First Name</label>
+              <input type="text" id="Fname" class="form-control"  th:field="*{firstName}" placeholder="First Name">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control"  th:field="*{lastName}" placeholder="Last Name">
+              <label for="Lname">Last Name</label>
+              <input type="text" id="Lname" class="form-control"  th:field="*{lastName}" placeholder="Last Name">
             </div>
             <div class="form-group">
-              <input type="email" class="form-control"  th:field="*{customer.email}" placeholder="E-mail">
+              <label for="E-mail">E-mail</label>
+              <input type="email" id="E-mail" class="form-control"  th:field="*{customer.email}" placeholder="E-mail">
             </div>
             <div class="form-group">
-              <input type="password" class="form-control"  th:field="*{customer.password}" placeholder="Password">
+              <label for="Password">Password</label>
+              <input type="password" id="Password" class="form-control"  th:field="*{customer.password}" placeholder="Password">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control"  th:field="*{customer.street}" placeholder="Street">
+              <label for="Street">Street</label>
+              <input type="text" id="Street" class="form-control"  th:field="*{customer.street}" placeholder="Street">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control"  th:field="*{customer.city}" placeholder="City">
+              <label for="City">City</label>
+              <input type="text" id="City" class="form-control"  th:field="*{customer.city}" placeholder="City">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control"  th:field="*{customer.state}" placeholder="State">
+<!--              <input type="text" class="form-control"  th:field="*{customer.state}" placeholder="State">-->
+              <label for="State">State</label>
+              <select id="State" class="form-control" th:field="*{customer.state}">
+                <option value="AL">Alabama (AL)</option>
+                <option value="AK">Alaska (AK)</option>
+                <option value="AZ">Arizona (AZ)</option>
+                <option value="AR">Arkansas (AR)</option>
+                <option value="CA">California (CA)</option>
+                <option value="CO">Colorado (CO)</option>
+                <option value="CT">Connecticut (CT)</option>
+                <option value="DE">Delaware (DE)</option>
+                <option value="DC">District Of Columbia (DC)</option>
+                <option value="FL">Florida (FL)</option>
+                <option value="GA">Georgia (GA)</option>
+                <option value="HI">Hawaii (HI)</option>
+                <option value="ID">Idaho (ID)</option>
+                <option value="IL">Illinois (IL)</option>
+                <option value="IN">Indiana (IN)</option>
+                <option value="IA">Iowa (IA)</option>
+                <option value="KS">Kansas (KS)</option>
+                <option value="KY">Kentucky (KY)</option>
+                <option value="LA">Louisiana (LA)</option>
+                <option value="ME">Maine (ME)</option>
+                <option value="MD">Maryland (MD)</option>
+                <option value="MA">Massachusetts (MA)</option>
+                <option value="MI">Michigan (MI)</option>
+                <option value="MN">Minnesota (MN)</option>
+                <option value="MS">Mississippi (MS)</option>
+                <option value="MO">Missouri (MO)</option>
+                <option value="MT">Montana (MT)</option>
+                <option value="NE">Nebraska (NE)</option>
+                <option value="NV">Nevada (NV)</option>
+                <option value="NH">New Hampshire (NH)</option>
+                <option value="NJ">New Jersey (NJ)</option>
+                <option value="NM">New Mexico (NM)</option>
+                <option value="NY">New York (NY)</option>
+                <option value="NC">North Carolina (NC)</option>
+                <option value="ND">North Dakota (ND)</option>
+                <option value="OH">Ohio (OH)</option>
+                <option value="OK">Oklahoma (OK)</option>
+                <option value="OR">Oregon (OR)</option>
+                <option value="PA">Pennsylvania (PA)</option>
+                <option value="RI">Rhode Island (RI)</option>
+                <option value="SC">South Carolina (SC)</option>
+                <option value="SD">South Dakota (SD)</option>
+                <option value="TN">Tennessee (TN)</option>
+                <option value="TX">Texas (TX)</option>
+                <option value="UT">Utah (UT)</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+              </select>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control"  th:field="*{customer.zipcode}" placeholder="Zipcode">
+              <label for="Zipcode">Zipcode</label>
+              <input type="text" id="Zipcode" class="form-control"  th:field="*{customer.zipcode}" placeholder="Zipcode">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control"  th:field="*{customer.phone}" placeholder="Phone">
+              <label for="Phone">Phone</label>
+              <input type="text" id="Phone" class="form-control"  th:field="*{customer.phone}" placeholder="Phone">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control"  th:field="*{driverLicenseNo}" placeholder="Driver License No">
+              <label for="DriverLicenseNo">Driver License No</label>
+              <input type="text" id="DriverLicenseNo" class="form-control"  th:field="*{driverLicenseNo}" placeholder="Driver License No">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control"  th:field="*{insuranceName}" placeholder="Insurance Company Name">
+              <label for="InsuranceName">Insurance Company Name</label>
+              <input type="text" id="InsuranceName" class="form-control"  th:field="*{insuranceName}" placeholder="Insurance Company Name">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control"  th:field="*{insuranceNo}" placeholder="Insurance No">
+              <label for="InsuranceNo">Insurance No</label>
+              <input type="text" id="InsuranceNo" class="form-control"  th:field="*{insuranceNo}" placeholder="Insurance No">
             </div>
             <div class="text-center">
               <button type="submit" class="btn btn-main btn-small btn-round-full">Register</button>
