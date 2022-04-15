@@ -7,4 +7,8 @@ public class WowConstants {
 
     // corporation customer type
     public static final String CORP_TYPE = "C";
+
+    public static final String VEHICLE_RENT = "R";
+
+    public static final String VEHICLE_AVAILABLE = "A";
 }
