@@ -47,22 +47,24 @@
             <div class="form-group">
               <label for="E-mail">E-mail</label>
               <input type="email" id="E-mail" class="form-control"  th:field="*{email}" placeholder="E-mail">
-<!--                <div th:if="${#fields.hasErrors('customer.email')}" class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i> Better check</div>-->
+              <div th:if="${#fields.hasErrors('email')}" class="alert alert-danger alert-common" role="alert" th:errors="*{email}"></div>
             </div>
             <div class="form-group">
               <label for="Password">Password</label>
               <input type="password" id="Password" class="form-control"  th:field="*{password}" placeholder="Password">
+              <div th:if="${#fields.hasErrors('password')}" class="alert alert-danger alert-common" role="alert" th:errors="*{password}"></div>
             </div>
             <div class="form-group">
                 <label for="Street">Street</label>
                 <input type="text" id="Street" class="form-control"  th:field="*{street}" placeholder="Street">
+                <div th:if="${#fields.hasErrors('street')}" class="alert alert-danger alert-common" role="alert" th:errors="*{street}"></div>
             </div>
             <div class="form-group">
                 <label for="City">City</label>
                 <input type="text" id="City" class="form-control"  th:field="*{city}" placeholder="City">
+                <div th:if="${#fields.hasErrors('city')}" class="alert alert-danger alert-common" role="alert" th:errors="*{city}"></div>
             </div>
             <div class="form-group">
-<!--              <input type="text" class="form-control"  th:field="*{customer.state}" placeholder="State">-->
               <label for="State">State</label>
               <select id="State" class="form-control" th:field="*{state}">
                 <option value="AL">Alabama (AL)</option>
@@ -117,22 +119,28 @@
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
               </select>
+              <div th:if="${#fields.hasErrors('state')}" class="alert alert-danger alert-common" role="alert" th:errors="*{state}"></div>
             </div>
             <div class="form-group">
                 <label for="Zipcode">Zipcode</label>
               <input type="text" id="Zipcode" class="form-control"  th:field="*{zipcode}" placeholder="Zipcode">
+                <div th:if="${#fields.hasErrors('zipcode')}" class="alert alert-danger alert-common" role="alert" th:errors="*{zipcode}"></div>
             </div>
             <div class="form-group">
                 <label for="Phone">Phone</label>
               <input type="text" id="Phone" class="form-control"  th:field="*{phone}" placeholder="Phone">
+                <div th:if="${#fields.hasErrors('phone')}" class="alert alert-danger alert-common" role="alert" th:errors="*{phone}"></div>
             </div>
             <div class="form-group">
                 <label for="employeeId">Employee ID</label>
               <input type="text" id="employeeId" class="form-control"  th:field="*{employeeId}" placeholder="Your Employee Id">
+                <div th:if="${#fields.hasErrors('employeeId')}" class="alert alert-danger alert-common" role="alert" th:errors="*{employeeId}"></div>
             </div>
             <div class="form-group">
                 <label for="CorpRegNo">Corporation Register No</label>
               <input type="text" id="CorpRegNo" class="form-control"  th:field="*{corpRegisterNo}" placeholder="Corporation Register No">
+                <div th:if="${#fields.hasErrors('corpRegisterNo')}" class="alert alert-danger alert-common" role="alert" th:errors="*{corpRegisterNo}"></div>
+
             </div>
             <div class="text-center">
               <button type="submit" class="btn btn-main btn-small btn-round-full">Register</button>

@@ -60,7 +60,7 @@ public class CustomerServiceImpl implements CustomerService{
     public void registerIndivCustomer(IndivCustomerVO indivCustomerVO) {
         // register basic info
         CustomerEntity customerEntity = new CustomerEntity();
-        BeanUtils.copyProperties(indivCustomerVO.getCustomer(), customerEntity);
+        BeanUtils.copyProperties(indivCustomerVO, customerEntity);
         customerEntity.setCustomerType(WowConstants.INDIV_TYPE);
         customerMapper.insert(customerEntity);
 
