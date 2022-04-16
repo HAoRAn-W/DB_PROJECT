@@ -26,6 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web){
+        // configure Spring Security to ignore static resources
         web.ignoring()
                 .antMatchers("/css/**", "/images/**", "/js/**", "/plugins/**");
     }
