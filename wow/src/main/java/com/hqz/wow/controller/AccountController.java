@@ -31,16 +31,12 @@ public class AccountController {
     @GetMapping("/register-corp")
     public String registerCorp(Model model) {
         CorpCustomerVO corpCustomerVO = new CorpCustomerVO();
-//        CustomerVO customer = new CustomerVO();
-//        corpCustomerVO.setCustomer(customer);
         model.addAttribute("corpCustomerVO", corpCustomerVO);
         return "register-corp";
     }
     @GetMapping("/register-indiv")
     public String registerIndiv(Model model) {
         IndivCustomerVO indivCustomerVO = new IndivCustomerVO();
-        CustomerVO customer = new CustomerVO();
-        indivCustomerVO.setCustomer(customer);
         model.addAttribute("indivCustomerVO", indivCustomerVO);
         return "register-indiv";
     }
@@ -71,15 +67,15 @@ public class AccountController {
     @PostMapping("/register-indiv")
     public String registerSaveIndiv(@Valid @ModelAttribute("indivCustomerVO") IndivCustomerVO indivCustomerVO, BindingResult bindingResult, Model model) {
         //todo parameter check, employeeId unique check
-        if(customerService.checkIfCustomerExist(indivCustomerVO.getCustomer().getEmail())) {
+        if(customerService.checkIfCustomerExist(indivCustomerVO.getEmail())) {
             model.addAttribute("error", true);
-            return "register-corp";
+            return "register-indiv";
         }
         try {
             // 密码加密存储
             BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-            String password = bCryptPasswordEncoder.encode(indivCustomerVO.getCustomer().getPassword());
-            indivCustomerVO.getCustomer().setPassword(password);
+            String password = bCryptPasswordEncoder.encode(indivCustomerVO.getPassword());
+            indivCustomerVO.setPassword(password);
             // 写入数据库
             customerService.registerIndivCustomer(indivCustomerVO);
             //  重定向到 login 页面
