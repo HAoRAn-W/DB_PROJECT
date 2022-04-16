@@ -2,7 +2,8 @@ CREATE TABLE hqz_class (
     class_id    INT NOT NULL COMMENT 'The id for the class',
     class_name  VARCHAR(30) NOT NULL COMMENT 'Name of the class, small, mid-size, SUV, etc.',
     rental_rate DECIMAL(6, 2) NOT NULL COMMENT 'Rental rate per day.',
-    over_fee    DECIMAL(4, 2) NOT NULL COMMENT 'Fees for over mileage if rental service exceeds daily odometer limit.'
+    over_fee    DECIMAL(4, 2) NOT NULL COMMENT 'Fees for over mileage if rental service exceeds daily odometer limit.',
+    img_url    VARCHAR(2000) COMMENT 'CDN url for class images.'
 );
 
 ALTER TABLE hqz_class ADD CONSTRAINT hqz_class_pk PRIMARY KEY ( class_id );
@@ -11,7 +12,7 @@ ALTER TABLE hqz_class ADD CONSTRAINT hqz_class_pk PRIMARY KEY ( class_id );
 CREATE TABLE hqz_corp_cust (
     customer_id INT NOT NULL COMMENT 'ID for the customer',
     employee_id INT NOT NULL COMMENT 'Employee ID of the customer who rents the car on a corporate account' UNIQUE,
-    corp_reg_no VARCHAR(10) COMMENT 'The registration number of the customer''s company'
+    corp_reg_no VARCHAR(10) NOT NULL COMMENT 'The registration number of the customer''s company'
 );
 
 ALTER TABLE hqz_corp_cust ADD CONSTRAINT hqz_corp_cust_pk PRIMARY KEY ( customer_id );
@@ -76,7 +77,8 @@ CREATE TABLE hqz_office (
     city         VARCHAR(30) NOT NULL COMMENT 'City of office address',
     state        VARCHAR(30) NOT NULL COMMENT 'State of office address',
     zipcode      VARCHAR(10) NOT NULL COMMENT 'Postal code of office address',
-    office_phone VARCHAR(15) NOT NULL COMMENT 'Phone number of the office'
+    office_phone VARCHAR(15) NOT NULL COMMENT 'Phone number of the office',
+    img_url    VARCHAR(2000) COMMENT 'CDN url for office images.'
 );
 
 ALTER TABLE hqz_office ADD CONSTRAINT hqz_office_pk PRIMARY KEY ( office_id );
@@ -121,7 +123,8 @@ CREATE TABLE hqz_vehicle (
     license_plate_no VARCHAR(10) NOT NULL COMMENT 'License Plate number',
     class_id         INT COMMENT 'ID of the car class',
     office_id        INT COMMENT 'ID of the office',
-    vehicle_status   VARCHAR(1) NOT NULL COMMENT 'Staus of the vehicle, R for rent and A for available'
+    vehicle_status   VARCHAR(1) NOT NULL COMMENT 'Staus of the vehicle, R for rent and A for available',
+    img_url    VARCHAR(2000) COMMENT 'CDN url for vehicle images.'
 );
 
 ALTER TABLE hqz_vehicle ADD CONSTRAINT hqz_vehicle_pk PRIMARY KEY ( vin );
