@@ -1,8 +1,10 @@
 package com.hqz.wow.controller;
 
 import com.hqz.wow.entity.ClassEntity;
+import com.hqz.wow.entity.OfficeEntity;
 import com.hqz.wow.entity.VehicleEntity;
 import com.hqz.wow.service.ClassService;
+import com.hqz.wow.service.OfficeService;
 import com.hqz.wow.service.VehicleService;
 import com.hqz.wow.vo.CarFilterVO;
 import com.hqz.wow.vo.IndivCustomerVO;
@@ -26,6 +28,9 @@ public class RentalController {
     @Resource
     VehicleService vehicleService;
 
+    @Resource
+    OfficeService officeService;
+
     @RequestMapping("/index")
     public String index(Model model) {
         List<ClassEntity> classEntityList = classService.getClassEntityList();
@@ -39,13 +44,20 @@ public class RentalController {
         model.addAttribute("carFilter", carFilter);
         List<VehicleEntity> vehicleEntityList = vehicleService.getVehicleListByClass(classId);
         model.addAttribute("vehicleEntityList", vehicleEntityList);
-        // todo
+        model.addAttribute("classId", classId);
+        List<OfficeEntity> offices = officeService.getAllOffices();
+        model.addAttribute("offices", offices);
         return "viewcar";
     }
 
     @PostMapping("/view-car/{classId}")
-    public String viewCarWithFilter(@PathVariable int classId, @ModelAttribute("carFilter") CarFilterVO carFilter) {
-        //todo
+    public String viewCarWithFilter(@PathVariable int classId, @ModelAttribute("carFilter") CarFilterVO carFilter, Model model) {
+        model.addAttribute("carFilter", carFilter);
+        List<VehicleEntity> vehicleEntityList = vehicleService.getVehicleListByClassAndOffice(classId, carFilter.getOfficeId());
+        model.addAttribute("vehicleEntityList", vehicleEntityList);
+        model.addAttribute("classId", classId);
+        List<OfficeEntity> offices = officeService.getAllOffices();
+        model.addAttribute("offices", offices);
         return "viewcar";
     }
 

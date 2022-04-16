@@ -63,77 +63,75 @@
 		<div class="row">
 			<div class="col-md-3">
 				<div class="widget">
-					<h4 class="widget-title">Short By</h4>
-					<form method="post" action="#">
-                        <select class="form-control">
-                            <option>Man</option>
-                            <option>Women</option>
-                            <option>Accessories</option>
-                            <option>Shoes</option>
+					<h4 class="widget-title">Choose Your Rental Office</h4>
+					<form method="post" th:action="@{/view-car/{classId}(classId=${classId})}" th:object="${carFilter}">
+                        <select class="form-control" th:field="*{officeId}" onchange='if(this.value != 0) { this.form.submit(); }'>
+							<option selected disabled value="0">offices</option>
+                            <option th:each="office : ${offices}" th:value="${office.officeID}" th:text="${office.street} + '  ' + ${office.state}">office</option>
                         </select>
                     </form>
 	            </div>
-				<div class="widget product-category">
-					<h4 class="widget-title">Categories</h4>
-					<div class="panel-group commonAccordion" id="accordion" role="tablist" aria-multiselectable="true">
-					  	<div class="panel panel-default">
-						    <div class="panel-heading" role="tab" id="headingOne">
-						      	<h4 class="panel-title">
-						        	<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						          	Shoes
-						        	</a>
-						      	</h4>
-						    </div>
-					    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-							<div class="panel-body">
-								<ul>
-									<li><a href="#!">Brand & Twist</a></li>
-									<li><a href="#!">Shoe Color</a></li>
-									<li><a href="#!">Shoe Color</a></li>
-								</ul>
-							</div>
-					    </div>
-					  </div>
-					  <div class="panel panel-default">
-					    <div class="panel-heading" role="tab" id="headingTwo">
-					      <h4 class="panel-title">
-					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-					         	Duty Wear
-					        </a>
-					      </h4>
-					    </div>
-					    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-					    	<div class="panel-body">
-					     		<ul>
-									<li><a href="#!">Brand & Twist</a></li>
-									<li><a href="#!">Shoe Color</a></li>
-									<li><a href="#!">Shoe Color</a></li>
-								</ul>
-					    	</div>
-					    </div>
-					  </div>
-					  <div class="panel panel-default">
-					    <div class="panel-heading" role="tab" id="headingThree">
-					      <h4 class="panel-title">
-					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-					          	WorkOut Shoes
-					        </a>
-					      </h4>
-					    </div>
-					    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-					    	<div class="panel-body">
-					      		<ul>
-									<li><a href="#!">Brand & Twist</a></li>
-									<li><a href="#!">Shoe Color</a></li>
-									<li><a href="#!">Gladian Shoes</a></li>
-									<li><a href="#!">Swis Shoes</a></li>
-								</ul>
-					    	</div>
-					    </div>
-					  </div>
-					</div>
-					
-				</div>
+<!--				<div class="widget product-category">-->
+<!--					<h4 class="widget-title">Categories</h4>-->
+<!--					<div class="panel-group commonAccordion" id="accordion" role="tablist" aria-multiselectable="true">-->
+<!--					  	<div class="panel panel-default">-->
+<!--						    <div class="panel-heading" role="tab" id="headingOne">-->
+<!--						      	<h4 class="panel-title">-->
+<!--						        	<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
+<!--						          	Shoes-->
+<!--						        	</a>-->
+<!--						      	</h4>-->
+<!--						    </div>-->
+<!--					    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">-->
+<!--							<div class="panel-body">-->
+<!--								<ul>-->
+<!--									<li><a href="#!">Brand & Twist</a></li>-->
+<!--									<li><a href="#!">Shoe Color</a></li>-->
+<!--									<li><a href="#!">Shoe Color</a></li>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--					    </div>-->
+<!--					  </div>-->
+<!--					  <div class="panel panel-default">-->
+<!--					    <div class="panel-heading" role="tab" id="headingTwo">-->
+<!--					      <h4 class="panel-title">-->
+<!--					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+<!--					         	Duty Wear-->
+<!--					        </a>-->
+<!--					      </h4>-->
+<!--					    </div>-->
+<!--					    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">-->
+<!--					    	<div class="panel-body">-->
+<!--					     		<ul>-->
+<!--									<li><a href="#!">Brand & Twist</a></li>-->
+<!--									<li><a href="#!">Shoe Color</a></li>-->
+<!--									<li><a href="#!">Shoe Color</a></li>-->
+<!--								</ul>-->
+<!--					    	</div>-->
+<!--					    </div>-->
+<!--					  </div>-->
+<!--					  <div class="panel panel-default">-->
+<!--					    <div class="panel-heading" role="tab" id="headingThree">-->
+<!--					      <h4 class="panel-title">-->
+<!--					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+<!--					          	WorkOut Shoes-->
+<!--					        </a>-->
+<!--					      </h4>-->
+<!--					    </div>-->
+<!--					    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">-->
+<!--					    	<div class="panel-body">-->
+<!--					      		<ul>-->
+<!--									<li><a href="#!">Brand & Twist</a></li>-->
+<!--									<li><a href="#!">Shoe Color</a></li>-->
+<!--									<li><a href="#!">Gladian Shoes</a></li>-->
+<!--									<li><a href="#!">Swis Shoes</a></li>-->
+<!--								</ul>-->
+<!--					    	</div>-->
+<!--					    </div>-->
+<!--					  </div>-->
+<!--					</div>-->
+<!--					-->
+<!--				</div>-->
 			</div>
 			<div class="col-md-9">
 				<div class="row">
@@ -179,13 +177,10 @@
 									</div>
 									<div class="col-md-4 col-sm-6 col-xs-12">
 										<div class="product-short-details">
-											<h2 class="product-title">GM Pendant, Basalt Grey</h2>
-											<p class="product-price">$200</p>
-											<p class="product-short-description">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem iusto nihil cum. Illo laborum numquam rem aut officia dicta cumque.
-											</p>
-											<a href="cart.html" class="btn btn-main">Add To Cart</a>
-											<a href="product-single.html" class="btn btn-transparent">View Product Details</a>
+											<h2 class="product-title" th:text="${vehicleEntity.model}">Car model</h2>
+											<h4><a href="product-single.html" th:text="${vehicleEntity.make}">Car make</a></h4>
+											<p class="product-short-description"> todo: car description</p>
+											<a href="cart.html" class="btn btn-main">Rent it!</a>
 										</div>
 									</div>
 								</div>

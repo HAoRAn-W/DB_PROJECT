@@ -43,27 +43,28 @@
             <img src="images/user.png" alt="">
           </a>
           <h2 class="text-center">Create Your Corporation Account</h2>
-          <form class="text-left clearfix" th:action="@{/register-corp}" th:object="${corpCustomerVO}" method="post">
+          <form class="text-left clearfix" th:action="@{/register-corp}" th:object="${corpCustomerVO}" method="post" novalidate>
             <div class="form-group">
               <label for="E-mail">E-mail</label>
-              <input type="email" id="E-mail" class="form-control"  th:field="*{customer.email}" placeholder="E-mail">
+              <input type="email" id="E-mail" class="form-control"  th:field="*{email}" placeholder="E-mail">
+<!--                <div th:if="${#fields.hasErrors('customer.email')}" class="alert alert-danger alert-common" role="alert"><i class="tf-ion-close-circled"></i> Better check</div>-->
             </div>
             <div class="form-group">
               <label for="Password">Password</label>
-              <input type="password" id="Password" class="form-control"  th:field="*{customer.password}" placeholder="Password">
+              <input type="password" id="Password" class="form-control"  th:field="*{password}" placeholder="Password">
             </div>
             <div class="form-group">
                 <label for="Street">Street</label>
-                <input type="text" id="Street" class="form-control"  th:field="*{customer.street}" placeholder="Street">
+                <input type="text" id="Street" class="form-control"  th:field="*{street}" placeholder="Street">
             </div>
             <div class="form-group">
                 <label for="City">City</label>
-                <input type="text" id="City" class="form-control"  th:field="*{customer.city}" placeholder="City">
+                <input type="text" id="City" class="form-control"  th:field="*{city}" placeholder="City">
             </div>
             <div class="form-group">
 <!--              <input type="text" class="form-control"  th:field="*{customer.state}" placeholder="State">-->
               <label for="State">State</label>
-              <select id="State" class="form-control" th:field="*{customer.state}">
+              <select id="State" class="form-control" th:field="*{state}">
                 <option value="AL">Alabama (AL)</option>
                 <option value="AK">Alaska (AK)</option>
                 <option value="AZ">Arizona (AZ)</option>
@@ -119,11 +120,11 @@
             </div>
             <div class="form-group">
                 <label for="Zipcode">Zipcode</label>
-              <input type="text" id="Zipcode" class="form-control"  th:field="*{customer.zipcode}" placeholder="Zipcode">
+              <input type="text" id="Zipcode" class="form-control"  th:field="*{zipcode}" placeholder="Zipcode">
             </div>
             <div class="form-group">
                 <label for="Phone">Phone</label>
-              <input type="text" id="Phone" class="form-control"  th:field="*{customer.phone}" placeholder="Phone">
+              <input type="text" id="Phone" class="form-control"  th:field="*{phone}" placeholder="Phone">
             </div>
             <div class="form-group">
                 <label for="employeeId">Employee ID</label>
