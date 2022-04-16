@@ -61,6 +61,8 @@
               <label for="E-mail">E-mail</label>
               <input type="email" id="E-mail" class="form-control"  th:field="*{email}" placeholder="E-mail">
                 <div th:if="${#fields.hasErrors('email')}" class="alert alert-danger alert-common" role="alert" th:errors="*{email}"></div>
+              <div th:if="${emailExists}" class="alert alert-danger alert-common" role="alert">E-mail address already exists</div>
+
             </div>
             <div class="form-group">
               <label for="Password">Password</label>

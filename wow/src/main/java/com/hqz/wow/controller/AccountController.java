@@ -44,8 +44,10 @@ public class AccountController {
     @PostMapping("/register-corp")
     public String registerSaveCorp(@Valid @ModelAttribute("corpCustomerVO") CorpCustomerVO corpCustomerVO, BindingResult bindingResult, Model model) {
         //todo parameter check, employeeId unique check
-        if(customerService.checkIfCustomerExist(corpCustomerVO.getEmail())) {
-            model.addAttribute("error", true);
+        if(customerService.checkIfCustomerExist(corpCustomerVO.getEmail()) || bindingResult.hasErrors()) {
+            if(customerService.checkIfCustomerExist(corpCustomerVO.getEmail())) {
+                model.addAttribute("emailExists", true);
+            }
             return "register-corp";
         }
         try {
@@ -67,8 +69,10 @@ public class AccountController {
     @PostMapping("/register-indiv")
     public String registerSaveIndiv(@Valid @ModelAttribute("indivCustomerVO") IndivCustomerVO indivCustomerVO, BindingResult bindingResult, Model model) {
         //todo parameter check, employeeId unique check
-        if(customerService.checkIfCustomerExist(indivCustomerVO.getEmail())) {
-            model.addAttribute("error", true);
+        if(customerService.checkIfCustomerExist(indivCustomerVO.getEmail()) || bindingResult.hasErrors()) {
+            if(customerService.checkIfCustomerExist(indivCustomerVO.getEmail())) {
+                model.addAttribute("emailExists", true);
+            }
             return "register-indiv";
         }
         try {
