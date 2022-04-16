@@ -7,6 +7,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
 @Data
+@Deprecated
 public class CustomerVO {
     @Email(message = "Please input valid email address")
     private String email;

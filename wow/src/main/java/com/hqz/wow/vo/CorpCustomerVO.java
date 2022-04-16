@@ -10,7 +10,6 @@ import javax.validation.constraints.Pattern;
 
 @Data
 public class CorpCustomerVO {
-//    private CustomerVO customer;
 
     @Email(message = "Please input valid email address")
     private String email;
