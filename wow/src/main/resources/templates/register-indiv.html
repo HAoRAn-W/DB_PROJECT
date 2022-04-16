@@ -3,212 +3,235 @@
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5" xmlns="http://www.w3.org/1999/html">
 <head>
 
-  <!-- Basic Page Needs
-  ================================================== -->
-  <meta charset="utf-8">
-  <title>WoW | Register</title>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>WoW | Register</title>
 
-  <!-- Mobile Specific Metas
-  ================================================== -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Construction Html5 Template">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="author" content="Themefisher">
-  <meta name="generator" content="Themefisher Constra HTML Template v1.0">
-  
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-  
-  <!-- Themefisher Icon font -->
-  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
-  <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-  
-  <!-- Animate css -->
-  <link rel="stylesheet" href="plugins/animate/animate.css">
-  <!-- Slick Carousel -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
-  
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Construction Html5 Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="author" content="Themefisher">
+    <meta name="generator" content="Themefisher Constra HTML Template v1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png"/>
+
+    <!-- Themefisher Icon font -->
+    <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Animate css -->
+    <link rel="stylesheet" href="plugins/animate/animate.css">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body id="body">
 
 <section class="signin-page account">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="block text-center">
-          <a class="logo" href="index.html">
-            <img src="images/user.png" alt="">
-          </a>
-          <h2 class="text-center">Create Your Individual Account</h2>
-          <form class="text-left clearfix" th:action="@{/register-indiv}" th:object="${indivCustomerVO}" method="post" novalidate>
-            <div class="form-group">
-              <label for="Fname">First Name</label>
-              <input type="text" id="Fname" class="form-control"  th:field="*{firstName}" placeholder="First Name">
-                <div th:if="${#fields.hasErrors('firstName')}" class="alert alert-danger alert-common" role="alert" th:errors="*{firstName}"></div>
-            </div>
-            <div class="form-group">
-              <label for="Lname">Last Name</label>
-              <input type="text" id="Lname" class="form-control"  th:field="*{lastName}" placeholder="Last Name">
-                <div th:if="${#fields.hasErrors('lastName')}" class="alert alert-danger alert-common" role="alert" th:errors="*{lastName}"></div>
-            </div>
-            <div class="form-group">
-              <label for="E-mail">E-mail</label>
-              <input type="email" id="E-mail" class="form-control"  th:field="*{email}" placeholder="E-mail">
-                <div th:if="${#fields.hasErrors('email')}" class="alert alert-danger alert-common" role="alert" th:errors="*{email}"></div>
-              <div th:if="${emailExists}" class="alert alert-danger alert-common" role="alert">E-mail address already exists</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="block text-center">
+                    <a class="logo" href="index.html">
+                        <img src="images/user.png" alt="">
+                    </a>
+                    <h2 class="text-center">Create Your Individual Account</h2>
+                    <form class="text-left clearfix" th:action="@{/register-indiv}" th:object="${indivCustomerVO}"
+                          method="post" novalidate>
+                        <div class="form-group">
+                            <label for="Fname">First Name</label>
+                            <input type="text" id="Fname" class="form-control" th:field="*{firstName}"
+                                   placeholder="First Name">
+                            <div th:if="${#fields.hasErrors('firstName')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{firstName}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Lname">Last Name</label>
+                            <input type="text" id="Lname" class="form-control" th:field="*{lastName}"
+                                   placeholder="Last Name">
+                            <div th:if="${#fields.hasErrors('lastName')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{lastName}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="E-mail">E-mail</label>
+                            <input type="email" id="E-mail" class="form-control" th:field="*{email}"
+                                   placeholder="E-mail">
+                            <div th:if="${#fields.hasErrors('email')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{email}"></div>
+                            <div th:if="${emailExists}" class="alert alert-danger alert-common" role="alert">E-mail
+                                address already exists
+                            </div>
 
-            </div>
-            <div class="form-group">
-              <label for="Password">Password</label>
-              <input type="password" id="Password" class="form-control"  th:field="*{password}" placeholder="Password">
-                <div th:if="${#fields.hasErrors('password')}" class="alert alert-danger alert-common" role="alert" th:errors="*{password}"></div>
-            </div>
-            <div class="form-group">
-              <label for="Street">Street</label>
-              <input type="text" id="Street" class="form-control"  th:field="*{street}" placeholder="Street">
-                <div th:if="${#fields.hasErrors('street')}" class="alert alert-danger alert-common" role="alert" th:errors="*{street}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">Password</label>
+                            <input type="password" id="Password" class="form-control" th:field="*{password}"
+                                   placeholder="Password">
+                            <div th:if="${#fields.hasErrors('password')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{password}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Street">Street</label>
+                            <input type="text" id="Street" class="form-control" th:field="*{street}"
+                                   placeholder="Street">
+                            <div th:if="${#fields.hasErrors('street')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{street}"></div>
 
-            </div>
-            <div class="form-group">
-              <label for="City">City</label>
-              <input type="text" id="City" class="form-control"  th:field="*{city}" placeholder="City">
-                <div th:if="${#fields.hasErrors('city')}" class="alert alert-danger alert-common" role="alert" th:errors="*{city}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="City">City</label>
+                            <input type="text" id="City" class="form-control" th:field="*{city}" placeholder="City">
+                            <div th:if="${#fields.hasErrors('city')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{city}"></div>
 
-            </div>
-            <div class="form-group">
-              <label for="State">State</label>
-              <select id="State" class="form-control" th:field="*{state}">
-                <option value="AL">Alabama (AL)</option>
-                <option value="AK">Alaska (AK)</option>
-                <option value="AZ">Arizona (AZ)</option>
-                <option value="AR">Arkansas (AR)</option>
-                <option value="CA">California (CA)</option>
-                <option value="CO">Colorado (CO)</option>
-                <option value="CT">Connecticut (CT)</option>
-                <option value="DE">Delaware (DE)</option>
-                <option value="DC">District Of Columbia (DC)</option>
-                <option value="FL">Florida (FL)</option>
-                <option value="GA">Georgia (GA)</option>
-                <option value="HI">Hawaii (HI)</option>
-                <option value="ID">Idaho (ID)</option>
-                <option value="IL">Illinois (IL)</option>
-                <option value="IN">Indiana (IN)</option>
-                <option value="IA">Iowa (IA)</option>
-                <option value="KS">Kansas (KS)</option>
-                <option value="KY">Kentucky (KY)</option>
-                <option value="LA">Louisiana (LA)</option>
-                <option value="ME">Maine (ME)</option>
-                <option value="MD">Maryland (MD)</option>
-                <option value="MA">Massachusetts (MA)</option>
-                <option value="MI">Michigan (MI)</option>
-                <option value="MN">Minnesota (MN)</option>
-                <option value="MS">Mississippi (MS)</option>
-                <option value="MO">Missouri (MO)</option>
-                <option value="MT">Montana (MT)</option>
-                <option value="NE">Nebraska (NE)</option>
-                <option value="NV">Nevada (NV)</option>
-                <option value="NH">New Hampshire (NH)</option>
-                <option value="NJ">New Jersey (NJ)</option>
-                <option value="NM">New Mexico (NM)</option>
-                <option value="NY">New York (NY)</option>
-                <option value="NC">North Carolina (NC)</option>
-                <option value="ND">North Dakota (ND)</option>
-                <option value="OH">Ohio (OH)</option>
-                <option value="OK">Oklahoma (OK)</option>
-                <option value="OR">Oregon (OR)</option>
-                <option value="PA">Pennsylvania (PA)</option>
-                <option value="RI">Rhode Island (RI)</option>
-                <option value="SC">South Carolina (SC)</option>
-                <option value="SD">South Dakota (SD)</option>
-                <option value="TN">Tennessee (TN)</option>
-                <option value="TX">Texas (TX)</option>
-                <option value="UT">Utah (UT)</option>
-                <option value="VT">Vermont</option>
-                <option value="VA">Virginia</option>
-                <option value="WA">Washington</option>
-                <option value="WV">West Virginia</option>
-                <option value="WI">Wisconsin</option>
-                <option value="WY">Wyoming</option>
-              </select>
-                <div th:if="${#fields.hasErrors('state')}" class="alert alert-danger alert-common" role="alert" th:errors="*{state}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="State">State</label>
+                            <select id="State" class="form-control" th:field="*{state}">
+                                <option value="AL">Alabama (AL)</option>
+                                <option value="AK">Alaska (AK)</option>
+                                <option value="AZ">Arizona (AZ)</option>
+                                <option value="AR">Arkansas (AR)</option>
+                                <option value="CA">California (CA)</option>
+                                <option value="CO">Colorado (CO)</option>
+                                <option value="CT">Connecticut (CT)</option>
+                                <option value="DE">Delaware (DE)</option>
+                                <option value="DC">District Of Columbia (DC)</option>
+                                <option value="FL">Florida (FL)</option>
+                                <option value="GA">Georgia (GA)</option>
+                                <option value="HI">Hawaii (HI)</option>
+                                <option value="ID">Idaho (ID)</option>
+                                <option value="IL">Illinois (IL)</option>
+                                <option value="IN">Indiana (IN)</option>
+                                <option value="IA">Iowa (IA)</option>
+                                <option value="KS">Kansas (KS)</option>
+                                <option value="KY">Kentucky (KY)</option>
+                                <option value="LA">Louisiana (LA)</option>
+                                <option value="ME">Maine (ME)</option>
+                                <option value="MD">Maryland (MD)</option>
+                                <option value="MA">Massachusetts (MA)</option>
+                                <option value="MI">Michigan (MI)</option>
+                                <option value="MN">Minnesota (MN)</option>
+                                <option value="MS">Mississippi (MS)</option>
+                                <option value="MO">Missouri (MO)</option>
+                                <option value="MT">Montana (MT)</option>
+                                <option value="NE">Nebraska (NE)</option>
+                                <option value="NV">Nevada (NV)</option>
+                                <option value="NH">New Hampshire (NH)</option>
+                                <option value="NJ">New Jersey (NJ)</option>
+                                <option value="NM">New Mexico (NM)</option>
+                                <option value="NY">New York (NY)</option>
+                                <option value="NC">North Carolina (NC)</option>
+                                <option value="ND">North Dakota (ND)</option>
+                                <option value="OH">Ohio (OH)</option>
+                                <option value="OK">Oklahoma (OK)</option>
+                                <option value="OR">Oregon (OR)</option>
+                                <option value="PA">Pennsylvania (PA)</option>
+                                <option value="RI">Rhode Island (RI)</option>
+                                <option value="SC">South Carolina (SC)</option>
+                                <option value="SD">South Dakota (SD)</option>
+                                <option value="TN">Tennessee (TN)</option>
+                                <option value="TX">Texas (TX)</option>
+                                <option value="UT">Utah (UT)</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                            <div th:if="${#fields.hasErrors('state')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{state}"></div>
 
-            </div>
-            <div class="form-group">
-              <label for="Zipcode">Zipcode</label>
-              <input type="text" id="Zipcode" class="form-control"  th:field="*{zipcode}" placeholder="Zipcode">
-                <div th:if="${#fields.hasErrors('zipcode')}" class="alert alert-danger alert-common" role="alert" th:errors="*{zipcode}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Zipcode">Zipcode</label>
+                            <input type="text" id="Zipcode" class="form-control" th:field="*{zipcode}"
+                                   placeholder="Zipcode">
+                            <div th:if="${#fields.hasErrors('zipcode')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{zipcode}"></div>
 
-            </div>
-            <div class="form-group">
-              <label for="Phone">Phone</label>
-              <input type="text" id="Phone" class="form-control"  th:field="*{phone}" placeholder="Phone">
-                <div th:if="${#fields.hasErrors('phone')}" class="alert alert-danger alert-common" role="alert" th:errors="*{phone}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Phone">Phone</label>
+                            <input type="text" id="Phone" class="form-control" th:field="*{phone}" placeholder="Phone">
+                            <div th:if="${#fields.hasErrors('phone')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{phone}"></div>
 
-            </div>
-            <div class="form-group">
-              <label for="DriverLicenseNo">Driver License No</label>
-              <input type="text" id="DriverLicenseNo" class="form-control"  th:field="*{driverLicenseNo}" placeholder="Driver License No">
-                <div th:if="${#fields.hasErrors('driverLicenseNo')}" class="alert alert-danger alert-common" role="alert" th:errors="*{driverLicenseNo}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="DriverLicenseNo">Driver License No</label>
+                            <input type="text" id="DriverLicenseNo" class="form-control" th:field="*{driverLicenseNo}"
+                                   placeholder="Driver License No">
+                            <div th:if="${#fields.hasErrors('driverLicenseNo')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{driverLicenseNo}"></div>
 
-            </div>
-            <div class="form-group">
-              <label for="InsuranceName">Insurance Company Name</label>
-              <input type="text" id="InsuranceName" class="form-control"  th:field="*{insuranceName}" placeholder="Insurance Company Name">
-                <div th:if="${#fields.hasErrors('insuranceName')}" class="alert alert-danger alert-common" role="alert" th:errors="*{insuranceName}"></div>
-            </div>
-            <div class="form-group">
-              <label for="InsuranceNo">Insurance No</label>
-              <input type="text" id="InsuranceNo" class="form-control"  th:field="*{insuranceNo}" placeholder="Insurance No">
-              <div th:if="${#fields.hasErrors('insuranceNo')}" class="alert alert-danger alert-common" role="alert" th:errors="*{insuranceNo}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="InsuranceName">Insurance Company Name</label>
+                            <input type="text" id="InsuranceName" class="form-control" th:field="*{insuranceName}"
+                                   placeholder="Insurance Company Name">
+                            <div th:if="${#fields.hasErrors('insuranceName')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{insuranceName}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="InsuranceNo">Insurance No</label>
+                            <input type="text" id="InsuranceNo" class="form-control" th:field="*{insuranceNo}"
+                                   placeholder="Insurance No">
+                            <div th:if="${#fields.hasErrors('insuranceNo')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{insuranceNo}"></div>
 
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-main btn-small btn-round-full">Register</button>
+                        </div>
+                    </form>
+                    <p class="mt-20">Already hava an account ?<a th:href="@{/login}"> Login</a></p>
+                    <!--          <p><a href="forget-password.html"> Forgot your password?</a></p>-->
+                </div>
             </div>
-            <div class="text-center">
-              <button type="submit" class="btn btn-main btn-small btn-round-full">Register</button>
-            </div>
-          </form>
-          <p class="mt-20">Already hava an account ?<a th:href="@{/login}"> Login</a></p>
-<!--          <p><a href="forget-password.html"> Forgot your password?</a></p>-->
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
-    <!-- 
-    Essential Scripts
-    =====================================-->
-    
-    <!-- Main jQuery -->
-    <script src="plugins/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap 3.1 -->
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-    <!-- Bootstrap Touchpin -->
-    <script src="plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
-    <!-- Instagram Feed Js -->
-    <script src="plugins/instafeed/instafeed.min.js"></script>
-    <!-- Video Lightbox Plugin -->
-    <script src="plugins/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
-    <!-- Count Down Js -->
-    <script src="plugins/syo-timer/build/jquery.syotimer.min.js"></script>
+<!--
+Essential Scripts
+=====================================-->
 
-    <!-- slick Carousel -->
-    <script src="plugins/slick/slick.min.js"></script>
-    <script src="plugins/slick/slick-animation.min.js"></script>
+<!-- Main jQuery -->
+<script src="plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.1 -->
+<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- Bootstrap Touchpin -->
+<script src="plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+<!-- Instagram Feed Js -->
+<script src="plugins/instafeed/instafeed.min.js"></script>
+<!-- Video Lightbox Plugin -->
+<script src="plugins/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+<!-- Count Down Js -->
+<script src="plugins/syo-timer/build/jquery.syotimer.min.js"></script>
 
-    <!-- Google Mapl -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-    <script type="text/javascript" src="plugins/google-map/gmap.js"></script>
+<!-- slick Carousel -->
+<script src="plugins/slick/slick.min.js"></script>
+<script src="plugins/slick/slick-animation.min.js"></script>
 
-    <!-- Main Js File -->
-    <script src="js/script.js"></script>
-    
+<!-- Google Mapl -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<script type="text/javascript" src="plugins/google-map/gmap.js"></script>
+
+<!-- Main Js File -->
+<script src="js/script.js"></script>
 
 
-  </body>
-  </html>
+</body>
+</html>
