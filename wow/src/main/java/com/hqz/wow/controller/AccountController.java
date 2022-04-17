@@ -1,8 +1,10 @@
 package com.hqz.wow.controller;
 
 import com.hqz.wow.service.CustomerService;
+import com.hqz.wow.vo.ConfirmEmailVO;
 import com.hqz.wow.vo.CorpCustomerVO;
 import com.hqz.wow.vo.IndivCustomerVO;
+import com.hqz.wow.vo.ResetPasswordVO;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -70,7 +73,7 @@ public class AccountController {
         }
     }
 
-    // handle individual customer registartion
+    // handle individual customer registration
     @PostMapping("/register-indiv")
     public String registerSaveIndiv(@Valid @ModelAttribute("indivCustomerVO") IndivCustomerVO indivCustomerVO, BindingResult bindingResult, Model model) {
         if (customerService.checkIfCustomerExist(indivCustomerVO.getEmail()) || bindingResult.hasErrors()) {
@@ -108,5 +111,44 @@ public class AccountController {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         return "redirect:/login?logout";
+    }
+
+    @GetMapping("/confirm-email")
+    public String forgetPassword(Model model) {
+        return "confirm-email";
+    }
+
+    @PostMapping("/reset-password")
+    public String resetPassword(HttpServletRequest request, Model model) {
+        String email = request.getParameter("email");
+        if (!customerService.checkIfCustomerExist(email)) {
+            model.addAttribute("emailNotExists", true);
+            return "confirm-email";
+        }
+        ResetPasswordVO resetPasswordVO = new ResetPasswordVO();
+        model.addAttribute("resetPasswordVO", resetPasswordVO);
+        model.addAttribute("email", email);
+
+        return "reset-password";
+    }
+
+    @PostMapping("/reset-password-process")
+    public String processResetPassword(@ModelAttribute("resetPasswordVO") ResetPasswordVO resetPasswordVO, HttpServletRequest request, Model model) {
+        if (!resetPasswordVO.getPassword().equals(resetPasswordVO.getConfirmPassword())) {
+            model.addAttribute("passwordMismatch", true);
+            return "reset-password";
+        }
+        try {
+            BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+            String password = bCryptPasswordEncoder.encode(resetPasswordVO.getPassword());
+            resetPasswordVO.setPassword(password);
+            String email = request.getParameter("email");
+            customerService.resetPassword(email, resetPasswordVO);
+
+            return "/login";
+        } catch (Exception e) {
+            model.addAttribute("error", true);
+            return "reset-password";
+        }
     }
 }

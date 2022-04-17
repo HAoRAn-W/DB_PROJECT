@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5" xmlns="http://www.w3.org/1999/html">
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
 
     <!-- Basic Page Needs
@@ -37,41 +37,27 @@
 
 <body id="body">
 
-<section class="signin-page account">
+<section class="forget-password-page account">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div class="block text-center">
-                    <img src="images/user.png" alt="">
-                    <h2 class="text-center">Login</h2>
-                    <form class="text-left clearfix" th:action="@{/login}" method="post">
+                    <a class="logo" href="index.html">
+                        <img src="images/user.png" alt="">
+                    </a>
+                    <h2 class="text-center">Confirm your e-mail</h2>
+                    <form class="text-left clearfix" method="post" th:action="@{/reset-password}" novalidate>
+                        <p>Forget your password? No worry! Please enter the email address for your account. You will be
+                            able to choose a new password for your account.</p>
                         <div class="form-group">
-                            <input type="text" id="username" name="username" class="form-control" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" id="password" name="password" class="form-control"
-                                   placeholder="Password">
+                            <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+                                   placeholder="Account email address">
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-main btn-small btn-round-full">Login</button>
+                            <button type="submit" class="btn btn-main text-center">Confirm e-mail</button>
                         </div>
                     </form>
-                    </br>
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="check-box">
-                                <input type="checkbox" id="remember" name="remember-me">
-                                <label for="remember">Remember me</label>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="mt-20">New in this site ? Create
-                        </br>
-                        <a th:href="@{/register-indiv}"> Individual Account </a>
-                        or
-                        <a th:href="@{/register-corp}"> Corp Account</a>
-                    </p>
-                    <p><a th:href="@{/confirm-email}"> Forgot your password?</a></p>
+                    <p class="mt-20"><a href="login.html">Back to log in</a></p>
                 </div>
             </div>
         </div>

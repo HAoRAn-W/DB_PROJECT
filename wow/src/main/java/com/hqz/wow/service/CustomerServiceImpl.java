@@ -1,6 +1,7 @@
 package com.hqz.wow.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.hqz.wow.entity.CorpCustomerEntity;
 import com.hqz.wow.entity.CustomerEntity;
 import com.hqz.wow.entity.IndivCustomerEntity;
@@ -10,6 +11,7 @@ import com.hqz.wow.mapper.IndivCustomerMapper;
 import com.hqz.wow.util.WowConstants;
 import com.hqz.wow.vo.CorpCustomerVO;
 import com.hqz.wow.vo.IndivCustomerVO;
+import com.hqz.wow.vo.ResetPasswordVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -33,6 +35,8 @@ public class CustomerServiceImpl implements CustomerService{
         wrapper.eq("c_email", email);
         return customerMapper.selectOne(wrapper);
     }
+
+    //todo get customer detail info
 
     @Override
     public boolean checkIfCustomerExist(String email) {
@@ -74,5 +78,12 @@ public class CustomerServiceImpl implements CustomerService{
         indivCustomerEntity.setInsuranceName(indivCustomerVO.getInsuranceName());
         indivCustomerEntity.setInsuranceNo(indivCustomerVO.getInsuranceNo());
         indivCustomerMapper.insert(indivCustomerEntity);
+    }
+
+    @Override
+    public void resetPassword(String email, ResetPasswordVO resetPasswordVO) {
+        CustomerEntity customerEntity= findCustomerByEmail(email);
+        customerEntity.setPassword(resetPasswordVO.getPassword());
+        customerMapper.updateById(customerEntity);
     }
 }

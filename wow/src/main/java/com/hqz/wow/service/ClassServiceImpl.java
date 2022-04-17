@@ -15,8 +15,7 @@ public class ClassServiceImpl implements ClassService{
 
     @Override
     public List<ClassEntity> getClassEntityList() {
-        List<ClassEntity> classList = classMapper.selectList(null);
-        return classList;
+        return classMapper.selectList(null);
     }
 
     @Override
