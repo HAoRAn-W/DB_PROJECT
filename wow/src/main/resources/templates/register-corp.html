@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div class="block text-center">
-                    <a class="logo" href="index.html">
+                    <a class="logo" th:href="@{/login}">
                         <img src="images/user.png" alt="">
                     </a>
                     <h2 class="text-center">Create Your Corporation Account</h2>
@@ -124,12 +124,12 @@
                                 <option value="TN">Tennessee (TN)</option>
                                 <option value="TX">Texas (TX)</option>
                                 <option value="UT">Utah (UT)</option>
-                                <option value="VT">Vermont</option>
-                                <option value="VA">Virginia</option>
-                                <option value="WA">Washington</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WY">Wyoming</option>
+                                <option value="VT">Vermont (VT)</option>
+                                <option value="VA">Virginia (VA)</option>
+                                <option value="WA">Washington (WA)</option>
+                                <option value="WV">West Virginia (WV)</option>
+                                <option value="WI">Wisconsin (WI)</option>
+                                <option value="WY">Wyoming (WY)</option>
                             </select>
                             <div th:if="${#fields.hasErrors('state')}" class="alert alert-danger alert-common"
                                  role="alert" th:errors="*{state}"></div>

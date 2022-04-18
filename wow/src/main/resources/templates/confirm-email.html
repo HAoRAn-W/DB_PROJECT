@@ -6,7 +6,7 @@
     <!-- Basic Page Needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Aviato | E-commerce template</title>
+    <title>WoW | Confirm email</title>
 
     <!-- Mobile Specific Metas
     ================================================== -->
@@ -42,8 +42,8 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div class="block text-center">
-                    <a class="logo" href="index.html">
-                        <img src="images/user.png" alt="">
+                    <a class="logo" th:href="@{/login}">
+                        <img src="images/email.png" alt="">
                     </a>
                     <h2 class="text-center">Confirm your e-mail</h2>
                     <form class="text-left clearfix" method="post" th:action="@{/reset-password}" novalidate>
@@ -57,7 +57,7 @@
                             <button type="submit" class="btn btn-main text-center">Confirm e-mail</button>
                         </div>
                     </form>
-                    <p class="mt-20"><a href="login.html">Back to log in</a></p>
+                    <p class="mt-20"><a th:href="@{/login}">Back to log in</a></p>
                 </div>
             </div>
         </div>
