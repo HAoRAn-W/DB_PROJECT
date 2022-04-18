@@ -1,7 +1,6 @@
 package com.hqz.wow.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.hqz.wow.entity.CorpCustomerEntity;
 import com.hqz.wow.entity.CustomerEntity;
 import com.hqz.wow.entity.IndivCustomerEntity;
