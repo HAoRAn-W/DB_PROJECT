@@ -89,7 +89,7 @@ CREATE TABLE hqz_payment (
     payment_method VARCHAR(10) NOT NULL COMMENT 'Payment method (Credit, decit, etc.)',
     card_no        VARCHAR(20) NOT NULL COMMENT 'Payment card number',
     service_id     INT COMMENT 'ID for the service',
-    paid_amount    DECIMAL(8, 2) NOT NULL COMMENT 'Paid amount'
+    paid_amount    DECIMAL(8, 2) NOT NULL DEFAULT 0 COMMENT 'Paid amount'
 );
 
 CREATE TABLE hqz_rental_service (
@@ -104,7 +104,7 @@ CREATE TABLE hqz_rental_service (
     customer_id   INT COMMENT 'ID of the customer',
     vin           VARCHAR(17) COMMENT 'VIN of the rent car',
     coupon_id     BIGINT COMMENT 'ID for the coupon',
-    service_status VARCHAR(1) NOT NULL COMMENT 'Status of the rantal service'
+    service_status VARCHAR(1) NOT NULL DEFAULT 'N' COMMENT 'Status of the rantal service'
 );
 
 ALTER TABLE hqz_rental_service
@@ -370,4 +370,6 @@ ALTER TABLE hqz_coupon ADD CONSTRAINT coupon_date_check CHECK (valid_from_date <
 
 -- Add check for service_status in hqz_rental_service Y for complete, N for ongoing
 ALTER TABLE hqz_rental_service ADD CONSTRAINT service_status_check CHECK (service_status='Y' OR service_status='N');
+
+
 
