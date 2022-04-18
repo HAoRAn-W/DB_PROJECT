@@ -84,25 +84,20 @@ CREATE TABLE hqz_office (
 ALTER TABLE hqz_office ADD CONSTRAINT hqz_office_pk PRIMARY KEY ( office_id );
 
 CREATE TABLE hqz_payment (
-    payment_id     BIGINT NOT NULL COMMENT 'ID of the payment',
+    payment_id     BIGINT NOT NULL COMMENT 'ID of the payment' AUTO_INCREMENT,
     pay_date       DATETIME NOT NULL COMMENT 'Date of this payment',
     payment_method VARCHAR(10) NOT NULL COMMENT 'Payment method (Credit, decit, etc.)',
     card_no        VARCHAR(20) NOT NULL COMMENT 'Payment card number',
-    service_id     INT COMMENT 'ID for the service'
+    service_id     INT COMMENT 'ID for the service',
+    paid_amount    DECIMAL(8, 2) NOT NULL COMMENT 'Paid amount'
 );
 
 ALTER TABLE hqz_payment ADD CONSTRAINT hqz_payment_pk PRIMARY KEY ( payment_id );
 
 CREATE TABLE hqz_rental_service (
-    service_id    INT NOT NULL COMMENT 'ID of the service',
-    p_street      VARCHAR(30) NOT NULL COMMENT 'Pick up street',
-    p_city        VARCHAR(20) NOT NULL COMMENT 'Pick up city',
-    p_state       VARCHAR(30) NOT NULL COMMENT 'Pick up state',
-    p_zipcode     VARCHAR(10) NOT NULL COMMENT 'Pick up zipcode',
-    d_street      VARCHAR(30) NOT NULL COMMENT 'Drop off street',
-    d_city        VARCHAR(30) NOT NULL COMMENT 'Drop off city',
-    d_state       VARCHAR(20) NOT NULL COMMENT 'Drop off state',
-    d_zipcode     VARCHAR(10) NOT NULL COMMENT 'Drop off zipcode',
+    service_id    INT NOT NULL COMMENT 'ID of the service' AUTO_INCREMENT,
+    p_office      INT NOT NULL COMMENT 'ID for pickup office',
+    d_office      INT NOT NULL COMMENT 'ID for dropoff office',
     p_date        DATETIME NOT NULL COMMENT 'Pick up date',
     d_date        DATETIME NOT NULL COMMENT 'Drop off date',
     s_odometer    DECIMAL(9, 2) NOT NULL COMMENT 'Start odometer',
@@ -111,7 +106,16 @@ CREATE TABLE hqz_rental_service (
     customer_id   INT COMMENT 'ID of the customer',
     vin           VARCHAR(17) COMMENT 'VIN of the rent car',
     coupon_id     BIGINT COMMENT 'ID for the coupon'
+    service_status CHAR(1) NOT NULL COMMENT 'Status of the rantal service'
 );
+
+ALTER TABLE hqz_rental_service
+    ADD CONSTRAINT p_office_fk FOREIGN KEY ( p_office )
+        REFERENCES hqz_office ( office_id );
+
+ALTER TABLE hqz_rental_service
+    ADD CONSTRAINT d_office_fk FOREIGN KEY ( d_office )
+        REFERENCES hqz_office ( office_id );
 
 ALTER TABLE hqz_rental_service ADD CONSTRAINT hqz_rental_service_pk PRIMARY KEY ( service_id );
 
@@ -366,3 +370,7 @@ ALTER TABLE hqz_corp_info ADD CONSTRAINT corp_discount_check CHECK ( discount <=
 
 -- Add check for hqz_coupon check dates valid_from_date <= valid_to_date
 ALTER TABLE hqz_coupon ADD CONSTRAINT coupon_date_check CHECK (valid_from_date <= valid_to_date);
+
+-- Add check for service_status in hqz_rental_service Y for complete, N for ongoing
+ALTER TABLE hqz_rental_service ADD CONSTRAINT service_status_check CHECK (service_status='Y' OR service_status='N');
+
