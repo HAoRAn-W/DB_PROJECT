@@ -124,6 +124,7 @@ CREATE TABLE hqz_vehicle (
     license_plate_no VARCHAR(10) NOT NULL COMMENT 'License Plate number',
     class_id         INT COMMENT 'ID of the car class',
     office_id        INT COMMENT 'ID of the office',
+    odometer    DECIMAL(9, 2) NOT NULL COMMENT 'Odometer',
     vehicle_status   VARCHAR(1) NOT NULL COMMENT 'Staus of the vehicle, R for rent and A for available',
     img_url    VARCHAR(2000) COMMENT 'CDN url for vehicle images.'
 );
