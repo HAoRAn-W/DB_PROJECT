@@ -103,7 +103,7 @@ CREATE TABLE hqz_rental_service (
     daily_o_limit DECIMAL(6, 2) COMMENT 'Daily odometer limitaion',
     customer_id   INT COMMENT 'ID of the customer',
     vin           VARCHAR(17) COMMENT 'VIN of the rent car',
-    coupon_id     BIGINT COMMENT 'ID for the coupon'
+    coupon_id     BIGINT COMMENT 'ID for the coupon',
     service_status VARCHAR(1) NOT NULL COMMENT 'Status of the rantal service'
 );
 
