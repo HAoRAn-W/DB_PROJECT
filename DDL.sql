@@ -84,7 +84,7 @@ CREATE TABLE hqz_office (
 ALTER TABLE hqz_office ADD CONSTRAINT hqz_office_pk PRIMARY KEY ( office_id );
 
 CREATE TABLE hqz_payment (
-    payment_id     BIGINT NOT NULL COMMENT 'ID of the payment' AUTO_INCREMENT,
+    payment_id     BIGINT NOT NULL COMMENT 'ID of the payment' PRIMARY KEY AUTO_INCREMENT,
     pay_date       DATETIME NOT NULL COMMENT 'Date of this payment',
     payment_method VARCHAR(10) NOT NULL COMMENT 'Payment method (Credit, decit, etc.)',
     card_no        VARCHAR(20) NOT NULL COMMENT 'Payment card number',
@@ -92,10 +92,8 @@ CREATE TABLE hqz_payment (
     paid_amount    DECIMAL(8, 2) NOT NULL COMMENT 'Paid amount'
 );
 
-ALTER TABLE hqz_payment ADD CONSTRAINT hqz_payment_pk PRIMARY KEY ( payment_id );
-
 CREATE TABLE hqz_rental_service (
-    service_id    INT NOT NULL COMMENT 'ID of the service' AUTO_INCREMENT,
+    service_id    INT NOT NULL COMMENT 'ID of the service' PRIMARY KEY AUTO_INCREMENT,
     p_office      INT NOT NULL COMMENT 'ID for pickup office',
     d_office      INT NOT NULL COMMENT 'ID for dropoff office',
     p_date        DATETIME NOT NULL COMMENT 'Pick up date',
@@ -117,7 +115,6 @@ ALTER TABLE hqz_rental_service
     ADD CONSTRAINT d_office_fk FOREIGN KEY ( d_office )
         REFERENCES hqz_office ( office_id );
 
-ALTER TABLE hqz_rental_service ADD CONSTRAINT hqz_rental_service_pk PRIMARY KEY ( service_id );
 
 CREATE TABLE hqz_vehicle (
     vin              VARCHAR(17) NOT NULL COMMENT 'Vehicle identification number',
