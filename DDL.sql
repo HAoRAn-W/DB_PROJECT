@@ -52,6 +52,11 @@ CREATE TABLE hqz_customer (
 ALTER TABLE hqz_customer
     ADD CONSTRAINT ch_inh_hqz_customer CHECK ( cust_type IN ( 'C', 'I' ) );
 
+CREATE TABLE hqz_admin (
+    admin_id INT NOT NULL COMMENT 'ID for the admin account' PRIMARY KEY AUTO_INCREMENT,
+    a_password VARCHAR(255) NOT NULL COMMENT 'admin encoded password'
+);
+
 CREATE TABLE hqz_indiv_cust (
     customer_id      INT NOT NULL COMMENT 'ID for the customer',
     fname            VARCHAR(20) NOT NULL COMMENT 'First name',
