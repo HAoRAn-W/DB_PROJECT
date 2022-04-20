@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Controller
-public class RentalController {
+public class VehicleViewController {
 
     @Resource
     ClassService classService;
