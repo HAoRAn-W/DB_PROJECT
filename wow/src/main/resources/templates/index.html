@@ -92,7 +92,7 @@
                         <img class="img-responsive" th:src="${classEntity.imgUrl}" alt="product-img"/>
                     </div>
                     <div class="product-content">
-                        <h4><a th:href="@{/view-car/{classId}(classId=${classEntity.classId})}"
+                        <h4><a th:href="@{/view-car(classid=${classEntity.classId})}"
                                th:text="${classEntity.className}">Unknown</a></h4>
                         <p class="price" th:text="'Rental rate: ' + ${classEntity.rentalRate}">$200</p>
                     </div>

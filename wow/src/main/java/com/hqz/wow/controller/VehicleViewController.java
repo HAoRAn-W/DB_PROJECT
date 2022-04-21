@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -40,35 +42,38 @@ public class VehicleViewController {
     }
 
     // view cars under specific class
-    @GetMapping("/view-car/{classId}")
-    public String viewCar(@PathVariable int classId, Model model) {
-        // CarFilterVO is prepared to receive office choice and filter cars
-        CarFilterVO carFilter = new CarFilterVO();
-        model.addAttribute("carFilter", carFilter);
+    @RequestMapping("/view-car")
+    public String viewCar(@RequestParam(value="classid") Integer classId, @RequestParam(value = "officeid", required=false) Integer officeId, Model model) {
+        List<VehicleEntity> vehicleEntityList = new ArrayList<>();
+        if(officeId != null) {
+            vehicleEntityList = vehicleService.getVehicleListByClassAndOffice(classId, officeId);
+        }
+        else {
+            vehicleEntityList = vehicleService.getVehicleListByClass(classId);
+        }
 
         // vehicle list of specific class is prepared
         // todo pagination
-        List<VehicleEntity> vehicleEntityList = vehicleService.getVehicleListByClass(classId);
         model.addAttribute("vehicleEntityList", vehicleEntityList);
-
-        model.addAttribute("classId", classId);
 
         // office list is prepared
         List<OfficeEntity> offices = officeService.getAllOffices();
         model.addAttribute("offices", offices);
+
+        model.addAttribute("classId", classId);
         return "viewcar";
     }
 
     // when user specifies office, prepare responding car list
-    @PostMapping("/view-car/{classId}")
-    public String viewCarWithFilter(@PathVariable int classId, @ModelAttribute("carFilter") CarFilterVO carFilter, Model model) {
-        model.addAttribute("carFilter", carFilter);
-        List<VehicleEntity> vehicleEntityList = vehicleService.getVehicleListByClassAndOffice(classId, carFilter.getOfficeId());
-        model.addAttribute("vehicleEntityList", vehicleEntityList);
-        model.addAttribute("classId", classId);
-        List<OfficeEntity> offices = officeService.getAllOffices();
-        model.addAttribute("offices", offices);
-        return "viewcar";
-    }
+//    @PostMapping("/view-car/{classId}")
+//    public String viewCarWithFilter(@PathVariable int classId, @ModelAttribute("carFilter") CarFilterVO carFilter, Model model) {
+//        model.addAttribute("carFilter", carFilter);
+//        List<VehicleEntity> vehicleEntityList = vehicleService.getVehicleListByClassAndOffice(classId, carFilter.getOfficeId());
+//        model.addAttribute("vehicleEntityList", vehicleEntityList);
+//        model.addAttribute("classId", classId);
+//        List<OfficeEntity> offices = officeService.getAllOffices();
+//        model.addAttribute("offices", offices);
+//        return "viewcar";
+//    }
 
 }
