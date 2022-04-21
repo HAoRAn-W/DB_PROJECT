@@ -156,8 +156,11 @@
                         </div>
                         <div class="form-group">
                             <label for="CorpRegNo">Corporation Register No</label>
-                            <input type="text" id="CorpRegNo" class="form-control" th:field="*{corpRegisterNo}"
-                                   placeholder="Corporation Register No">
+                            <select id="CorpRegNo" class="form-control" th:field="*{corpRegisterNo}">
+                                <option th:each="corpInfo : ${corpInfoEntity}"
+                                        th:value="${corpInfo.corpRegNo}"
+                                        th:text="${corpInfo.corpRegNo}+' ('+${corpInfo.corpName}+')'">
+                            </select>
                             <div th:if="${#fields.hasErrors('corpRegisterNo')}" class="alert alert-danger alert-common"
                                  role="alert" th:errors="*{corpRegisterNo}"></div>
 

@@ -1,7 +1,8 @@
 package com.hqz.wow.controller;
 
+import com.hqz.wow.entity.CorpInfoEntity;
+import com.hqz.wow.service.CorpInfoService;
 import com.hqz.wow.service.CustomerService;
-import com.hqz.wow.vo.ConfirmEmailVO;
 import com.hqz.wow.vo.CorpCustomerVO;
 import com.hqz.wow.vo.IndivCustomerVO;
 import com.hqz.wow.vo.ResetPasswordVO;
@@ -12,17 +13,13 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class AccountController {
@@ -30,10 +27,18 @@ public class AccountController {
     @Resource
     CustomerService customerService;
 
+    @Resource
+    CorpInfoService corpInfoService;
+
     @GetMapping("/register-corp")
     public String registerCorp(Model model) {
         // When user start register (GET), prepare VO to receive user input
         CorpCustomerVO corpCustomerVO = new CorpCustomerVO();
+
+        // Show corp_reg_no in corp register page
+        List<CorpInfoEntity> corpInfoEntityList = corpInfoService.getCorpInfoEntityList();
+
+        model.addAttribute("corpInfoEntity", corpInfoEntityList);
         model.addAttribute("corpCustomerVO", corpCustomerVO);
         return "register-corp";
     }
