@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * user detail service for Spring Security authentication
+ */
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
 

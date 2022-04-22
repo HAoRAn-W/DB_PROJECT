@@ -30,7 +30,7 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public CustomerEntity findCustomerByEmail(String email) throws UsernameNotFoundException {
-        QueryWrapper wrapper = new QueryWrapper();
+        QueryWrapper<CustomerEntity> wrapper = new QueryWrapper<>();
         wrapper.eq("c_email", email);
         return customerMapper.selectOne(wrapper);
     }

@@ -15,6 +15,9 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Controller for vehicle display related views
+ */
 @Controller
 public class VehicleViewController {
 
@@ -27,23 +30,35 @@ public class VehicleViewController {
     @Resource
     OfficeService officeService;
 
-    // home page
+    /**
+     * home page
+     *
+     * @param model model for the page
+     * @return index.html
+     */
     @RequestMapping("/index")
     public String index(Model model) {
-        // show vehicle classes on home page
+        // show vehicle class list on home page
+        // todo pagination
         List<ClassEntity> classEntityList = classService.getClassEntityList();
         model.addAttribute("classEntityList", classEntityList);
         return "index";
     }
 
-    // view cars under specific class
+    /**
+     * display vehicles under certain class and office
+     *
+     * @param classId  vehicle class id in request params
+     * @param officeId office id in request params (not required)
+     * @param model    model for the page
+     * @return viewcar.html
+     */
     @RequestMapping("/view-car")
-    public String viewCar(@RequestParam(value="classid") Integer classId, @RequestParam(value = "officeid", required=false) Integer officeId, Model model) {
-        List<VehicleEntity> vehicleEntityList = new ArrayList<>();
-        if(officeId != null) {
+    public String viewCar(@RequestParam(value = "classid") Integer classId, @RequestParam(value = "officeid", required = false) Integer officeId, Model model) {
+        List<VehicleEntity> vehicleEntityList;
+        if (officeId != null) {
             vehicleEntityList = vehicleService.getVehicleListByClassAndOffice(classId, officeId);
-        }
-        else {
+        } else {
             vehicleEntityList = vehicleService.getVehicleListByClass(classId);
         }
 
@@ -58,17 +73,4 @@ public class VehicleViewController {
         model.addAttribute("classId", classId);
         return "viewcar";
     }
-
-    // when user specifies office, prepare responding car list
-//    @PostMapping("/view-car/{classId}")
-//    public String viewCarWithFilter(@PathVariable int classId, @ModelAttribute("carFilter") CarFilterVO carFilter, Model model) {
-//        model.addAttribute("carFilter", carFilter);
-//        List<VehicleEntity> vehicleEntityList = vehicleService.getVehicleListByClassAndOffice(classId, carFilter.getOfficeId());
-//        model.addAttribute("vehicleEntityList", vehicleEntityList);
-//        model.addAttribute("classId", classId);
-//        List<OfficeEntity> offices = officeService.getAllOffices();
-//        model.addAttribute("offices", offices);
-//        return "viewcar";
-//    }
-
 }

@@ -18,10 +18,9 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public List<VehicleEntity> getVehicleListByClass(int classId) {
-        QueryWrapper wrapper = new QueryWrapper();
+        QueryWrapper<VehicleEntity> wrapper = new QueryWrapper<>();
         wrapper.eq("class_id" , classId);
-        List<VehicleEntity> vehicleEntityList = vehicleMapper.selectList(wrapper);
-        return vehicleEntityList;
+        return vehicleMapper.selectList(wrapper);
     }
 
     @Override
