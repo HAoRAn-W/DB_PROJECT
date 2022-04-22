@@ -16,4 +16,6 @@ public interface CustomerService {
     void registerIndivCustomer(IndivCustomerVO indivCustomerVO);
 
     void resetPassword(String email, ResetPasswordVO resetPasswordVO);
+
+    boolean validateSecQuestion(String email, int questionId, String answer);
 }

@@ -1,10 +1,13 @@
 package com.hqz.wow.controller;
 
 import com.hqz.wow.entity.CorpInfoEntity;
+import com.hqz.wow.entity.SecurityQuestionEntity;
 import com.hqz.wow.service.CorpInfoService;
 import com.hqz.wow.service.CustomerService;
+import com.hqz.wow.service.SecurityQuestionService;
 import com.hqz.wow.vo.CorpCustomerVO;
 import com.hqz.wow.vo.IndivCustomerVO;
+import com.hqz.wow.vo.InfoConfirmVO;
 import com.hqz.wow.vo.ResetPasswordVO;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +34,9 @@ public class AccountController {
     @Resource
     CorpInfoService corpInfoService;
 
+    @Resource
+    SecurityQuestionService securityQuestionService;
+
     @GetMapping("/register-corp")
     public String registerCorp(Model model) {
         // When user start register (GET), prepare VO to receive user input
@@ -38,8 +45,11 @@ public class AccountController {
         // Show corp_reg_no in corp register page
         List<CorpInfoEntity> corpInfoEntityList = corpInfoService.getCorpInfoEntityList();
 
+        List<SecurityQuestionEntity> questionList = securityQuestionService.getSecQuestions();
+
         model.addAttribute("corpInfoEntity", corpInfoEntityList);
         model.addAttribute("corpCustomerVO", corpCustomerVO);
+        model.addAttribute("questionList", questionList);
         return "register-corp";
     }
 
@@ -47,7 +57,11 @@ public class AccountController {
     public String registerIndiv(Model model) {
         // When user start register (GET), prepare VO to receive user input
         IndivCustomerVO indivCustomerVO = new IndivCustomerVO();
+
+        List<SecurityQuestionEntity> questionList = securityQuestionService.getSecQuestions();
+
         model.addAttribute("indivCustomerVO", indivCustomerVO);
+        model.addAttribute("questionList", questionList);
         return "register-indiv";
     }
 
@@ -118,17 +132,34 @@ public class AccountController {
         return "redirect:/login?logout";
     }
 
-    @GetMapping("/confirm-email")
+    @GetMapping("/confirm-info")
     public String forgetPassword(Model model) {
-        return "confirm-email";
+        if(!model.containsAttribute("infoConfirmVO")) {
+            InfoConfirmVO infoConfirmVO = new InfoConfirmVO();
+            model.addAttribute("infoConfirmVO", infoConfirmVO);
+        }
+        if(!model.containsAttribute("questionList")) {
+            List<SecurityQuestionEntity> questionList = securityQuestionService.getSecQuestions();
+            model.addAttribute("questionList", questionList);
+        }
+        return "confirm-info";
     }
 
     @PostMapping("/reset-password")
-    public String resetPassword(HttpServletRequest request, Model model) {
-        String email = request.getParameter("email");
+    public String resetPassword(@Valid @ModelAttribute("infoConfirmVO") InfoConfirmVO infoConfirmVO, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+        if(bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.infoConfirmVO", bindingResult);
+            redirectAttributes.addFlashAttribute("infoConfirmVO", infoConfirmVO);
+            return "redirect:/confirm-info";
+        }
+        String email = infoConfirmVO.getEmail();
         if (!customerService.checkIfCustomerExist(email)) {
-            model.addAttribute("emailNotExists", true);
-            return "confirm-email";
+            redirectAttributes.addFlashAttribute("emailNotExists", true);
+            return "redirect:/confirm-info";
+        }
+        if(!customerService.validateSecQuestion(email, infoConfirmVO.getQuestionId(), infoConfirmVO.getSecAnswer())) {
+            redirectAttributes.addFlashAttribute("wronganswer", true);
+            return "redirect:/confirm-info";
         }
         ResetPasswordVO resetPasswordVO = new ResetPasswordVO();
         model.addAttribute("resetPasswordVO", resetPasswordVO);
@@ -141,6 +172,7 @@ public class AccountController {
     public String processResetPassword(@ModelAttribute("resetPasswordVO") ResetPasswordVO resetPasswordVO, HttpServletRequest request, Model model) {
         if (!resetPasswordVO.getPassword().equals(resetPasswordVO.getConfirmPassword())) {
             model.addAttribute("passwordMismatch", true);
+            model.addAttribute("email", request.getParameter("email"));
             return "reset-password";
         }
         try {
@@ -149,7 +181,6 @@ public class AccountController {
             resetPasswordVO.setPassword(password);
             String email = request.getParameter("email");
             customerService.resetPassword(email, resetPasswordVO);
-
             return "/login";
         } catch (Exception e) {
             model.addAttribute("error", true);

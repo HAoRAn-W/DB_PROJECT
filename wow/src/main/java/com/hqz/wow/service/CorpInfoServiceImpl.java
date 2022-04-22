@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service("corpInfoService")
-public class CorpInfoServiceImpl implements CorpInfoService{
+public class CorpInfoServiceImpl implements CorpInfoService {
 
     @Autowired
     CorpInfoMapper corpInfoMapper;

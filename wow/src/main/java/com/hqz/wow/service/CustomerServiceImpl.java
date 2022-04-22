@@ -85,4 +85,10 @@ public class CustomerServiceImpl implements CustomerService{
         customerEntity.setPassword(resetPasswordVO.getPassword());
         customerMapper.updateById(customerEntity);
     }
+
+    @Override
+    public boolean validateSecQuestion(String email, int questionId, String answer) {
+        CustomerEntity customer = findCustomerByEmail(email);
+        return customer.getQuestionId() == questionId && answer.equals(customer.getSecAnswer());
+    }
 }

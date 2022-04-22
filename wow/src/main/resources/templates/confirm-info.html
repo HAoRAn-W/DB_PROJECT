@@ -46,15 +46,39 @@
                         <img src="images/email.png" alt="">
                     </a>
                     <h2 class="text-center">Confirm your e-mail</h2>
-                    <form class="text-left clearfix" method="post" th:action="@{/reset-password}" novalidate>
+                    <form class="text-left clearfix" method="post" th:action="@{/reset-password}" th:object="${infoConfirmVO}" novalidate>
                         <p>Forget your password? No worry! Please enter the email address for your account. You will be
                             able to choose a new password for your account.</p>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control" id="email" th:field="*{email}"
                                    placeholder="Account email address">
+                            <div th:if="${emailNotExists}" class="alert alert-danger alert-common"
+                                 role="alert">Account not exists</div>
+                            <div th:if="${#fields.hasErrors('email')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{email}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="q_id">Security Question</label>
+                            <select id="q_id" class="form-control" th:field="*{questionId}">
+                                <option th:each="question : ${questionList}"
+                                        th:value="${question.questionId}"
+                                        th:text="${question.securityQuestion}">
+                            </select>
+                            <div th:if="${#fields.hasErrors('questionId')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{questionId}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="q_answer">Answer for the Question</label>
+                            <input type="text" id="q_answer" class="form-control" th:field="*{secAnswer}"
+                                   placeholder="Answer">
+                            <div th:if="${#fields.hasErrors('secAnswer')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{secAnswer}"></div>
+                            <div th:if="${wronganswer}" class="alert alert-danger alert-common"
+                                 role="alert">Answer or question is wrong</div>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-main text-center">Confirm e-mail</button>
+                            <button type="submit" class="btn btn-main text-center">Confirm</button>
                         </div>
                     </form>
                     <p class="mt-20"><a th:href="@{/login}">Back to log in</a></p>
