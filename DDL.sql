@@ -1,3 +1,8 @@
+CREATE TABLE hqz_sec_question (
+    q_id    INT NOT NULL COMMENT 'Id for security questions' PRIMARY KEY,
+    sec_question  VARCHAR(255) NOT NULL COMMENT 'Security questions'
+);
+
 CREATE TABLE hqz_class (
     class_id    INT NOT NULL COMMENT 'The id for the class',
     class_name  VARCHAR(30) NOT NULL COMMENT 'Name of the class, small, mid-size, SUV, etc.',
@@ -46,11 +51,17 @@ CREATE TABLE hqz_customer (
     c_email     VARCHAR(50) NOT NULL COMMENT 'Customer email address' UNIQUE,
     c_phone     VARCHAR(15) NOT NULL COMMENT 'Customer phone number',
     cust_type   VARCHAR(1) NOT NULL COMMENT 'Type of the customer',
-    c_password VARCHAR(255) NOT NULL COMMENT 'Customer encoded password'
+    c_password  VARCHAR(255) NOT NULL COMMENT 'Customer encoded password',
+    q_id        INT NOT NULL COMMENT 'Id for security questions',
+    sec_ans     VARCHAR(255) NOT NULL COMMENT 'Answer for security question'
 );
 
 ALTER TABLE hqz_customer
     ADD CONSTRAINT ch_inh_hqz_customer CHECK ( cust_type IN ( 'C', 'I' ) );
+
+ALTER TABLE hqz_customer
+    ADD CONSTRAINT sec_q_fk FOREIGN KEY ( q_id )
+        REFERENCES hqz_sec_question ( q_id );
 
 CREATE TABLE hqz_admin (
     admin_id INT NOT NULL COMMENT 'ID for the admin account' PRIMARY KEY AUTO_INCREMENT,
