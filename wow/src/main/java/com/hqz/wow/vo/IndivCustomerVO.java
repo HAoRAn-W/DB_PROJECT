@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 @Data
@@ -46,4 +47,10 @@ public class IndivCustomerVO {
 
     @NotEmpty(message = "Please tell us your insurance number")
     private String insuranceNo;
+
+    @NotNull(message = "Please choose one security question")
+    private int questionId;
+
+    @NotEmpty(message = "Please provide your answer for the security question")
+    private String secAnswer;
 }

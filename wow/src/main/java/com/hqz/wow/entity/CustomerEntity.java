@@ -37,4 +37,10 @@ public class CustomerEntity {
 
     @TableField(value = "c_password", insertStrategy = NOT_NULL)
     private String password; // encoded password
+
+    @TableField(value = "q_id", insertStrategy = NOT_NULL)
+    private int questionId;
+
+    @TableField(value = "sec_ans", insertStrategy = NOT_NULL)
+    private String secAnswer;
 }
