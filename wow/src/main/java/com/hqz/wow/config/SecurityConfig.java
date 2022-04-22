@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // Remember me configurations
                 .rememberMe()
                 .userDetailsService(this.userDetailsService)
-                .tokenValiditySeconds(2000)
+                .tokenValiditySeconds(86400)
                 .useSecureCookie(true)
                 .rememberMeCookieName("wow-cookie")
                 //Login configurations

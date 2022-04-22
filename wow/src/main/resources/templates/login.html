@@ -52,19 +52,19 @@
                             <input type="password" id="password" name="password" class="form-control"
                                    placeholder="Password">
                         </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-main btn-small btn-round-full">Login</button>
-                        </div>
-                    </form>
-                    </br>
-                    <div class="row">
-                        <div class="col-8">
+                        <div th:if="${(param.error != null) and (param.error[0] == 'true')}" class="alert alert-danger alert-common"
+                             role="alert" >Wrong E-mail or password!</div>
+                        <div class="form-group">
                             <div class="check-box">
                                 <input type="checkbox" id="remember" name="remember-me">
                                 <label for="remember">Remember me</label>
                             </div>
                         </div>
-                    </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-main btn-small btn-round-full">Login</button>
+                        </div>
+                    </form>
+                    </br>
                     <p class="mt-20">New in this site ? Create
                         </br>
                         <a th:href="@{/register-indiv}"> Individual Account </a>

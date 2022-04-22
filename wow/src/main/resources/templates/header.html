@@ -138,7 +138,7 @@
                         <ul class="dropdown-menu">
                             <div sec:authorize="isAuthenticated()">
                                 <li><a href="#">Account info (todo)</a></li>
-                                <li><a href="javascript: document.logoutForm.submit()">Sign out</a></li>
+                                <li><a href="javascript: document.logoutForm.submit()">Logout</a></li>
                                 <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
                                     <input hidden type="submit"/>
                                 </form>
