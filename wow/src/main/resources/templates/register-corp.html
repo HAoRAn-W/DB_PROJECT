@@ -163,7 +163,23 @@
                             </select>
                             <div th:if="${#fields.hasErrors('corpRegisterNo')}" class="alert alert-danger alert-common"
                                  role="alert" th:errors="*{corpRegisterNo}"></div>
-
+                        </div>
+                        <div class="form-group">
+                            <label for="q_id">Security Question</label>
+                            <select id="q_id" class="form-control" th:field="*{questionId}">
+                                <option th:each="question : ${questionList}"
+                                        th:value="${question.questionId}"
+                                        th:text="${question.securityQuestion}">
+                            </select>
+                            <div th:if="${#fields.hasErrors('questionId')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{questionId}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="q_answer">Answer for the Question</label>
+                            <input type="text" id="q_answer" class="form-control" th:field="*{secAnswer}"
+                                   placeholder="Answer">
+                            <div th:if="${#fields.hasErrors('secAnswer')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{secAnswer}"></div>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-main btn-small btn-round-full">Register</button>
