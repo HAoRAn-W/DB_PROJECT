@@ -79,7 +79,7 @@
             <div class="col-md-9">
                 <div class="row">
 
-                    <div class="col-md-4" th:each="vehicleEntity,status : ${vehicleEntityList}">
+                    <div class="col-md-4" th:each="vehicleEntity : ${vehiclePage.getRecords()}">
                         <div class="product-item">
                             <div class="product-thumb">
                                 <img class="img-responsive" th:src="${vehicleEntity.imgUrl}" alt="product-img"/>
@@ -136,7 +136,28 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="text-center">
+                    <ul class="pagination post-pagination">
+                        <li th:if="${vehiclePage.current>1}">
+                            <a th:if="${officeId != null}" th:href="@{/view-car(classid=${classId}, officeid=${officeId}, cur=${vehiclePage.current}-1)}">Prev</a>
+                            <a th:if="${officeId == null}" th:href="@{/view-car(classid=${classId}, cur=${vehiclePage.current}-1)}">Prev</a>
+                        </li>
+                        <li th:if="${vehiclePage.current==1}" class="disabled"><a>Prev</a></li>
 
+                        <!--遍历总页数，范围是第一页到最后一页-->
+                        <li th:each="num:${#numbers.sequence(1,vehiclePage.pages)}">
+                            <a th:if="${officeId != null}" th:href="@{/view-car(classid=${classId}, officeid=${officeId}, cur=${num})}">[[${num}]]</a>
+                            <a th:if="${officeId == null}" th:href="@{/view-car(classid=${classId}, cur=${num})}">[[${num}]]</a>
+                        </li>
+
+                        <li th:if="${vehiclePage.current<vehiclePage.pages}">
+                            <a th:if="${officeId != null}" th:href="@{/view-car(classid=${classId}, officeid=${officeId}, cur=${vehiclePage.current}+1)}">Next</a>
+                            <a th:if="${officeId == null}" th:href="@{/view-car(classid=${classId}, cur=${vehiclePage.current}+1)}">Next</a>
+                        </li>
+                        <li th:if="${vehiclePage.current==vehiclePage.pages}" class="disabled"><a>Next</a></li>
+
+                    </ul>
                 </div>
             </div>
 

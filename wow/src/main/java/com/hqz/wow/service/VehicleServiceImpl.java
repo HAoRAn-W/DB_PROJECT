@@ -1,6 +1,8 @@
 package com.hqz.wow.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.hqz.wow.entity.VehicleEntity;
 import com.hqz.wow.mapper.VehicleMapper;
 import com.hqz.wow.util.WowConstants;
@@ -17,18 +19,19 @@ public class VehicleServiceImpl implements VehicleService {
     VehicleMapper vehicleMapper;
 
     @Override
-    public List<VehicleEntity> getVehicleListByClass(int classId) {
+    public IPage<VehicleEntity> getVehicleListByClass(int classId, int curPage) {
         QueryWrapper<VehicleEntity> wrapper = new QueryWrapper<>();
         wrapper.eq("class_id" , classId);
-        return vehicleMapper.selectList(wrapper);
+        Page<VehicleEntity> vehicleEntityPage = new Page<>(curPage, WowConstants.PAGE_SIZE);
+        return vehicleMapper.selectPage(vehicleEntityPage, wrapper);
     }
 
     @Override
-    public List<VehicleEntity> getVehicleListByClassAndOffice(int classId, int officeId) {
-        List<VehicleEntity> vehicleEntityList = getVehicleListByClass(classId);
-        return vehicleEntityList.stream()
-                .filter(a -> a.getOfficeId() == officeId)
-                .collect(Collectors.toList());
+    public IPage<VehicleEntity> getVehicleListByClassAndOffice(int classId, int officeId, int curPage) {
+        QueryWrapper<VehicleEntity> wrapper = new QueryWrapper<>();
+        wrapper.eq("class_id" , classId).eq("office_id", officeId);
+        Page<VehicleEntity> vehicleEntityPage = new Page<>(curPage, WowConstants.PAGE_SIZE);
+        return vehicleMapper.selectPage(vehicleEntityPage, wrapper);
     }
 
     @Override

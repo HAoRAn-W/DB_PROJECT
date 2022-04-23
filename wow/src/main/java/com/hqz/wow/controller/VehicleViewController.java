@@ -1,5 +1,6 @@
 package com.hqz.wow.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.hqz.wow.entity.ClassEntity;
 import com.hqz.wow.entity.OfficeEntity;
 import com.hqz.wow.entity.VehicleEntity;
@@ -54,23 +55,26 @@ public class VehicleViewController {
      * @return viewcar.html
      */
     @RequestMapping("/view-car")
-    public String viewCar(@RequestParam(value = "classid") Integer classId, @RequestParam(value = "officeid", required = false) Integer officeId, Model model) {
-        List<VehicleEntity> vehicleEntityList;
-        if (officeId != null) {
-            vehicleEntityList = vehicleService.getVehicleListByClassAndOffice(classId, officeId);
-        } else {
-            vehicleEntityList = vehicleService.getVehicleListByClass(classId);
-        }
+    public String viewCar(@RequestParam(value = "classid") Integer classId,
+                          @RequestParam(value = "officeid", required = false) Integer officeId,
+                          @RequestParam(value = "cur", defaultValue = "1") Integer curPage, Model model) {
 
-        // vehicle list of specific class is prepared
-        // todo pagination
-        model.addAttribute("vehicleEntityList", vehicleEntityList);
+        IPage<VehicleEntity> vehiclePage;
+        if (officeId != null) {
+            vehiclePage = vehicleService.getVehicleListByClassAndOffice(classId, officeId, curPage);
+        } else {
+            vehiclePage = vehicleService.getVehicleListByClass(classId,curPage);
+        }
+        model.addAttribute("vehiclePage", vehiclePage);
 
         // office list is prepared
         List<OfficeEntity> offices = officeService.getAllOffices();
         model.addAttribute("offices", offices);
 
         model.addAttribute("classId", classId);
+        if(officeId != null) {
+            model.addAttribute("officeId", officeId);
+        }
         return "viewcar";
     }
 }

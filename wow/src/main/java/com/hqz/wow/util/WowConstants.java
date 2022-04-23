@@ -13,4 +13,6 @@ public class WowConstants {
 
     // vehicle availability: available
     public static final String VEHICLE_AVAILABLE = "A";
+
+    public static final int PAGE_SIZE = 6;
 }
