@@ -51,6 +51,7 @@ public class VehicleViewController {
      *
      * @param classId  vehicle class id in request params
      * @param officeId office id in request params (not required)
+     * @param curPage  current page number
      * @param model    model for the page
      * @return viewcar.html
      */
@@ -59,11 +60,11 @@ public class VehicleViewController {
                           @RequestParam(value = "officeid", required = false) Integer officeId,
                           @RequestParam(value = "cur", defaultValue = "1") Integer curPage, Model model) {
 
-        IPage<VehicleEntity> vehiclePage;
+        IPage<VehicleEntity> vehiclePage; // pagination
         if (officeId != null) {
             vehiclePage = vehicleService.getVehicleListByClassAndOffice(classId, officeId, curPage);
         } else {
-            vehiclePage = vehicleService.getVehicleListByClass(classId,curPage);
+            vehiclePage = vehicleService.getVehicleListByClass(classId, curPage);
         }
         model.addAttribute("vehiclePage", vehiclePage);
 
@@ -72,7 +73,7 @@ public class VehicleViewController {
         model.addAttribute("offices", offices);
 
         model.addAttribute("classId", classId);
-        if(officeId != null) {
+        if (officeId != null) {
             model.addAttribute("officeId", officeId);
         }
         return "viewcar";
