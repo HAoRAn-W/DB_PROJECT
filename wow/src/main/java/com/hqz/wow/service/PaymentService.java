@@ -6,5 +6,5 @@ import com.hqz.wow.vo.PaymentVO;
 public interface PaymentService {
     PaymentEntity getPaymentRecordById(int paymentId);
 
-    void payBill(PaymentVO paymentVO);
+    void payBill(PaymentVO paymentVO) throws RuntimeException;
 }

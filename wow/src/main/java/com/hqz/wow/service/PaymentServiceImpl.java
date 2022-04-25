@@ -1,7 +1,9 @@
 package com.hqz.wow.service;
 
 import com.hqz.wow.entity.PaymentEntity;
+import com.hqz.wow.exception.PayBillException;
 import com.hqz.wow.mapper.PaymentMapper;
+import com.hqz.wow.util.WowConstants;
 import com.hqz.wow.vo.PaymentVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -22,9 +24,14 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     @Transactional
-    public void payBill(PaymentVO paymentVO) {
+    public void payBill(PaymentVO paymentVO) throws RuntimeException{
         PaymentEntity paymentRecord = new PaymentEntity();
         BeanUtils.copyProperties(paymentVO, paymentRecord);
-        paymentMapper.insert(paymentRecord);
+        try {
+            paymentMapper.insert(paymentRecord);
+        }
+        catch (Exception e) {
+            throw new PayBillException(WowConstants.PAY_BILL_ERROR, "Pay Bill Error");
+        }
     }
 }
