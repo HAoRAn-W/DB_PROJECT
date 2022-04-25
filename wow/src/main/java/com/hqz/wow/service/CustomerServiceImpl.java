@@ -15,6 +15,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CustomerServiceImpl implements CustomerService{
@@ -43,6 +44,7 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
+    @Transactional
     public void registerCorpCustomer(CorpCustomerVO corpCustomerVO) {
         // register basic info
         CustomerEntity customerEntity = new CustomerEntity();
@@ -60,6 +62,7 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
+    @Transactional
     public void registerIndivCustomer(IndivCustomerVO indivCustomerVO) {
         // register basic info
         CustomerEntity customerEntity = new CustomerEntity();
@@ -80,6 +83,7 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
+    @Transactional
     public void resetPassword(String email, ResetPasswordVO resetPasswordVO) {
         CustomerEntity customerEntity= findCustomerByEmail(email);
         customerEntity.setPassword(resetPasswordVO.getPassword());
