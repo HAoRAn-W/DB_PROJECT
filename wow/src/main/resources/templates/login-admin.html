@@ -6,7 +6,7 @@
     <!-- Basic Page Needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>WoW | Login</title>
+    <title>WoW | Register</title>
 
     <!-- Mobile Specific Metas
     ================================================== -->
@@ -43,17 +43,17 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="block text-center">
                     <img src="images/user.png" alt="">
-                    <h2 class="text-center">Login</h2>
-                    <form class="text-left clearfix" th:action="@{/login}" method="post">
+                    <h2 class="text-center">Admin Login</h2>
+                    <form class="text-left clearfix" th:action="@{/login-admin}" method="post">
                         <div class="form-group">
-                            <input type="text" id="username" name="username" class="form-control" placeholder="Email">
+                            <input type="text" id="admin id" name="admin_id" class="form-control" placeholder="Admin id">
                         </div>
                         <div class="form-group">
                             <input type="password" id="password" name="password" class="form-control"
                                    placeholder="Password">
                         </div>
                         <div th:if="${(param.error != null) and (param.error[0] == 'true')}" class="alert alert-danger alert-common"
-                             role="alert" >Wrong E-mail or password!</div>
+                             role="alert" >Wrong admin id or password!</div>
                         <div class="form-group">
                             <div class="check-box">
                                 <input type="checkbox" id="remember" name="remember-me">
@@ -61,22 +61,13 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-main btn-small btn-round-full">Login</button>
+                            <button type="submit" class="btn btn-main btn-small btn-round-full">Admin Login</button>
                         </div>
                     </form>
                     </br>
-                    <p class="mt-20">New in this site ? Create
+                    <p class="mt-20">Creat an Admin Account?
                         </br>
-                        <a th:href="@{/register-indiv}"> Individual Account </a>
-                        or
-                        <a th:href="@{/register-corp}"> Corp Account</a>
-                    </p>
-                    <p><a th:href="@{/confirm-info}"> Forgot your password?</a></p>
-
-                    </br>
-                    <p class="mt-20">Are you an Admin?
-                        </br>
-                        <a th:href="@{/login-admin}"> Admin Account </a>
+                        <a th:href="@{/register-admin}"> Admin Account </a>
                     </p>
                 </div>
             </div>
@@ -115,3 +106,4 @@ Essential Scripts
 
 </body>
 </html>
+

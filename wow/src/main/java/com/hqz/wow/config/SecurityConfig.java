@@ -2,6 +2,7 @@ package com.hqz.wow.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -16,6 +17,7 @@ import javax.annotation.Resource;
  * Customer pages security configurations
  */
 @Configuration
+@Order(1)
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -37,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/login", "/register-corp","/register-indiv", "/reset-password", "/confirm-info", "/reset-password-process").permitAll()
+                .antMatchers("/login","/login-admin", "/register-admin","/register-corp","/register-indiv", "/reset-password", "/confirm-info", "/reset-password-process").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 // Remember me configurations
