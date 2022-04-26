@@ -2,13 +2,11 @@ package com.hqz.wow.controller;
 
 import com.hqz.wow.entity.CorpInfoEntity;
 import com.hqz.wow.entity.SecurityQuestionEntity;
+import com.hqz.wow.service.AdminService;
 import com.hqz.wow.service.CorpInfoService;
 import com.hqz.wow.service.CustomerService;
 import com.hqz.wow.service.SecurityQuestionService;
-import com.hqz.wow.vo.CorpCustomerVO;
-import com.hqz.wow.vo.IndivCustomerVO;
-import com.hqz.wow.vo.InfoConfirmVO;
-import com.hqz.wow.vo.ResetPasswordVO;
+import com.hqz.wow.vo.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -35,6 +33,9 @@ import java.util.List;
 public class AccountController {
 
     @Resource
+    AdminService adminService;
+
+    @Resource
     CustomerService customerService;
 
     @Resource
@@ -42,6 +43,28 @@ public class AccountController {
 
     @Resource
     SecurityQuestionService securityQuestionService;
+
+    /**
+     * Admin registration - GET
+     *
+     * @param model Model for the page
+     * @return admin.html
+     */
+    @GetMapping("/register-admin")
+    public String registerAdmin(Model model) {
+        // When user start register (GET), prepare VO to receive user input
+        AdminVO adminVO = new AdminVO();
+
+        // Prepare corporation options
+        //List<CorpInfoEntity> corpInfoEntityList = corpInfoService.getCorpInfoEntityList();
+
+        // Prepare security question options
+        //List<SecurityQuestionEntity> questionList = securityQuestionService.getSecQuestions();
+
+        //model.addAttribute("corpInfoEntity", corpInfoEntityList);
+        model.addAttribute("adminVO", adminVO);
+        return "register-admin";
+    }
 
     /**
      * Corporation customer registration - GET
@@ -93,6 +116,42 @@ public class AccountController {
      * @param model          Model for the page
      * @return Input invalid, return register-corp.html, registration success return login.html
      */
+
+
+    /**
+     * Process admin registration
+     *
+     * @param adminVO admin information
+     * @param bindingResult   User input validation
+     * @param model           Model for the page
+     * @return Input invalid return registration page, successful return login page
+     */
+    @PostMapping("/register-admin")
+    public String registerSaveAdmin(@Valid @ModelAttribute("adminVO") AdminVO adminVO, BindingResult bindingResult, Model model) {
+
+        // check if id already registered
+        if (adminService.checkIfAdminExist(adminVO.getAdmin_id())) {
+            model.addAttribute("adminExists", true);
+            return "register-admin";
+        }
+
+        if (bindingResult.hasErrors()) {
+            // input invalid, display error messages
+            return "register-admin";
+        }
+        try {
+            BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+            String password = bCryptPasswordEncoder.encode(adminVO.getA_password());
+            adminVO.setA_password(password);
+            adminService.registerAdmin(adminVO);
+            return "/login";
+        } catch (Exception e) {
+            model.addAttribute("error", true);
+            return "register-admin";
+        }
+    }
+
+
     @PostMapping("/register-corp")
     public String registerSaveCorp(@Valid @ModelAttribute("corpCustomerVO") CorpCustomerVO corpCustomerVO, BindingResult bindingResult, Model model) {
         //todo employeeId unique check
@@ -191,6 +250,36 @@ public class AccountController {
      * @param model Model for the page
      * @return confirm-info.html
      */
+
+    /**
+     * Admin login page with Spring Security
+     *
+     * @return login.html
+     */
+    @RequestMapping("/login-admin")
+    public String loginAdmin() {
+        return "login-admin";
+    }
+
+    /**
+     * logout page, only takes POST request to prevent CSRF
+     *
+     * @param request  Http request
+     * @param response Http response
+     * @return login page
+     */
+    @RequestMapping(value = "/logout-admin", method = RequestMethod.POST)
+    public String logoutPageAdmin(HttpServletRequest request, HttpServletResponse response) {
+        // get authentication information
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null) {
+            // Spring Security logout API
+            new SecurityContextLogoutHandler().logout(request, response, auth);
+        }
+        return "redirect:/login-admin?logout-admin";
+    }
+
+
     @GetMapping("/confirm-info")
     public String forgetPassword(Model model) {
         if (!model.containsAttribute("infoConfirmVO")) {
