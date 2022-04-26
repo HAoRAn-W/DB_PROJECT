@@ -7,6 +7,7 @@ import com.hqz.wow.entity.VehicleEntity;
 import com.hqz.wow.mapper.VehicleMapper;
 import com.hqz.wow.util.WowConstants;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;

@@ -33,6 +33,8 @@ public class VehicleEntity {
     @TableField(value = "img_url")
     private String imgUrl;
 
+    @TableField(value = "odometer")
+    private float odometer;
 
 
 }

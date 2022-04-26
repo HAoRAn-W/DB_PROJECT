@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface OfficeService {
     List<OfficeEntity> getAllOffices();
+
+    OfficeEntity getOfficeById(int id);
 }

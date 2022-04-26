@@ -17,4 +17,9 @@ public class OfficeServiceImpl implements OfficeService {
     public List<OfficeEntity> getAllOffices() {
         return officeMapper.selectList(null);
     }
+
+    @Override
+    public OfficeEntity getOfficeById(int id){
+        return officeMapper.selectById(id);
+    }
 }
