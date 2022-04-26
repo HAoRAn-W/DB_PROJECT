@@ -18,7 +18,7 @@ public class RentalServiceEntity {
     private BigInteger couponId;
 
     @TableField(value = "customer_id", insertStrategy = FieldStrategy.NOT_NULL)
-    private int customer_id;
+    private int customerId;
 
     @TableField(value = "p_date", insertStrategy = FieldStrategy.NOT_NULL)
     private Date pDate;

@@ -1,5 +1,6 @@
 package com.hqz.wow.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.hqz.wow.entity.CustomerEntity;
 import com.hqz.wow.entity.OfficeEntity;
 import com.hqz.wow.entity.RentalServiceEntity;
@@ -14,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -22,14 +24,16 @@ public class RentalServiceImpl implements RentalService {
     @Autowired
     RentalServiceMapper rentalServiceMapper;
 
+
+
     @Override
     @Transactional
     public void addRentalService(VehicleEntity vehicleEntity, OfficeEntity officeEntity,
                                  CustomerEntity customerEntity, CheckoutVO checkoutVO)  {
-//        try {
+        try {
             RentalServiceEntity rentalServiceEntity = new RentalServiceEntity();
             rentalServiceEntity.setCouponId(checkoutVO.getCouponId());
-            rentalServiceEntity.setCustomer_id(customerEntity.getCustomerId());
+            rentalServiceEntity.setCustomerId(customerEntity.getCustomerId());
 
             rentalServiceEntity.setDDate(checkoutVO.getDDate());
             rentalServiceEntity.setDOffice(checkoutVO.getDOffice());
@@ -44,11 +48,16 @@ public class RentalServiceImpl implements RentalService {
             rentalServiceEntity.setServiceStatus(WowConstants.SERVICE_ONGOING);
 
             rentalServiceMapper.insert(rentalServiceEntity);
-//        } catch (Exception e) {
-//            throw new RegistrationException(WowConstants.PLACE_ORDER_ERROR, "Error Place Order");
-//        }
+        } catch (Exception e) {
+            throw new RegistrationException(WowConstants.PLACE_ORDER_ERROR, "Error Place Order");
+        }
+    }
 
-
+    @Override
+    public List<RentalServiceEntity> getRentalServiceListByCustomerId(int customerId) {
+        QueryWrapper<RentalServiceEntity> wrapper = new QueryWrapper<>();
+        wrapper.eq("customer_id",customerId).orderByDesc("service_id");
+        return rentalServiceMapper.selectList(wrapper);
     }
 
 

@@ -12,6 +12,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -43,7 +44,8 @@ public class OrderConfirmController {
                                @Valid @ModelAttribute("checkoutVO") CheckoutVO checkoutVO,
                                BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            // input invalid, display error messages
+            // input invalid, jump to error messages page
+            return "redirect:/order-error";
         } else {
             VehicleEntity vehicleEntity = vehicleService.getVehicleByVin(vin);
             OfficeEntity officeEntity = officeService.getOfficeById(vehicleEntity.getOfficeId());
@@ -57,5 +59,10 @@ public class OrderConfirmController {
         }
 
         return "order-confirm";
+    }
+
+    @GetMapping("/order-error")
+    public String orderError(Model model){
+        return "order-error";
     }
 }

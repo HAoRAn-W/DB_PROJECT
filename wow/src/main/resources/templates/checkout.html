@@ -67,7 +67,7 @@
                     <form class="text-left clearfix" th:action="@{/order-confirm(vin=${vehicleEntity.vin})}" th:object="${checkoutVO}"
                           method="post" novalidate>
                         <div class="block billing-details">
-                            <h4 class="widget-title">Choose your office</h4>
+                            <h4 class="widget-title">Service Details</h4>
                             <div class="form-group">
                                 <label for="pick_address">Pick-up Office</label>
                                 <input type="text" class="form-control" id="pick_address" th:placeholder="${officeEntity.street}
@@ -80,6 +80,8 @@
                                             th:value="${office.officeID}"
                                             th:text="${office.street}+ ' ' + ${office.state}">
                                 </select>
+                                <div th:if="${#fields.hasErrors('dOffice')}" class="alert alert-danger alert-common"
+                                     role="alert" th:errors="*{dOffice}"></div>
                             </div>
                             <div class="checkout-country-code clearfix">
                                 <div class="form-group">
@@ -87,12 +89,16 @@
                                     <input type="date" class="form-control" id=start name="trip-start"
                                            value="2018-07-22"
                                            min="2018-01-01" max="2022-12-31" th:field="*{pDate}" >
+                                    <div th:if="${#fields.hasErrors('pDate')}" class="alert alert-danger alert-common"
+                                         role="alert" th:errors="*{pDate}"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for=end>Drop-off Date</label>
                                     <input type="date" class="form-control" id=end name="trip-end"
                                            value="2018-07-22"
                                            min="2018-01-01" max="2022-12-31" th:field="*{dDate}" >
+                                    <div th:if="${#fields.hasErrors('dDate')}" class="alert alert-danger alert-common"
+                                         role="alert" th:errors="*{dDate}"></div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -102,7 +108,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-main btn-small btn-round-full" th:href="@{/order-confirm}">Place order</button>
+                            <button type="submit" class="btn btn-main btn-small btn-round-full">Place order</button>
                         </div>
                     </form>
                 </div>
