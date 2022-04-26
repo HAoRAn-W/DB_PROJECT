@@ -3,6 +3,7 @@ package com.hqz.wow.service.security;
 import com.hqz.wow.entity.CustomerEntity;
 import com.hqz.wow.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,6 +18,7 @@ import java.util.List;
  * user detail service for Spring Security authentication
  */
 @Service
+@Order(1)
 public class UserDetailServiceImpl implements UserDetailsService {
 
     @Autowired

@@ -1,8 +1,12 @@
 package com.hqz.wow.config;
 
+import com.hqz.wow.service.AdminService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -18,12 +22,18 @@ import javax.annotation.Resource;
 @EnableWebSecurity
 public class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Bean
+    @Order(2)
+    public static PasswordEncoder a_encoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+
     @Resource
     UserDetailsService userDetailsService;
 
-    //@Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+    public AdminSecurityConfig() {
+        super();
     }
 
     @Override
@@ -33,12 +43,22 @@ public class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/css/**", "/images/**", "/js/**", "/plugins/**");
     }
 
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.inMemoryAuthentication()
+//                .withUser("admin")
+//                .password(a_encoder().encode("admin"))
+//                .roles("ADMIN");
+//    }
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication()
+                .withUser("admin").password("{noop}password").roles("ADMIN");
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/login", "/login-admin","/register-admin","/register-corp","/register-indiv", "/reset-password", "/confirm-info", "/reset-password-process").permitAll()
-                .anyRequest()
-                .authenticated()
+                .antMatchers("/login", "/login-admin").permitAll()
+                .anyRequest().authenticated()
                 .and()
                 // Remember me configurations
                 .rememberMe()
@@ -51,7 +71,7 @@ public class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login-admin")
                 .defaultSuccessUrl("/index", true)
-                .failureUrl("/login?error=true")
+                .failureUrl("/login-admin?error=true")
                 .permitAll()
                 .and()
                 .logout()
