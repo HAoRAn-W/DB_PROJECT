@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+import javax.validation.constraints.Pattern;
 
 @Data
 public class PaymentVO {
@@ -13,7 +13,8 @@ public class PaymentVO {
     private String paymentMethod;
 
     @NotEmpty(message = "Please input your card number")
-    private String cardNo;
+    @Pattern(regexp="(^$|[0-9]{16})", message = "Please input valid card number")
+    private String cardNumber;
 
     private int serviceId;
 
