@@ -153,11 +153,13 @@ ALTER TABLE hqz_corp_cust
 
 ALTER TABLE hqz_corp_cust
     ADD CONSTRAINT corp_cust_customer_fk FOREIGN KEY ( customer_id )
-        REFERENCES hqz_customer ( customer_id );
+        REFERENCES hqz_customer ( customer_id )
+        ON DELETE CASCADE;
 
 ALTER TABLE hqz_indiv_cust
     ADD CONSTRAINT indiv_cust_customer_fk FOREIGN KEY ( customer_id )
-        REFERENCES hqz_customer ( customer_id );
+        REFERENCES hqz_customer ( customer_id )
+        ON DELETE CASCADE;
 
 ALTER TABLE hqz_invoice
     ADD CONSTRAINT invoice_rental_service_fk FOREIGN KEY ( service_id )
@@ -173,7 +175,8 @@ ALTER TABLE hqz_rental_service
 
 ALTER TABLE hqz_rental_service
     ADD CONSTRAINT rental_service_customer_fk FOREIGN KEY ( customer_id )
-        REFERENCES hqz_customer ( customer_id );
+        REFERENCES hqz_customer ( customer_id )
+        ON DELETE CASCADE;
 
 ALTER TABLE hqz_rental_service
     ADD CONSTRAINT rental_service_vehicle_fk FOREIGN KEY ( vin )
@@ -386,7 +389,4 @@ ALTER TABLE hqz_corp_info ADD CONSTRAINT corp_discount_check CHECK ( discount <=
 ALTER TABLE hqz_coupon ADD CONSTRAINT coupon_date_check CHECK (valid_from_date <= valid_to_date);
 
 -- Add check for service_status in hqz_rental_service Y for complete, N for ongoing
-ALTER TABLE hqz_rental_service ADD CONSTRAINT service_status_check CHECK (service_status='Y' OR service_status='N');
-
-
-
+ALTER TABLE hqz_rental_service ADD CONSTRAINT service_status_check CHECK (service_status in ('O','A','P','F'));
