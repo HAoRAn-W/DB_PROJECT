@@ -216,7 +216,8 @@ public class AccountController {
      * @return info invalid redirect to confirm-info.html, successful return reset-password.html
      */
     @PostMapping("/reset-password")
-    public String resetPassword(@Valid @ModelAttribute("infoConfirmVO") InfoConfirmVO infoConfirmVO, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+    public String resetPassword(@Valid @ModelAttribute("infoConfirmVO") InfoConfirmVO infoConfirmVO, BindingResult bindingResult,
+                                RedirectAttributes redirectAttributes, Model model) {
         if (bindingResult.hasErrors()) {
             // redirect error messages
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.infoConfirmVO", bindingResult);
