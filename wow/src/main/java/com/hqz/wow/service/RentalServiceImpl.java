@@ -5,14 +5,17 @@ import com.hqz.wow.entity.CustomerEntity;
 import com.hqz.wow.entity.OfficeEntity;
 import com.hqz.wow.entity.RentalServiceEntity;
 import com.hqz.wow.entity.VehicleEntity;
+import com.hqz.wow.exception.PayBillException;
 import com.hqz.wow.exception.RegistrationException;
 import com.hqz.wow.mapper.RentalServiceMapper;
+import com.hqz.wow.mapper.VehicleMapper;
 import com.hqz.wow.util.WowConstants;
 import com.hqz.wow.vo.CheckoutVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -23,6 +26,9 @@ public class RentalServiceImpl implements RentalService {
 
     @Autowired
     RentalServiceMapper rentalServiceMapper;
+
+    @Resource
+    VehicleMapper vehicleMapper;
 
 
 
@@ -58,6 +64,27 @@ public class RentalServiceImpl implements RentalService {
         QueryWrapper<RentalServiceEntity> wrapper = new QueryWrapper<>();
         wrapper.eq("customer_id",customerId).orderByDesc("service_id");
         return rentalServiceMapper.selectList(wrapper);
+    }
+
+    @Override
+    public RentalServiceEntity getRentalServiceById(int serviceId) {
+        return rentalServiceMapper.selectById(serviceId);
+    }
+
+    @Override
+    @Transactional
+    public void completeService(int serviceId) {
+        RentalServiceEntity rentalServiceEntity = rentalServiceMapper.selectById(serviceId);
+        rentalServiceEntity.setServiceStatus(WowConstants.SERVICE_FINISHED);
+        VehicleEntity vehicleEntity = vehicleMapper.selectById(rentalServiceEntity.getVin());
+        vehicleEntity.setVehicleStatus(WowConstants.VEHICLE_AVAILABLE);
+        try {
+            rentalServiceMapper.updateById(rentalServiceEntity);
+            vehicleMapper.updateById(vehicleEntity);
+        }
+        catch (Exception e) {
+            throw new PayBillException(WowConstants.PAY_BILL_ERROR, "Complete Service Error");
+        }
     }
 
 
