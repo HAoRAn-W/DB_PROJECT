@@ -390,3 +390,7 @@ ALTER TABLE hqz_coupon ADD CONSTRAINT coupon_date_check CHECK (valid_from_date <
 
 -- Add check for service_status in hqz_rental_service Y for complete, N for ongoing
 ALTER TABLE hqz_rental_service ADD CONSTRAINT service_status_check CHECK (service_status in ('O','A','P','F'));
+
+--INDEX SECTION
+-- index on email (used for user login)
+ALTER TABLE `hqz_customer` ADD INDEX `email_idx` (c_email);
