@@ -92,9 +92,13 @@
 <!--                                btn for payment and end the service            -->
                                 <td th:if="${rentalServiceEntity.serviceStatus == 'O'}">
                                     <a th:href="@{/order-end(serviceId=${rentalServiceEntity.serviceId})}" class="btn btn-default">End</a></td>
+                                <td th:if="${rentalServiceEntity.serviceStatus == 'A'}">
+                                    <span th:text="' '"></span></td>
                                 <td th:if="${rentalServiceEntity.serviceStatus == 'P'}">
                                     <a th:href="@{/pay(serviceId=${rentalServiceEntity.serviceId})}"
                                        class="btn btn-default">Pay</a></td>
+                                <td th:if="${rentalServiceEntity.serviceStatus == 'F'}">
+                                    <span th:text="' '"></span></td>
                             </tr>
                             </tbody>
                         </table>
