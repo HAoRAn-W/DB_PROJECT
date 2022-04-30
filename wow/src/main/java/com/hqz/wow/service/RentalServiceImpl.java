@@ -78,22 +78,4 @@ public class RentalServiceImpl implements RentalService {
             throw new PayBillException(WowConstants.END_SERVICE_ERROR, "End Service Error");
         }
     }
-
-
-    @Override
-    @Transactional
-    public void completeService(int serviceId) {
-        RentalServiceEntity rentalServiceEntity = rentalServiceMapper.selectById(serviceId);
-        rentalServiceEntity.setServiceStatus(WowConstants.SERVICE_FINISHED);
-        VehicleEntity vehicleEntity = vehicleMapper.selectById(rentalServiceEntity.getVin());
-        vehicleEntity.setVehicleStatus(WowConstants.VEHICLE_AVAILABLE);
-        try {
-            rentalServiceMapper.updateById(rentalServiceEntity);
-            vehicleMapper.updateById(vehicleEntity);
-        } catch (Exception e) {
-            throw new PayBillException(WowConstants.PAY_BILL_ERROR, "Complete Service Error");
-        }
-    }
-
-
 }

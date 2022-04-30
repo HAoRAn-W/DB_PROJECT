@@ -17,5 +17,4 @@ public interface RentalService {
 
     void endService(int serviceId);
 
-    void completeService(int serviceId);
 }
