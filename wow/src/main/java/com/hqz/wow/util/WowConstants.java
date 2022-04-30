@@ -14,9 +14,12 @@ public class WowConstants {
     // vehicle availability: available
     public static final String VEHICLE_AVAILABLE = "A";
 
-    public static final String SERVICE_ONGOING = "N";
+    public static final String SERVICE_ONGOING = "O"; // service is ongoing
 
-    public static final String SERVICE_FINISHED = "Y";
+    public static final String SERVICE_PENDING = "A"; // service is waiting for admin to update odometer
+
+    public static final String SERVICE_NEED_PAY = "P"; // service waiting for payment
+    public static final String SERVICE_FINISHED = "F"; // service finished
 
     //individual customer's daily limit for rent a car
     public static final float INDIV_DAILY_O_LIMIT = 500.0F;
@@ -29,4 +32,5 @@ public class WowConstants {
     public static final int RESET_PASSWORD_ERROR = 123002;
 
     public static final int PLACE_ORDER_ERROR = 123003;
+
 }
