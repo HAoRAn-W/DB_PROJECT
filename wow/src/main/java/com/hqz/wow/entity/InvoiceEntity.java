@@ -17,6 +17,9 @@ public class InvoiceEntity {
     @TableField(value = "i_amount")
     private float amount;
 
+    @TableField(value = "unpaid_amount")
+    private float unpaidAmount;
+
     @TableField(value = "i_date")
     private Date invoiceDate;
 
