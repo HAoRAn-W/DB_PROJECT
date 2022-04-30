@@ -15,5 +15,7 @@ public interface RentalService {
 
     RentalServiceEntity getRentalServiceById(int serviceId);
 
+    void endService(int serviceId);
+
     void completeService(int serviceId);
 }

@@ -27,10 +27,13 @@ public class WowConstants {
     public static final int PAGE_SIZE = 6;
 
     public static final int REGISTRATION_ERROR = 123000;
+
     public static final int PAY_BILL_ERROR = 123001;
 
     public static final int RESET_PASSWORD_ERROR = 123002;
 
     public static final int PLACE_ORDER_ERROR = 123003;
+
+    public static final int END_SERVICE_ERROR = 123004;
 
 }

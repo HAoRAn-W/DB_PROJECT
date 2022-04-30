@@ -16,8 +16,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Objects;
 
@@ -31,11 +29,10 @@ public class RentalServiceImpl implements RentalService {
     VehicleMapper vehicleMapper;
 
 
-
     @Override
     @Transactional
     public void addRentalService(VehicleEntity vehicleEntity, OfficeEntity officeEntity,
-                                 CustomerEntity customerEntity, CheckoutVO checkoutVO)  {
+                                 CustomerEntity customerEntity, CheckoutVO checkoutVO) {
         try {
             RentalServiceEntity rentalServiceEntity = new RentalServiceEntity();
             rentalServiceEntity.setCouponId(checkoutVO.getCouponId());
@@ -62,7 +59,7 @@ public class RentalServiceImpl implements RentalService {
     @Override
     public List<RentalServiceEntity> getRentalServiceListByCustomerId(int customerId) {
         QueryWrapper<RentalServiceEntity> wrapper = new QueryWrapper<>();
-        wrapper.eq("customer_id",customerId).orderByDesc("service_id");
+        wrapper.eq("customer_id", customerId).orderByDesc("service_id");
         return rentalServiceMapper.selectList(wrapper);
     }
 
@@ -70,6 +67,18 @@ public class RentalServiceImpl implements RentalService {
     public RentalServiceEntity getRentalServiceById(int serviceId) {
         return rentalServiceMapper.selectById(serviceId);
     }
+
+    @Override
+    public void endService(int serviceId) {
+        RentalServiceEntity rentalServiceEntity = rentalServiceMapper.selectById(serviceId);
+        rentalServiceEntity.setServiceStatus(WowConstants.SERVICE_PENDING);
+        try {
+            rentalServiceMapper.updateById(rentalServiceEntity);
+        } catch (Exception e) {
+            throw new PayBillException(WowConstants.END_SERVICE_ERROR, "End Service Error");
+        }
+    }
+
 
     @Override
     @Transactional
@@ -81,8 +90,7 @@ public class RentalServiceImpl implements RentalService {
         try {
             rentalServiceMapper.updateById(rentalServiceEntity);
             vehicleMapper.updateById(vehicleEntity);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new PayBillException(WowConstants.PAY_BILL_ERROR, "Complete Service Error");
         }
     }

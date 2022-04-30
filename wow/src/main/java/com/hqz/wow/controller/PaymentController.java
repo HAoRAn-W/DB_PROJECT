@@ -43,7 +43,7 @@ public class PaymentController {
     PaymentService paymentService;
 
     @RequestMapping("/pay")
-    public String showPaymentPage(@RequestParam(value = "serviceid") Integer serviceId, Model model) {
+    public String showPaymentPage(@RequestParam(value = "serviceId") Integer serviceId, Model model) {
         RentalServiceEntity rentalServiceEntity = rentalService.getRentalServiceById(serviceId);
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

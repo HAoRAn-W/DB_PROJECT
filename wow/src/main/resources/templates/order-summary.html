@@ -80,10 +80,21 @@
                                 <td><span th:text="${vehicleEntityList[rentalServiceEntityStat.index].model} + ' ' +
                                     ${vehicleEntityList[rentalServiceEntityStat.index].make} + ' ' +
                                     ${vehicleEntityList[rentalServiceEntityStat.index].carYear}"></span></td>
-                                <td th:if="${rentalServiceEntity.serviceStatus != 'Y'}">
+<!--                                order status-->
+                                <td th:if="${rentalServiceEntity.serviceStatus == 'O'}">
                                     <span class="label label-primary" th:text="'OnGoing'"></span></td>
-                                <td th:if="${rentalServiceEntity.serviceStatus == 'Y'}">
+                                <td th:if="${rentalServiceEntity.serviceStatus == 'A'}">
+                                    <span class="label label-warning" th:text="'Processing'"></span></td>
+                                <td th:if="${rentalServiceEntity.serviceStatus == 'P'}">
+                                    <span class="label label-danger" th:text="'Unpaid'"></span></td>
+                                <td th:if="${rentalServiceEntity.serviceStatus == 'F'}">
                                     <span class="label label-success" th:text="'Complete'"></span></td>
+<!--                                btn for payment and end the service            -->
+                                <td th:if="${rentalServiceEntity.serviceStatus == 'O'}">
+                                    <a th:href="@{/order-end(serviceId=${rentalServiceEntity.serviceId})}" class="btn btn-default">End</a></td>
+                                <td th:if="${rentalServiceEntity.serviceStatus == 'P'}">
+                                    <a th:href="@{/pay(serviceId=${rentalServiceEntity.serviceId})}"
+                                       class="btn btn-default">Pay</a></td>
                             </tr>
                             </tbody>
                         </table>

@@ -7,10 +7,12 @@ import com.hqz.wow.service.CustomerService;
 import com.hqz.wow.service.RentalService;
 import com.hqz.wow.service.VehicleService;
 import com.hqz.wow.service.security.AuthenticationService;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -54,6 +56,22 @@ public class OrderSummaryController {
         model.addAttribute("rentalServiceEntityList", rentalServiceEntityList);
         model.addAttribute("vehicleEntityList",vehicleEntityList);
         return "order-summary";
+    }
+
+    @GetMapping("/order-end")
+    public  String endOrder(@RequestParam(value = "serviceId") Integer serviceId, Model model){
+        RentalServiceEntity rentalServiceEntity = rentalService.getRentalServiceById(serviceId);
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String email = authentication.getName();
+        int customerId = customerService.findIdByEmail(email);
+        if (customerId != rentalServiceEntity.getCustomerId()) {
+            // user and service mismatch
+            model.addAttribute("usermismatch", true);
+            return "order-error";
+        }
+        rentalService.endService(serviceId);
+        return "order-end";
     }
 
 }
