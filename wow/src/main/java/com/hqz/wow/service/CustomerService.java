@@ -18,4 +18,6 @@ public interface CustomerService {
     void resetPassword(String email, ResetPasswordVO resetPasswordVO) throws RuntimeException;
 
     boolean validateSecQuestion(String email, int questionId, String answer);
+
+    int findIdByEmail(String email);
 }

@@ -110,4 +110,10 @@ public class CustomerServiceImpl implements CustomerService {
         CustomerEntity customer = findCustomerByEmail(email);
         return customer.getQuestionId() == questionId && answer.equals(customer.getSecAnswer());
     }
+
+    @Override
+    public int findIdByEmail(String email) {
+        CustomerEntity customerEntity = findCustomerByEmail(email);
+        return customerEntity.getCustomerId();
+    }
 }
