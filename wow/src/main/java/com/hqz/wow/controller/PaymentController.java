@@ -17,7 +17,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
@@ -40,14 +42,14 @@ public class PaymentController {
     @Resource
     PaymentService paymentService;
 
-    @GetMapping("/pay")
+    @RequestMapping("/pay")
     public String showPaymentPage(@RequestParam(value = "serviceid") Integer serviceId, Model model) {
         RentalServiceEntity rentalServiceEntity = rentalService.getRentalServiceById(serviceId);
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = authentication.getName();
         int customerId = customerService.findIdByEmail(email);
-        if(customerId != rentalServiceEntity.getCustomerId()) {
+        if (customerId != rentalServiceEntity.getCustomerId()) {
             // user and service mismatch
             model.addAttribute("usermismatch", true);
             return "payment-error";
@@ -58,8 +60,11 @@ public class PaymentController {
         String vin = rentalServiceEntity.getVin();
         VehicleEntity vehicleEntity = vehicleService.getVehicleByVin(vin);
 
-        PaymentVO paymentVO = new PaymentVO();
-        model.addAttribute("paymentVO", paymentVO);
+        if (!model.containsAttribute("paymentVO")) {
+            PaymentVO paymentVO = new PaymentVO();
+            model.addAttribute("paymentVO", paymentVO);
+        }
+
         model.addAttribute("vehicleEntity", vehicleEntity);
         model.addAttribute("invoiceEntity", invoiceEntity);
         model.addAttribute("rentalServiceEntity", rentalServiceEntity);
@@ -67,37 +72,42 @@ public class PaymentController {
         return "payment";
     }
 
-    @PostMapping("/pay")
+    @PostMapping("/pay-process")
     public String processPayment(@RequestParam(value = "serviceid") Integer serviceId, Model model,
-                                 @Valid @ModelAttribute("paymentVO") PaymentVO paymentVO, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()) {
-            return "payment";
+                                 @Valid @ModelAttribute("paymentVO") PaymentVO paymentVO,
+                                 RedirectAttributes redirectAttributes, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.paymentVO", bindingResult);
+            redirectAttributes.addFlashAttribute("paymentVO", paymentVO);
+            return "redirect:/payment?serviceid=" + serviceId;
         }
         float paidAmount = paymentVO.getPaidAmount();
         float amountNeeded = paymentService.amountNeedToPay(serviceId);
-        int compareResult =Float.compare(paidAmount, amountNeeded);
-        if(compareResult < 0) {
+        int compareResult = Float.compare(paidAmount, amountNeeded);
+        if (compareResult < 0) {
             paymentVO.setServiceId(serviceId);
             try {
                 paymentService.payBill(paymentVO);
             } catch (Exception e) {
                 model.addAttribute("error", true);
-                return "payment";
+                redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.paymentVO", bindingResult);
+                redirectAttributes.addFlashAttribute("paymentVO", paymentVO);
+                return "redirect:/payment?serviceid=" + serviceId;
             }
             return "payment-confirm";
-        }
-        else if(compareResult > 0) {
+        } else if (compareResult > 0) {
             model.addAttribute("overpay", true);
             return "payment";
-        }
-        else {
+        } else {
             paymentVO.setServiceId(serviceId);
             try {
                 paymentService.payBill(paymentVO);
                 rentalService.completeService(serviceId);
             } catch (Exception e) {
                 model.addAttribute("error", true);
-                return "payment";
+                redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.paymentVO", bindingResult);
+                redirectAttributes.addFlashAttribute("paymentVO", paymentVO);
+                return "redirect:/payment?serviceid=" + serviceId;
             }
             return "payment-confirm";
         }
