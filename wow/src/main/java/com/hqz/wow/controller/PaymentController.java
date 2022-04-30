@@ -42,7 +42,7 @@ public class PaymentController {
     @Resource
     PaymentService paymentService;
 
-    @RequestMapping("/pay")
+    @GetMapping("/pay")
     public String showPaymentPage(@RequestParam(value = "serviceId") Integer serviceId, Model model) {
         RentalServiceEntity rentalServiceEntity = rentalService.getRentalServiceById(serviceId);
 
@@ -73,18 +73,20 @@ public class PaymentController {
     }
 
     @PostMapping("/pay-process")
-    public String processPayment(@RequestParam(value = "serviceid") Integer serviceId, Model model,
+    public String processPayment(@RequestParam(value = "serviceId") Integer serviceId,
+                                 Model model,
                                  @Valid @ModelAttribute("paymentVO") PaymentVO paymentVO,
-                                 RedirectAttributes redirectAttributes, BindingResult bindingResult) {
+                                 BindingResult bindingResult,
+                                 RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.paymentVO", bindingResult);
             redirectAttributes.addFlashAttribute("paymentVO", paymentVO);
-            return "redirect:/payment?serviceid=" + serviceId;
+            return "redirect:/pay?serviceId=" + serviceId;
         }
         float paidAmount = paymentVO.getPaidAmount();
         float amountNeeded = paymentService.amountNeedToPay(serviceId);
         int compareResult = Float.compare(paidAmount, amountNeeded);
-        if (compareResult < 0) {
+        if (compareResult <= 0) {
             paymentVO.setServiceId(serviceId);
             try {
                 paymentService.payBill(paymentVO);
@@ -92,24 +94,14 @@ public class PaymentController {
                 model.addAttribute("error", true);
                 redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.paymentVO", bindingResult);
                 redirectAttributes.addFlashAttribute("paymentVO", paymentVO);
-                return "redirect:/payment?serviceid=" + serviceId;
+                return "redirect:/pay?serviceId=" + serviceId;
             }
             return "payment-confirm";
-        } else if (compareResult > 0) {
-            model.addAttribute("overpay", true);
-            return "payment";
         } else {
-            paymentVO.setServiceId(serviceId);
-            try {
-                paymentService.payBill(paymentVO);
-                rentalService.completeService(serviceId);
-            } catch (Exception e) {
-                model.addAttribute("error", true);
-                redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.paymentVO", bindingResult);
-                redirectAttributes.addFlashAttribute("paymentVO", paymentVO);
-                return "redirect:/payment?serviceid=" + serviceId;
-            }
-            return "payment-confirm";
+            redirectAttributes.addFlashAttribute("overpay", true);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.paymentVO", bindingResult);
+            redirectAttributes.addFlashAttribute("paymentVO", paymentVO);
+            return "redirect:/pay?serviceId=" + serviceId;
         }
     }
 }
