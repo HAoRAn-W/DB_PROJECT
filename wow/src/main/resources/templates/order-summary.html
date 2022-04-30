@@ -80,9 +80,10 @@
                                 <td><span th:text="${vehicleEntityList[rentalServiceEntityStat.index].model} + ' ' +
                                     ${vehicleEntityList[rentalServiceEntityStat.index].make} + ' ' +
                                     ${vehicleEntityList[rentalServiceEntityStat.index].carYear}"></span></td>
-                                <td>
-                                    <span class="${rentalServiceEntity.serviceStatus == 'N'} ? label label-primary : label label-success"
-                                    th:text="${rentalServiceEntity.serviceStatus == 'N'} ? 'OnGoing' : 'Completed'"></span></td>
+                                <td th:if="${rentalServiceEntity.serviceStatus != 'Y'}">
+                                    <span class="label label-primary" th:text="'OnGoing'"></span></td>
+                                <td th:if="${rentalServiceEntity.serviceStatus == 'Y'}">
+                                    <span class="label label-success" th:text="'Complete'"></span></td>
                             </tr>
                             </tbody>
                         </table>
