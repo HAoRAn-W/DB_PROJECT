@@ -82,6 +82,7 @@ ALTER TABLE hqz_indiv_cust ADD CONSTRAINT hqz_indiv_cust_pk PRIMARY KEY ( custom
 CREATE TABLE hqz_invoice (
     i_date     DATETIME NOT NULL COMMENT 'Invoice date',
     i_amount   DECIMAL(8, 2) NOT NULL COMMENT 'Invoice amount in USD',
+    unpaid_amount DECIMAL(8, 2) NOT NULL COMMENT 'Unpaid amount',
     service_id INT NOT NULL COMMENT 'ID for the customer'
 );
 
@@ -320,9 +321,9 @@ BEGIN
             END IF;
         END IF;
         IF new.daily_o_limit IS NULL OR new.e_odometer - new.s_odometer <= (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit THEN
-            INSERT INTO wow_db.hqz_invoice (i_date, i_amount, service_id) VALUES (SYSDATE(), ROUND((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee * disc, 2), new.service_id);
+            INSERT INTO wow_db.hqz_invoice (i_date, i_amount, unpaid_amount, service_id) VALUES (SYSDATE(), ROUND((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee * disc, ROUND((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee * disc, 2), new.service_id);
         ELSE
-            INSERT INTO wow_db.hqz_invoice (i_date, i_amount, service_id) VALUES (SYSDATE(), ROUND(((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee + ((new.e_odometer - new.s_odometer) - (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit) * o_fee) * disc, 2), new.service_id);
+            INSERT INTO wow_db.hqz_invoice (i_date, i_amount, unpaid_amount, service_id) VALUES (SYSDATE(), ROUND(((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee + ((new.e_odometer - new.s_odometer) - (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit) * o_fee) * disc, 2), ROUND(((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee + ((new.e_odometer - new.s_odometer) - (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit) * o_fee) * disc, 2), new.service_id);
         END IF;
     END IF;
 END;
@@ -358,13 +359,15 @@ BEGIN
             UPDATE hqz_invoice 
 			SET 
 			I_DATE = SYSDATE(),
-			I_AMOUNT = ROUND((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee * disc, 2)
+			I_AMOUNT = ROUND((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee * disc, 2),
+            unpaid_amount = ROUND((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee * disc, 2)
             WHERE service_id = new.service_id;
         ELSE
 			UPDATE hqz_invoice 
 			SET 
 			I_DATE = SYSDATE(),
 			I_AMOUNT = ROUND(((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee + ((new.e_odometer - new.s_odometer) - (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit) * o_fee) * disc, 2)
+			unpaid_amount = ROUND(((DATEDIFF(new.d_date, new.p_date) + 1) * r_fee + ((new.e_odometer - new.s_odometer) - (DATEDIFF(new.d_date, new.p_date) + 1) * new.daily_o_limit) * o_fee) * disc, 2)
             WHERE service_id = new.service_id;
         END IF;
     END IF;
