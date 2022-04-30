@@ -64,46 +64,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <form class="text-left clearfix" th:action="@{/pay-process}" th:object="${paymentVO}"
+                    <form class="text-left clearfix" th:action="@{/pay-process(serviceId=${param.serviceId})}" th:object="${paymentVO}"
                           method="post" novalidate>
-                        <div class="block billing-details">
-                            <h4 class="widget-title">Payment Information</h4>
-                            <div class="form-group">
-                                <div th:if="${error}" class="alert alert-danger alert-common"
-                                     role="alert">Error happens, please try again
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="drop_method">Payment Method</label>
-                                <select id="drop_method" class="form-control" th:field="*{paymentMethod}">
-                                    <option value="debit">Debit Card</option>
-                                    <option value="credit">Credit Card</option>
-                                </select>
-                                <div th:if="${#fields.hasErrors('paymentMethod')}"
-                                     class="alert alert-danger alert-common"
-                                     role="alert" th:errors="*{paymentMethod}"></div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="card_no">Card No.</label>
-                                <input type="text" class="form-control" id="card_no" placeholder=""
-                                       th:feild="*{cardNo}">
-                                <div th:if="${#fields.hasErrors('cardNo')}" class="alert alert-danger alert-common"
-                                     role="alert" th:errors="*{cardNo}"></div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="amount">Payment Amount</label>
-                                <input type="text" class="form-control" id="amount" placeholder=""
-                                       th:feild="*{paidAmount}">
-                                <div th:if="${#fields.hasErrors('paidAmount')}" class="alert alert-danger alert-common"
-                                     role="alert" th:errors="*{paidAmount}"></div>
-                                <div th:if="${overpay}" class="alert alert-danger alert-common"
-                                     role="alert">Pay amount exceeds
-                                </div>
-                            </div>
-
+                        <div class="form-group">
+                            <label for="payment_method">Payment Method</label>
+                            <select id="payment_method" class="form-control" th:field="*{paymentMethod}">
+                                <option value="Debit">Debit Card</option>
+                                <option value="Credit">Credit Card</option>
+                            </select>
+                            <div th:if="${#fields.hasErrors('paymentMethod')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{paymentMethod}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="card_no">Card No.</label>
+                            <input type="text" class="form-control" id="card_no" th:field="*{cardNumber}" placeholder="">
+                            <div th:if="${#fields.hasErrors('cardNumber')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{cardNumber}"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Amount</label>
+                            <input type="text" class="form-control" id="amount" th:field="*{paidAmount}" th:placeholder="${invoiceEntity.unpaidAmount}">
+                            <div th:if="${#fields.hasErrors('paidAmount')}" class="alert alert-danger alert-common"
+                                 role="alert" th:errors="*{paidAmount}"></div>
+                            <div th:if="${overpay}" class="alert alert-danger alert-common"
+                                 role="alert">Pay amount exceeds</div>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-main btn-small btn-round-full">Pay Now</button>
@@ -137,6 +121,10 @@
                                 <li>
                                     <span>Total: </span>
                                     <span class="price" th:text="'$' + ${invoiceEntity.amount}"></span>
+                                </li>
+                                <li>
+                                    <span>You need to pay: </span>
+                                    <span class="price" th:text="'$' + ${invoiceEntity.unpaidAmount}"></span>
                                 </li>
                             </ul>
                             <div class="verified-icon">
