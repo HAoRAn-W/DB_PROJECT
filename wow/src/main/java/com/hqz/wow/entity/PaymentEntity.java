@@ -20,7 +20,7 @@ public class PaymentEntity {
     private String paymentMethod;
 
     @TableField(value = "card_no")
-    private String cardNo;
+    private String cardNumber;
 
     @TableField(value = "service_id")
     private int serviceId;
