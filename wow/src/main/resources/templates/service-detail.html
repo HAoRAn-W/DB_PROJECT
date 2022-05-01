@@ -1,10 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>WoW | Detail</title>
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Construction Html5 Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="author" content="Themefisher">
+    <meta name="generator" content="Themefisher Constra HTML Template v1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png"/>
+
+    <!-- Themefisher Icon font -->
+    <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Animate css -->
+    <link rel="stylesheet" href="plugins/animate/animate.css">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
-<body>
-$END$
+
+<body id="body">
+
+<!-- Start Top Header Bar -->
+<section class="top-header" th:insert="header :: top-header"></section><!-- End Top Header Bar -->
+
+<!-- Main Menu Section -->
+<section class="menu" th:insert="header :: menu"></section>
+
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <h1 class="page-name">Detail</h1>
+                    <ol class="breadcrumb">
+                        <li><a th:href="@{/index}">Home</a></li>
+                        <li class="active">detail</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="page-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="post">
+                    <div class="post-media post-thumb">
+                        <a href="#">
+                            <img th:src="${vehicleEntity.imgUrl}" alt="">
+                        </a>
+                    </div>
+                    <h2 th:text="${vehicleEntity.model}"></h2>
+                    <h4 th:text="${vehicleEntity.make} + ' ' + ${vehicleEntity.carYear}"></h4>
+
+                    <ul class="summary-prices">
+                        <li>
+                            <h3>License Plate Number</h3>
+                            <h3 class="post-title" th:text="'  ' + ${vehicleEntity.licPlateNo}"></h3>
+                        </li>
+                        <li>
+                            <h3>Odometer </h3>
+                            <h3 class="post-title" th:text="'  ' + ${vehicleEntity.odometer} + ' miles'"></h3>
+                        </li>
+                        <li>
+                            <h3>Daily limit </h3>
+                            <h3 class="post-title" th:text="'  ' + ${rentalServiceEntity.dailyOLimit} + ' miles'"></h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <aside class="sidebar">
+                    <div class="widget widget-latest-post">
+                        <h4 class="widget-title">Offices</h4>
+                        <div class="media">
+                            <a class="pull-left" href="#!">
+                                <img class="media-object" th:src="${pickupOffice.imgUrl}" alt="Image">
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading"><a href="#!">Pick-up Office</a></h3>
+                                <h4 class="media-heading" th:text="${pickupOffice.officePhone}"></h4>
+                                <h4 class="media-heading" th:text="${pickupOffice.street}"></h4>
+                                <h4 class="media-heading" th:text="${pickupOffice.city}"></h4>
+                                <h4 class="media-heading" th:text="${pickupOffice.state}"></h4>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <a class="pull-left" href="#!">
+                                <img class="media-object" th:src="${dropoffOffice.imgUrl}" alt="Image">
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading"><a href="#!">Drop-off Office</a></h3>
+                                <h4 class="media-heading" th:text="${dropoffOffice.officePhone}"></h4>
+                                <h4 class="media-heading" th:text="${dropoffOffice.street}"></h4>
+                                <h4 class="media-heading" th:text="${dropoffOffice.city}"></h4>
+                                <h4 class="media-heading" th:text="${dropoffOffice.state}"></h4>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer section text-center" th:insert="footer :: footer"></footer>
+
+<!--
+Essential Scripts
+=====================================-->
+
+<!-- Main jQuery -->
+<script src="plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.1 -->
+<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- Bootstrap Touchpin -->
+<script src="plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+<!-- Instagram Feed Js -->
+<script src="plugins/instafeed/instafeed.min.js"></script>
+<!-- Video Lightbox Plugin -->
+<script src="plugins/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+<!-- Count Down Js -->
+<script src="plugins/syo-timer/build/jquery.syotimer.min.js"></script>
+
+<!-- slick Carousel -->
+<script src="plugins/slick/slick.min.js"></script>
+<script src="plugins/slick/slick-animation.min.js"></script>
+
+<!-- Google Mapl -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<script type="text/javascript" src="plugins/google-map/gmap.js"></script>
+
+<!-- Main Js File -->
+<script src="js/script.js"></script>
+
+
 </body>
 </html>

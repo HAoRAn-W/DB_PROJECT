@@ -2,15 +2,19 @@ package com.hqz.wow.controller;
 
 import com.hqz.wow.entity.ClassEntity;
 import com.hqz.wow.entity.OfficeEntity;
+import com.hqz.wow.entity.RentalServiceEntity;
 import com.hqz.wow.entity.VehicleEntity;
 import com.hqz.wow.service.*;
 import com.hqz.wow.vo.CheckoutVO;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
@@ -36,6 +40,9 @@ public class RentalServiceController {
 
     @Resource
     RentalService rentalService;
+
+    @Resource
+    CustomerService customerService;
 
 
     /**
@@ -63,6 +70,27 @@ public class RentalServiceController {
         model.addAttribute("officeEntityList", officeEntityList);
         model.addAttribute("classEntity", classEntity);
         return "checkout";
+    }
+
+    @RequestMapping("/service-detail")
+    public String showOngoing(@RequestParam("serviceId") Integer serviceId, Model model) {
+        RentalServiceEntity rentalServiceEntity = rentalService.getRentalServiceById(serviceId);
+        model.addAttribute("rentalServiceEntity", rentalServiceEntity);
+
+        String vin = rentalServiceEntity.getVin();
+        VehicleEntity vehicleEntity = vehicleService.getVehicleByVin(vin);
+        model.addAttribute("vehicleEntity",vehicleEntity);
+
+        int pOfficeId = rentalServiceEntity.getPOffice();
+        int dOfficeId = rentalServiceEntity.getDOffice();
+
+        OfficeEntity pickupOffice = officeService.getOfficeById(pOfficeId);
+        OfficeEntity dropoffOffice = officeService.getOfficeById(dOfficeId);
+
+        model.addAttribute("pickupOffice", pickupOffice);
+        model.addAttribute("dropoffOffice", dropoffOffice);
+
+        return "service-detail";
     }
 
 }
