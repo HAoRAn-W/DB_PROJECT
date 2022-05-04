@@ -37,7 +37,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/login", "/register-corp","/register-indiv", "/reset-password", "/confirm-info", "/reset-password-process").permitAll()
+                .antMatchers("/login", "/register-corp","/register-indiv", "/reset-password",
+                        "/confirm-info", "/reset-password-process").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 // Remember me configurations
