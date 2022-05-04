@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5333C006-F0D8-75D4-F47A-186E06B31BDF" name="HQZ_ADMIN">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:21:23 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ADMIN_ID" id="6C6EF789-16B0-7462-B7BD-CC49A536AE9D">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:21:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Id for admin account]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="A_PASSWORD" id="2B8D9FA5-D3E6-35D5-DBFD-FFE7F98DCA39">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:22:03 UTC</createdTime>
+<commentInRDBMS><![CDATA[Admin encoded password]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F45B9A45-9AA3-77C1-2821-E5D28059D285" name="hqz_admin PK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:21:50 UTC</createdTime>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6C6EF789-16B0-7462-B7BD-CC49A536AE9D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

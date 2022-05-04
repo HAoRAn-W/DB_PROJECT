@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C49F2E7F-CACE-DA05-7B3D-3F63507BCA09" containerWithKeyObject="CAABDA31-BFF5-9ACB-3B8E-C11678A2A489" localFKIndex="0CA53C0A-E34F-55DF-F900-993D418563C9" name="HQZ_RENTAL_SERVICE_HQZ_OFFICE_FKv2">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<generatorID>E446436E-6554-9CB9-DAD7-FEEAFCE5E049</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<referredTableLongName>HQZ_OFFICE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>8317631B-82BA-3ED5-B132-8DAB62A06131</referredTableID>
+<keyObject>A9A91633-F6B7-08E6-3716-0BFF2524A83A</keyObject>
+<referredKeyID>A9A91633-F6B7-08E6-3716-0BFF2524A83A</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>OFFICE_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="71316531-6F15-CE85-43F8-4BD6B059F3C3" name="HQZ_ADMIN">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<generatorID>5333C006-F0D8-75D4-F47A-186E06B31BDF</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ADMIN_ID" id="D43A1E6A-351E-CB4F-A2AF-1D3107616DA9">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[Id for admin account]]></commentInRDBMS>
+<generatorID>6C6EF789-16B0-7462-B7BD-CC49A536AE9D</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="A_PASSWORD" id="3AFB350C-A6B9-ABE7-C8B6-A0B211A4B499">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[Admin encoded password]]></commentInRDBMS>
+<generatorID>2B8D9FA5-D3E6-35D5-DBFD-FFE7F98DCA39</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E81F7C2C-DEBC-3659-7279-ED753E6F8298" name="HQZ_ADMIN_PK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<generatorID>F45B9A45-9AA3-77C1-2821-E5D28059D285</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D43A1E6A-351E-CB4F-A2AF-1D3107616DA9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

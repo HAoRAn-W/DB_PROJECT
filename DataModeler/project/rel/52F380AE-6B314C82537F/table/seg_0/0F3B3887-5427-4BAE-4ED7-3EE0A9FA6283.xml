@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0F3B3887-5427-4BAE-4ED7-3EE0A9FA6283" name="HQZ_SEC_QUESTION">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<generatorID>26FBE36C-2B2A-FF5F-9D2D-E3AA7936ED3C</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Q_ID" id="2B25BDB4-E30C-25AE-04C7-F872E5F3F01A">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[Id for the security questions]]></commentInRDBMS>
+<generatorID>B56D9B4A-EA6F-36CE-FEF1-C996B03C6FDA</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,20,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEC_QUESTION" id="4713571A-A650-A950-2FB9-68CDF47C8EA3">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[Security questions]]></commentInRDBMS>
+<generatorID>EF840620-BAE2-0573-2FAF-59053A86B1FF</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D3375EEF-0487-FFC6-2848-F5ACB4DB9533" name="HQZ_SEC_QUESTION_PK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<generatorID>CBFE18A4-2E5B-FC4E-4838-385C4715E006</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2B25BDB4-E30C-25AE-04C7-F872E5F3F01A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -73,6 +73,21 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,4,2</ownDataTypeParameters>
 </Attribute>
+<Attribute name="IMG_URL" id="89DB02F3-4B5C-7B97-90A1-036A307A4B6A">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:22:55 UTC</createdTime>
+<commentInRDBMS><![CDATA[URL for images]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2000</dataTypeSize>
+<ownDataTypeParameters>2000,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="09D6B797-EB04-CE01-0745-AA1BB8BC7FD5" name="HQZ_CLASS PK">

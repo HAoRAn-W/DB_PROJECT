@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EB93BD2C-742A-C77A-DCE2-7F7B839F9F3B" name="HQZ_PAYMENT">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7B2DA1C9-05EE-828F-E651-F48FF11CAD9A" name="HQZ_PAYMENT">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <generatorID>E729EDB5-1457-3F0E-9C67-315ECC5C690B</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="PAYMENT_ID" id="96E9D362-E489-4BB1-D4CE-CFFDCDBBF8F3">
+<Column name="PAYMENT_ID" id="923589D2-3F03-DD53-A547-FE429C0F5197">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[ID of the payment]]></commentInRDBMS>
 <generatorID>CF0F6D21-5D34-824F-3F31-BDBDEE4705E3</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -21,9 +21,9 @@
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="PAY_DATE" id="1C340B29-9A8E-E8DB-435E-ACBC39E46FE1">
+<Column name="PAY_DATE" id="57E81C86-4ACC-24B9-F7E0-229984D250D3">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[Date of this payment]]></commentInRDBMS>
 <generatorID>3E439146-AF39-BF88-6768-4D4E0DA804D8</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -33,9 +33,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="PAYMENT_METHOD" id="C1F1F4EC-9FFC-A289-A258-62D6EAEE21A5">
+<Column name="PAYMENT_METHOD" id="BB8A5218-A2A8-B713-BB51-F3B574E38BDC">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[Payment method (Credit, decit, etc.)]]></commentInRDBMS>
 <generatorID>CFAC5A0E-714B-ED2A-48F9-CB94762E859A</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -46,9 +46,9 @@
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CARD_NO" id="D42BBAD6-6562-7099-EBF5-A6F456E1B7CE">
+<Column name="CARD_NO" id="A29B6561-ECC1-AE5A-DE9A-2E16D1334B2E">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[Payment card number]]></commentInRDBMS>
 <generatorID>61F43166-3290-A297-50F3-50B27CC5CFA0</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -59,9 +59,9 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="SERVICE_ID" id="E231A190-94DA-0F26-EC03-F895F4C98906">
+<Column name="SERVICE_ID" id="DFACBDE3-F7CA-BD16-9E66-34F2CEFB47DC">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <generatorID>B78025BF-E969-321F-F5D7-AEC5458B0607</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -73,32 +73,32 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="AF700B7D-8023-2B00-7AE4-F32CDA1046F5" referredColumn="4DCFD9E9-8529-6180-CF4F-85C7B6A2D8A7"/>
+<colAssociation fkAssociation="D5E1A078-D7DB-0047-E805-F965AC7B12EB" referredColumn="F203B09F-B614-63A1-0A60-6DDAE8F72A25"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="C2680D11-23E2-87C4-0A32-EF21C5077DFF" name="HQZ_PAYMENT_PK">
+<ind_PK_UK id="EDFA5F35-3122-76B8-AA23-348C14F57E8E" name="HQZ_PAYMENT_PK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <generatorID>7ABE0379-76F3-5033-F4C0-33A3227EFC04</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="96E9D362-E489-4BB1-D4CE-CFFDCDBBF8F3"/>
+<colUsage columnID="923589D2-3F03-DD53-A547-FE429C0F5197"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="35192524-ED3B-EEF4-5D8D-EC6F52CC6C33" name="PAYMENT_INVOICE_FK">
+<ind_PK_UK id="284DA003-E70C-85EB-D477-64456F954AC7" name="INVOICE_FKv1">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <generatorID>650ACCF4-B7EF-55D1-E542-179075108BA2</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="E231A190-94DA-0F26-EC03-F895F4C98906"/>
+<colUsage columnID="DFACBDE3-F7CA-BD16-9E66-34F2CEFB47DC"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
