@@ -404,3 +404,6 @@ ALTER TABLE hqz_rental_service ADD CONSTRAINT service_status_check CHECK (servic
 --INDEX SECTION
 -- index on email (used for user login)
 ALTER TABLE `hqz_customer` ADD INDEX `email_idx` (c_email);
+
+-- index on employee_id, corp_reg_no (used for check employee exists or not)
+CREATE INDEX employee_idx ON hqz_corp_cust(employee_id, corp_reg_no);

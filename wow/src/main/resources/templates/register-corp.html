@@ -163,6 +163,8 @@
                             </select>
                             <div th:if="${#fields.hasErrors('corpRegisterNo')}" class="alert alert-danger alert-common"
                                  role="alert" th:errors="*{corpRegisterNo}"></div>
+                            <div th:if="${employeeExists}" class="alert alert-danger alert-common"
+                                 role="alert">Employee exists!</div>
                         </div>
                         <div class="form-group">
                             <label for="q_id">Security Question</label>

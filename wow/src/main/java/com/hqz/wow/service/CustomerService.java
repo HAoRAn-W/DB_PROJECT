@@ -20,4 +20,6 @@ public interface CustomerService {
     boolean validateSecQuestion(String email, int questionId, String answer);
 
     int findIdByEmail(String email);
+
+    boolean checkCorpCustExist(int employeeId, String corpRegNo);
 }

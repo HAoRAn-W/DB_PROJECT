@@ -40,7 +40,6 @@ public class VehicleViewController {
     @RequestMapping("/index")
     public String index(Model model) {
         // show vehicle class list on home page
-        // todo pagination
         List<ClassEntity> classEntityList = classService.getClassEntityList();
         model.addAttribute("classEntityList", classEntityList);
         return "index";

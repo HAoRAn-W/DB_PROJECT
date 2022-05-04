@@ -116,4 +116,11 @@ public class CustomerServiceImpl implements CustomerService {
         CustomerEntity customerEntity = findCustomerByEmail(email);
         return customerEntity.getCustomerId();
     }
+
+    @Override
+    public boolean checkCorpCustExist(int employeeId, String corpRegNo) {
+        QueryWrapper<CorpCustomerEntity> wrapper = new QueryWrapper<>();
+        wrapper.eq("employee_id", employeeId).eq("corp_reg_no", corpRegNo);
+        return corpCustomerMapper.selectOne(wrapper) != null;
+    }
 }
