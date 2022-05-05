@@ -95,7 +95,10 @@ public class AccountController {
      */
     @PostMapping("/register-corp")
     public String registerSaveCorp(@Valid @ModelAttribute("corpCustomerVO") CorpCustomerVO corpCustomerVO, BindingResult bindingResult, Model model) {
-        //todo employeeId unique check
+        if (bindingResult.hasErrors()) {
+            // input invalid, display error messages
+            return "register-corp";
+        }
 
         // check if e-mail already registered
         if (customerService.checkIfCustomerExist(corpCustomerVO.getEmail())) {
@@ -103,8 +106,8 @@ public class AccountController {
             return "register-corp";
         }
 
-        if (bindingResult.hasErrors()) {
-            // input invalid, display error messages
+        if(customerService.checkCorpCustExist(corpCustomerVO.getEmployeeId(), corpCustomerVO.getCorpRegisterNo())) {
+            model.addAttribute("employeeExists", true);
             return "register-corp";
         }
 

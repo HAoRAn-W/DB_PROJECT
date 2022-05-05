@@ -29,118 +29,6 @@
 <dataTypePrecision>8</dataTypePrecision>
 <ownDataTypeParameters>,8,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="P_STREET" id="CD3F13BE-E839-902F-37FB-868B65896761">
-<createdBy>ryan2</createdBy>
-<createdTime>2022-03-27 00:04:17 UTC</createdTime>
-<commentInRDBMS><![CDATA[Pick up street]]></commentInRDBMS>
-<ownerDesignName>project</ownerDesignName>
-<engineerTo>
-<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="P_CITY" id="244CA09F-592A-602B-27A9-400A5D5D865F">
-<createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 00:27:40 UTC</createdTime>
-<commentInRDBMS><![CDATA[Pick up city]]></commentInRDBMS>
-<ownerDesignName>project</ownerDesignName>
-<engineerTo>
-<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="P_STATE" id="1CF351B2-CE9D-A984-4435-9AA6C94D1D64">
-<createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 01:08:29 UTC</createdTime>
-<commentInRDBMS><![CDATA[Pick up state]]></commentInRDBMS>
-<ownerDesignName>project</ownerDesignName>
-<engineerTo>
-<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="P_ZIPCODE" id="D1B74958-3D68-9F2B-1753-468D8029B2A2">
-<createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 01:08:46 UTC</createdTime>
-<commentInRDBMS><![CDATA[Pick up zipcode]]></commentInRDBMS>
-<ownerDesignName>project</ownerDesignName>
-<engineerTo>
-<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>10</dataTypeSize>
-<ownDataTypeParameters>10,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="D_STREET" id="6680AA5A-765F-0697-981D-565FE85B55B8">
-<createdBy>ryan2</createdBy>
-<createdTime>2022-03-27 00:07:52 UTC</createdTime>
-<commentInRDBMS><![CDATA[Drop off street]]></commentInRDBMS>
-<ownerDesignName>project</ownerDesignName>
-<engineerTo>
-<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="D_CITY" id="6C465A0A-B5F2-0634-470F-4ACD38EDD53E">
-<createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 01:09:01 UTC</createdTime>
-<commentInRDBMS><![CDATA[Drop off city]]></commentInRDBMS>
-<ownerDesignName>project</ownerDesignName>
-<engineerTo>
-<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="D_STATE" id="B588E039-5B4A-7EB1-33B5-239561549C4E">
-<createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 01:09:10 UTC</createdTime>
-<commentInRDBMS><![CDATA[Drop off state]]></commentInRDBMS>
-<ownerDesignName>project</ownerDesignName>
-<engineerTo>
-<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="D_ZIPCODE" id="01E54245-0651-840F-1A9E-82EA7BE043B1">
-<createdBy>ryan2</createdBy>
-<createdTime>2022-03-31 01:09:19 UTC</createdTime>
-<commentInRDBMS><![CDATA[Drop off zipcode]]></commentInRDBMS>
-<ownerDesignName>project</ownerDesignName>
-<engineerTo>
-<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>10</dataTypeSize>
-<ownDataTypeParameters>10,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="P_DATE" id="9C032F41-2D63-2E2A-CEF8-593FC10FACC2">
 <createdBy>ryan2</createdBy>
 <createdTime>2022-03-27 00:15:57 UTC</createdTime>
@@ -245,7 +133,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>17</dataTypeSize>
-<ownDataTypeParameters>17,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="COUPON_ID" id="0A2E4F5E-6558-9377-37BB-3293DA50F2FA">
 <createdBy>ryan2</createdBy>
@@ -277,6 +165,51 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SERVICE_STATUS" id="76988CA2-2B43-6B64-E3AD-D30586830F00">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:31:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Status of the service]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="OFFICE_ID" id="5A1B1F4D-94BA-CAA6-9E5A-2A99DB723D45">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:33:07 UTC</createdTime>
+<generatorID>831ECDEB-C23D-E9BE-EDB7-B43F6DB31823</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>0FE5CBF3-7168-EE57-D74B-ED6BF754C219</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="OFFICE_ID1" id="531532EE-5A8D-A3D7-8B9B-233B7DFB28AD">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:33:29 UTC</createdTime>
+<generatorID>E446436E-6554-9CB9-DAD7-FEEAFCE5E049</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>0FE5CBF3-7168-EE57-D74B-ED6BF754C219</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1A8652C1-ADD3-8B81-40CA-E2C6D19D8F52" containerWithKeyObject="B95453A4-673F-F2AD-321D-FA3A8BF23742" localFKIndex="C4B771C9-1CC5-5B4E-F57E-D7CEEEA01305" name="HQZ_INVOICE_HQZ_RENTAL_SERVICE_FK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<generatorID>26E87686-3690-DFB2-E454-2B1869F19076</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<referredTableLongName>HQZ_RENTAL_SERVICE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CAABDA31-BFF5-9ACB-3B8E-C11678A2A489</referredTableID>
+<keyObject>183B3CFF-2D02-5A58-6A85-DCD4BF724D2C</keyObject>
+<referredKeyID>183B3CFF-2D02-5A58-6A85-DCD4BF724D2C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>SERVICE_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

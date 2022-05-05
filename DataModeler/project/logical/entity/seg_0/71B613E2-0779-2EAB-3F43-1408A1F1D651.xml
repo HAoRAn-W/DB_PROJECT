@@ -130,6 +130,50 @@
 <dataTypeSize>1</dataTypeSize>
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="C_PASSWORD" id="20A00073-F3A1-EF15-E39B-E8A704885C0D">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:24:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[account password]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Q_ID" id="7E614E61-FF1B-A791-E4AF-FF387E30E281">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:30:15 UTC</createdTime>
+<generatorID>3B422450-E9C9-5971-5880-5C214C648DA0</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>B56D9B4A-EA6F-36CE-FEF1-C996B03C6FDA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SEC_ANS" id="16A0C605-4444-C1D3-0390-12400A750484">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:24:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Answer for the security question]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="6307B4A5-5319-AA6C-36C1-0E2415728026" name="HQZ_CUSTOMER PK">

@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CED8AC4E-9AE6-87FD-CC45-EFA63D731F4B" name="HQZ_CUSTOMER">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="33879264-85C6-77EF-C30E-D5EF84EBF7C8" name="HQZ_CUSTOMER">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <generatorID>71B613E2-0779-2EAB-3F43-1408A1F1D651</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CUSTOMER_ID" id="F0A4147F-39C0-82FE-7F65-E83BFD38A655">
+<Column name="CUSTOMER_ID" id="88638FC9-9100-C0B9-B2A6-D52A49C8FFFD">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[ID for the customer]]></commentInRDBMS>
 <generatorID>E11091C9-152A-0189-B2BA-9219EEE43516</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -21,9 +21,9 @@
 <ownDataTypeParameters>,8,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="C_STREET" id="492D7D18-EFB5-D67A-9410-70454704A3FD">
+<Column name="C_STREET" id="91B82B72-CCD8-9765-9C02-AC732F628802">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[Street of customer address]]></commentInRDBMS>
 <generatorID>36393421-925E-42BF-50E8-D6B0DE360A5D</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -34,9 +34,9 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="C_CITY" id="8A73B157-EDB7-AA47-2C6F-8D71412A992F">
+<Column name="C_CITY" id="B77619EE-3810-9CE6-D8D4-0801113A064E">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[City of customer address]]></commentInRDBMS>
 <generatorID>78D7AD45-F9FB-DA04-91B9-95A204F03E8C</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -47,9 +47,9 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="C_STATE" id="C82058AD-A140-304F-5E7F-3282A123D74B">
+<Column name="C_STATE" id="BEB9C2A3-F9D4-1ED2-4E45-F4888928989C">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[State of customer address]]></commentInRDBMS>
 <generatorID>BC00452D-0128-DA30-C026-793AC1A3F4DF</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -60,9 +60,9 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="C_ZIPCODE" id="42D43405-D95D-78A2-BC28-79C7AA067269">
+<Column name="C_ZIPCODE" id="7476A374-B905-EC94-614D-194DCCE5E139">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[Postal code of customer address]]></commentInRDBMS>
 <generatorID>E7B0C995-E524-7A7A-25E5-1B90EB6E05AE</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -73,9 +73,9 @@
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="C_EMAIL" id="B077B73D-D974-150C-27F0-80EA13700CA5">
+<Column name="C_EMAIL" id="19E227C1-7855-AF66-1058-7F678548F021">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[Customer email address]]></commentInRDBMS>
 <generatorID>D544C4A5-49A2-D6E7-6B69-975E0A40DA7F</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -86,9 +86,9 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="C_PHONE" id="5EA554A9-6DBC-B362-1313-C9D26ED89160">
+<Column name="C_PHONE" id="A327E27F-A974-EE5F-8899-73444F6AA2FC">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[Customer phone number]]></commentInRDBMS>
 <generatorID>3480778B-8CEA-554C-3ECF-E7F7C5996BB6</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -99,9 +99,9 @@
 <ownDataTypeParameters>15,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CUST_TYPE" id="FED9F09A-CB53-ADFB-EE17-7D14A0DF9F8A">
+<Column name="CUST_TYPE" id="1A85B7DB-C747-58E7-DF5A-0F66147B4D68">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[Type of the customer]]></commentInRDBMS>
 <generatorID>8A7F8954-1C32-71EF-C13B-7C823845941D</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -118,18 +118,72 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 <isDiscriminatorColumn>true</isDiscriminatorColumn>
 </Column>
+<Column name="C_PASSWORD" id="1BC15FAD-89F9-9373-B502-B2DD47C3DE15">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[account password]]></commentInRDBMS>
+<generatorID>20A00073-F3A1-EF15-E39B-E8A704885C0D</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Q_ID" id="66688FD1-FFB0-9B03-25C6-5AF55BC2FA9F">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<generatorID>7E614E61-FF1B-A791-E4AF-FF387E30E281</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7CE898A6-EA49-7119-3A01-59B8EC768531" referredColumn="2B25BDB4-E30C-25AE-04C7-F872E5F3F01A"/>
+</associations>
+</Column>
+<Column name="SEC_ANS" id="F2AE4251-10A2-B8F8-D9E8-AEE26CB7FEDB">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[Answer for the security question]]></commentInRDBMS>
+<generatorID>16A0C605-4444-C1D3-0390-12400A750484</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="132AEE7D-19AC-7262-5556-80CFFBB1D98C" name="HQZ_CUSTOMER_PK">
+<ind_PK_UK id="4A5C361C-FC48-E99B-4C4D-C69656E9937D" name="HQZ_CUSTOMER_PK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <generatorID>6307B4A5-5319-AA6C-36C1-0E2415728026</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="F0A4147F-39C0-82FE-7F65-E83BFD38A655"/>
+<colUsage columnID="88638FC9-9100-C0B9-B2A6-D52A49C8FFFD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5380BF6C-3ABE-FF7F-001D-D8E35FEA6535" name="HQZ_CUSTOMER_HQZ_SEC_QUESTION_FK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<generatorID>3B422450-E9C9-5971-5880-5C214C648DA0</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="66688FD1-FFB0-9B03-25C6-5AF55BC2FA9F"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

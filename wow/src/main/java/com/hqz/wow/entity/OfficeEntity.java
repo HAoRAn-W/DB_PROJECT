@@ -23,5 +23,5 @@ public class OfficeEntity {
     private String officePhone;
 
     @TableField(value = "img_url")
-    private String imgUrl; // TODO
+    private String imgUrl;
 }

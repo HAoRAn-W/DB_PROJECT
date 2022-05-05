@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="93A096BE-ABEB-5380-0A9C-163D91464D28" name="HQZ_CLASS">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D31EFE99-B5A6-8B99-01A6-9483D142E667" name="HQZ_CLASS">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <generatorID>9834697F-24BA-A508-186D-F947FE5FAAA3</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CLASS_ID" id="364F0B31-775B-A8E1-F192-3FF667BA19C8">
+<Column name="CLASS_ID" id="2C2E4D9E-4946-9A00-738D-448AB6FC3652">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[The id for the class]]></commentInRDBMS>
 <generatorID>8532D633-51E3-507E-B40F-3A1EE3DE6FC3</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -21,9 +21,9 @@
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CLASS_NAME" id="F1F22C31-C2CC-D7DB-D61E-5A206BF9BDD8">
+<Column name="CLASS_NAME" id="508B2B05-543F-4AF6-68BA-5288CA8E1E86">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[Name of the class, small, mid-size, SUV, etc.]]></commentInRDBMS>
 <generatorID>A83D1D61-3763-30FE-B06B-9751A8EA3196</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -34,9 +34,9 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="RENTAL_RATE" id="94D77004-2C68-B380-E01F-B31C3ED73E49">
+<Column name="RENTAL_RATE" id="B3156913-B99D-5B44-E9F7-16C8A4A5298A">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[Rental rate per day.]]></commentInRDBMS>
 <generatorID>F0AA78F1-4A6D-C8A3-11E8-EFAA0C2410A3</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -48,9 +48,9 @@
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="OVER_FEE" id="773EC958-D5F5-45D8-AA50-A02B1950B117">
+<Column name="OVER_FEE" id="6A323D4F-BFA5-CD6A-4447-8F3EEBB634DA">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[Fees for over mileage if rental service exceeds daily odometer limit.]]></commentInRDBMS>
 <generatorID>B241B6EB-1E68-ABE3-F52E-D127200E70D9</generatorID>
 <ownerDesignName>project</ownerDesignName>
@@ -62,18 +62,32 @@
 <ownDataTypeParameters>,4,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="IMG_URL" id="5689BFAA-C0BC-B704-2FE0-DF3624883187">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[URL for images]]></commentInRDBMS>
+<generatorID>89DB02F3-4B5C-7B97-90A1-036A307A4B6A</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2000</dataTypeSize>
+<ownDataTypeParameters>2000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="DA30ADAB-E070-A351-073A-621690089C45" name="HQZ_CLASS_PK">
+<ind_PK_UK id="59803FBD-78C0-9A8E-15C8-FC81CBEA7A8B" name="HQZ_CLASS_PK">
 <createdBy>ryan2</createdBy>
-<createdTime>2022-04-03 00:58:23 UTC</createdTime>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
 <generatorID>09D6B797-EB04-CE01-0745-AA1BB8BC7FD5</generatorID>
 <ownerDesignName>project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="364F0B31-775B-A8E1-F192-3FF667BA19C8"/>
+<colUsage columnID="2C2E4D9E-4946-9A00-738D-448AB6FC3652"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

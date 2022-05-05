@@ -100,7 +100,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="OFFICE_ID" id="81BECB71-F7A2-0A7C-C9A5-0993B7D7D0AE">
 <createdBy>ryan2</createdBy>
@@ -117,7 +117,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>6</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="VEHICLE_STATUS" id="F619294B-6C95-4578-5B13-709DA81B7668">
 <createdBy>ryan2</createdBy>
@@ -132,6 +132,36 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>1</dataTypeSize>
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IMG_URL" id="5AE24F45-9C96-E1D0-4ADB-472525E71869">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:31:47 UTC</createdTime>
+<commentInRDBMS><![CDATA[URL for images]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2000</dataTypeSize>
+<ownDataTypeParameters>2000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ODOMETER" id="64FDC15F-14E9-71BE-BF65-D278E7AD2199">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:32:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Car odometer value]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<engineerTo>
+<item key="52F380AE-7C9B-2388-5ECC-6B314C82537F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,9,2</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

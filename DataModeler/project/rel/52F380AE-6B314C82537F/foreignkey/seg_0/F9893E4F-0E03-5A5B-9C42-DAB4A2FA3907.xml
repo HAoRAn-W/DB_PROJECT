@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F9893E4F-0E03-5A5B-9C42-DAB4A2FA3907" containerWithKeyObject="CAABDA31-BFF5-9ACB-3B8E-C11678A2A489" localFKIndex="F1F88C1B-D414-DE03-B413-6286EEBB81A0" name="HQZ_RENTAL_SERVICE_HQZ_VEHICLE_FK">
+<createdBy>ryan2</createdBy>
+<createdTime>2022-05-04 20:34:25 UTC</createdTime>
+<generatorID>9909D032-C226-6CEC-C4E2-2A36C5582F69</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<referredTableLongName>HQZ_VEHICLE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>04696263-44F0-B66F-E289-CB9577CB8050</referredTableID>
+<keyObject>4C092F42-1503-154C-2CE4-09FECDC3FD0B</keyObject>
+<referredKeyID>4C092F42-1503-154C-2CE4-09FECDC3FD0B</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>VIN</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
