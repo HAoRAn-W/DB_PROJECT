@@ -126,7 +126,6 @@
                                                         model</h2>
                                                     <h4><a href="product-single.html" th:text="${vehicleEntity.make}">Car
                                                         make</a></h4>
-                                                    <p class="product-short-description"> todo: car description</p>
                                                     <a th:if="${vehicleEntity.vehicleStatus == 'A'}" th:href="@{/checkout(vin=${vehicleEntity.vin})}" class="btn btn-main">Rent it!</a>
                                                     <a th:if="${vehicleEntity.vehicleStatus != 'A'}" class="btn btn-main" th:disabled>Unavailable</a>
                                                 </div>
