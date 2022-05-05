@@ -55,7 +55,7 @@
             <div id="navbar" class="navbar-collapse collapse text-center">
                 <ul class="nav navbar-nav">
 
-                    <li class="dropdown ">
+                    <li class="dropdown">
                         <a th:href="@{/index}">Home</a>
                     </li>
 
@@ -68,20 +68,27 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown dropdown-slide">
-                        <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                           data-delay="350"
-                           role="button" aria-haspopup="true" aria-expanded="false">Account <span
-                                class="tf-ion-ios-arrow-down"></span></a>
-                        <ul class="dropdown-menu">
-                            <div sec:authorize="isAuthenticated()">
-                                <li><a href="javascript: document.logoutForm.submit()">Logout</a></li>
-                                <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
-                                    <input hidden type="submit"/>
-                                </form>
-                            </div>
-                        </ul>
-                    </li>
+                    <li class="dropdown" sec:authorize="isAuthenticated()">
+                        <a href="javascript: document.logoutForm.submit()">Logout</a></li>
+                    <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+                        <input hidden type="submit"/>
+                    </form>
+
+
+<!--                    <li class="dropdown dropdown-slide">-->
+<!--                        <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"-->
+<!--                           data-delay="350"-->
+<!--                           role="button" aria-haspopup="true" aria-expanded="false">Account <span-->
+<!--                                class="tf-ion-ios-arrow-down"></span></a>-->
+<!--                        <ul class="dropdown-menu">-->
+<!--                            <div sec:authorize="isAuthenticated()">-->
+<!--                                <li><a href="javascript: document.logoutForm.submit()">Logout</a></li>-->
+<!--                                <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">-->
+<!--                                    <input hidden type="submit"/>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                        </ul>-->
+<!--                    </li>-->
                 </ul>
             </div>
         </div>

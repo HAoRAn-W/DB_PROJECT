@@ -2,6 +2,7 @@ package com.hqz.wow.vo;
 
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.lang.Nullable;
 
 import javax.validation.constraints.NotNull;
 import java.math.BigInteger;
