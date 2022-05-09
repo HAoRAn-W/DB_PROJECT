@@ -6,6 +6,7 @@ import com.hqz.wow.entity.OfficeEntity;
 import com.hqz.wow.entity.VehicleEntity;
 import com.hqz.wow.service.*;
 import com.hqz.wow.service.security.AuthenticationService;
+import com.hqz.wow.util.WowConstants;
 import com.hqz.wow.vo.CheckoutVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.math.BigInteger;
 
 
 @Controller
@@ -36,6 +38,9 @@ public class OrderConfirmController {
     @Resource
     CustomerService customerService;
 
+    @Resource
+    CouponService couponService;
+
     @Autowired
     AuthenticationService authenticationService;
 
@@ -48,6 +53,12 @@ public class OrderConfirmController {
             return "redirect:/order-error";
         } else {
             VehicleEntity vehicleEntity = vehicleService.getVehicleByVin(vin);
+            if (checkoutVO.getCouponId() != null && !couponService.checkCouponExists(checkoutVO.getCouponId())) {
+                return "redirect:/order-error";
+            }
+            if (vehicleEntity.getVehicleStatus().equals(WowConstants.VEHICLE_RENT)) {
+                return "redirect:/order-error";
+            }
             OfficeEntity officeEntity = officeService.getOfficeById(vehicleEntity.getOfficeId());
 
             Authentication authentication = authenticationService.getAuthentication();
@@ -62,7 +73,7 @@ public class OrderConfirmController {
     }
 
     @GetMapping("/order-error")
-    public String orderError(Model model){
+    public String orderError(Model model) {
         return "order-error";
     }
 }

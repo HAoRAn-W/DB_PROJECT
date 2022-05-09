@@ -5,6 +5,7 @@ import com.hqz.wow.mapper.CouponMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.math.BigInteger;
 import java.util.Date;
 
 @Service
@@ -26,7 +27,7 @@ public class CouponServiceImpl implements CouponService {
     }
 
     @Override
-    public boolean checkCouponExists(int couponId) {
+    public boolean checkCouponExists(BigInteger couponId) {
         return couponMapper.selectById(couponId) != null;
     }
 }
