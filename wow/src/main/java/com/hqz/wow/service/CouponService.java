@@ -6,4 +6,6 @@ public interface CouponService {
     CouponEntity getCouponById(int couponId);
 
     boolean checkCouponDate(int couponId);
+
+    boolean checkCouponExists(int couponId);
 }

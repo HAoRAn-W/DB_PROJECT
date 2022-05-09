@@ -95,6 +95,10 @@ public class AccountController {
      */
     @PostMapping("/register-corp")
     public String registerSaveCorp(@Valid @ModelAttribute("corpCustomerVO") CorpCustomerVO corpCustomerVO, BindingResult bindingResult, Model model) {
+
+        List<SecurityQuestionEntity> questionList = securityQuestionService.getSecQuestions();
+        model.addAttribute("questionList", questionList);
+
         if (bindingResult.hasErrors()) {
             // input invalid, display error messages
             return "register-corp";
@@ -137,6 +141,9 @@ public class AccountController {
      */
     @PostMapping("/register-indiv")
     public String registerSaveIndiv(@Valid @ModelAttribute("indivCustomerVO") IndivCustomerVO indivCustomerVO, BindingResult bindingResult, Model model) {
+
+        List<SecurityQuestionEntity> questionList = securityQuestionService.getSecQuestions();
+        model.addAttribute("questionList", questionList);
 
         // check if e-mail already registered
         if (customerService.checkIfCustomerExist(indivCustomerVO.getEmail())) {

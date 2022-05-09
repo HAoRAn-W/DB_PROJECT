@@ -24,4 +24,9 @@ public class CouponServiceImpl implements CouponService {
         Date currentDate = new Date();
         return coupon.getValidFromDate().before(currentDate) && coupon.getValidToDate().after(currentDate);
     }
+
+    @Override
+    public boolean checkCouponExists(int couponId) {
+        return couponMapper.selectById(couponId) != null;
+    }
 }
