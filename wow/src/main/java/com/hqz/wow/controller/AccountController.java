@@ -123,7 +123,7 @@ public class AccountController {
             // database registration process
             customerService.registerCorpCustomer(corpCustomerVO);
             // successful registration, go to login page
-            return "/login";
+            return "login";
         } catch (Exception e) {
             // registration failure, back to registration page
             model.addAttribute("error", true);
@@ -160,7 +160,7 @@ public class AccountController {
             String password = bCryptPasswordEncoder.encode(indivCustomerVO.getPassword());
             indivCustomerVO.setPassword(password);
             customerService.registerIndivCustomer(indivCustomerVO);
-            return "/login";
+            return "login";
         } catch (Exception e) {
             model.addAttribute("error", true);
             return "register-indiv";
