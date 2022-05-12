@@ -10,6 +10,7 @@ import javax.validation.constraints.Pattern;
 @Data
 public class IndivCustomerVO {
     @Email(message = "Please input valid email address")
+    @NotEmpty(message = "please input your email")
     private String email;
 
     @NotEmpty(message = "Password cannot be empty")

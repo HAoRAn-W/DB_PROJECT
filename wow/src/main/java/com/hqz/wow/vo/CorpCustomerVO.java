@@ -15,6 +15,7 @@ import static com.baomidou.mybatisplus.annotation.FieldStrategy.NOT_NULL;
 public class CorpCustomerVO {
 
     @Email(message = "Please input valid email address")
+    @NotEmpty(message = "please input your email")
     private String email;
 
     @NotEmpty(message = "Password cannot be empty")
