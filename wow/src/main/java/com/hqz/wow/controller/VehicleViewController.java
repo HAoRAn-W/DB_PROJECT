@@ -31,6 +31,11 @@ public class VehicleViewController {
     @Resource
     OfficeService officeService;
 
+    @RequestMapping("/")
+    public String index() {
+        return "redirect:/index";
+    }
+
     /**
      * home page
      *

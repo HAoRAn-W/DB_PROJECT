@@ -277,7 +277,7 @@ public class AccountController {
             resetPasswordVO.setPassword(password);
             String email = request.getParameter("email");
             customerService.resetPassword(email, resetPasswordVO);
-            return "/login";
+            return "login";
         } catch (Exception e) {
             model.addAttribute("error", true);
             return "reset-password";
