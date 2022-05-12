@@ -99,6 +99,9 @@ public class AccountController {
         List<SecurityQuestionEntity> questionList = securityQuestionService.getSecQuestions();
         model.addAttribute("questionList", questionList);
 
+        List<CorpInfoEntity> corpInfoEntityList = corpInfoService.getCorpInfoEntityList();
+        model.addAttribute("corpInfoEntity", corpInfoEntityList);
+
         if (bindingResult.hasErrors()) {
             // input invalid, display error messages
             return "register-corp";

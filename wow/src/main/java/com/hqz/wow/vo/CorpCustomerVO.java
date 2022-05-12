@@ -33,7 +33,7 @@ public class CorpCustomerVO {
     private String zipcode;
 
     @NotEmpty(message = "Please input your phone number")
-    @Pattern(regexp="(^$|[0-9]{10})")
+    @Pattern(regexp="(^$|[0-9]{10})", message = "Phone umber must be 9 digits")
     private String phone;
 
     private String customerType;
